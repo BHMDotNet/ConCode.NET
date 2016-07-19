@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConf.NET.Mobile.iOS", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConf.NET.Mobile.Droid", "Droid\CodeConf.NET.Mobile.Droid.csproj", "{C31B22D8-F8BA-491E-B309-CED863E51A36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConf.NET.Mobile.Tests", "CodeConf.NET.Mobile.Tests\CodeConf.NET.Mobile.Tests.csproj", "{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{C31B22D8-F8BA-491E-B309-CED863E51A36}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{C31B22D8-F8BA-491E-B309-CED863E51A36}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{C31B22D8-F8BA-491E-B309-CED863E51A36}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|iPhone.Build.0 = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{D7EFB3F7-DB41-46CA-B81D-1C8414E1E11F}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
