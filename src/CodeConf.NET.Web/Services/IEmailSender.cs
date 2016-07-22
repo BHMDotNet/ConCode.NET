@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodeConf.NET.Web.Services
+namespace ConCode.NET.Web.Services
 {
     public interface IEmailSender
     {

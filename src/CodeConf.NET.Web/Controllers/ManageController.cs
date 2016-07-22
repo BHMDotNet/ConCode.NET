@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using CodeConf.NET.Web.Models;
-using CodeConf.NET.Web.Models.ManageViewModels;
-using CodeConf.NET.Web.Services;
+using ConCode.NET.Web.Models;
+using ConCode.NET.Web.Models.ManageViewModels;
+using ConCode.NET.Web.Services;
 
-namespace CodeConf.NET.Web.Controllers
+namespace ConCode.NET.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

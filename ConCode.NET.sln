@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CodeConf.NET.Core", "src\CodeConf.NET.Core\CodeConf.NET.Core.xproj", "{A5F75399-09D0-46D0-9C0F-A6C4B31409FC}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Core", "src\CodeConf.NET.Core\ConCode.NET.Core.xproj", "{A5F75399-09D0-46D0-9C0F-A6C4B31409FC}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CodeConf.NET.Tests", "src\CodeConf.NET.Tests\CodeConf.NET.Tests.xproj", "{43D4B277-D269-4DD1-A733-E02D744464EF}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Tests", "src\CodeConf.NET.Tests\ConCode.NET.Tests.xproj", "{43D4B277-D269-4DD1-A733-E02D744464EF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CodeConf.NET.Web", "src\CodeConf.NET.Web\CodeConf.NET.Web.xproj", "{CF4564CF-1AD3-4B65-9CE7-95FBF0437390}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Web", "src\CodeConf.NET.Web\ConCode.NET.Web.xproj", "{CF4564CF-1AD3-4B65-9CE7-95FBF0437390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

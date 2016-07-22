@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using CodeConf.NET.Web.Models;
-using CodeConf.NET.Web.Models.AccountViewModels;
-using CodeConf.NET.Web.Services;
+using ConCode.NET.Web.Models;
+using ConCode.NET.Web.Models.AccountViewModels;
+using ConCode.NET.Web.Services;
 
-namespace CodeConf.NET.Web.Controllers
+namespace ConCode.NET.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller

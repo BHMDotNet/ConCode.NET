@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using CodeConf.NET.Web.Data;
-using CodeConf.NET.Web.Models;
-using CodeConf.NET.Web.Services;
+using ConCode.NET.Web.Data;
+using ConCode.NET.Web.Models;
+using ConCode.NET.Web.Services;
 
-namespace CodeConf.NET.Web
+namespace ConCode.NET.Web
 {
     public class Startup
     {
