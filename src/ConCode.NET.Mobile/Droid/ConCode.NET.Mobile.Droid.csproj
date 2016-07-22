@@ -6,8 +6,8 @@
     <ProjectGuid>{C31B22D8-F8BA-491E-B309-CED863E51A36}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>CodeConf.NET.Mobile.Droid</RootNamespace>
-    <AssemblyName>CodeConf.NET.Mobile.Droid</AssemblyName>
+    <RootNamespace>ConCode.NET.Mobile.Droid</RootNamespace>
+    <AssemblyName>ConCode.NET.Mobile.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -73,9 +73,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodeConf.NET.Mobile\CodeConf.NET.Mobile.csproj">
+    <ProjectReference Include="..\ConCode.NET.Mobile\ConCode.NET.Mobile.csproj">
       <Project>{71A63BB1-DCB8-4F33-B9B4-03500C28B639}</Project>
-      <Name>CodeConf.NET.Mobile</Name>
+      <Name>ConCode.NET.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

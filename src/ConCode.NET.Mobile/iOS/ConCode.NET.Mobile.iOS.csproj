@@ -6,8 +6,8 @@
     <ProjectGuid>{59061FB2-1A5D-4F96-8D03-549DC3C10871}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CodeConf.NET.Mobile.iOS</RootNamespace>
-    <AssemblyName>CodeConf.NET.Mobile.iOS</AssemblyName>
+    <RootNamespace>ConCode.NET.Mobile.iOS</RootNamespace>
+    <AssemblyName>ConCode.NET.Mobile.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -106,9 +106,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodeConf.NET.Mobile\CodeConf.NET.Mobile.csproj">
+    <ProjectReference Include="..\ConCode.NET.Mobile\ConCode.NET.Mobile.csproj">
       <Project>{71A63BB1-DCB8-4F33-B9B4-03500C28B639}</Project>
-      <Name>CodeConf.NET.Mobile</Name>
+      <Name>ConCode.NET.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

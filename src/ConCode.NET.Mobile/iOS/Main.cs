@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace CodeConf.NET.Mobile.iOS
+namespace ConCode.NET.Mobile.iOS
 {
 	public class Application
 	{

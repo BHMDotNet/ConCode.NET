@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace CodeConf.NET.Mobile
+namespace ConCode.NET.Mobile
 {
 	public partial class MainPage : ContentPage
 	{
