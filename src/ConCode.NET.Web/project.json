@@ -2,6 +2,7 @@
   "userSecretsId": "aspnet-ConCode.NET.Web-8e556b6b-a432-4e9b-80d4-4207f9154002",
 
   "dependencies": {
+    "ConCode.NET.Core":"1.0.*",
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
       "type": "platform"
