@@ -19,7 +19,8 @@ namespace ConCode.NET.Web.Controllers
         public IActionResult SessionList()
         {
             ViewData["Message"] = "This is the session list";
-            
+            //All of this is just placeholder code. Feel free to remove it when
+            //you do the actual implementation.
             var sessionList = new List<Session>();
 
             var session = new Session{
@@ -39,7 +40,7 @@ namespace ConCode.NET.Web.Controllers
                     }
             };
             sessionList.Add(session);
-
+            
             var model = new SessionListViewModel{
                 SessionList = sessionList
             };
