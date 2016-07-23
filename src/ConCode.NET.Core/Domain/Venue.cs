@@ -8,6 +8,6 @@ namespace ConCode.NET.Core.Domain
     public class Venue
     {
         public int Id { get; set; }
-        public int Description { get; set; }
+        public string Description { get; set; }
     }
 }
