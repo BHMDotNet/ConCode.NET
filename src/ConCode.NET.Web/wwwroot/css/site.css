@@ -11,6 +11,29 @@
 	background-color: yellowgreen;
 }
 
+.label-cancelled{
+	background-color: #C62C2C;
+}
+
+.label-full{
+	background-color: #C62C2C;
+}
+
+.label-postponed{
+	background-color: orange;
+}
+
+.label-open{
+	background-color: yellowgreen;
+}
+
+.label-closed{
+	background-color: #95a5a6;
+}
+.label-finished{
+	background-color: #95a5a6;
+}
+
 .side-tag{
 	display:inline;
 	font-weight: bold;

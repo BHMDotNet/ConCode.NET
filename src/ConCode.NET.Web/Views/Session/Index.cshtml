@@ -14,7 +14,7 @@ ViewData["Title"] = "Session List";
             <div class="speakers-session-list list-group">
                @foreach (var session in Model.SessionList)
                {
-               <a href="#" class="list-group-item">
+               <a class="list-group-item" asp-controller="Session" asp-action="Details" asp-route-id="@session.Id">
                   <h3 style="display:inline;">@session.Talk.Title</h3>
                     @{foreach(var speaker in @session.Talk.Speakers)
                         {
@@ -23,7 +23,9 @@ ViewData["Title"] = "Session List";
                     }
                   <div style="float:right;" class="well well-lg"> <span style="font-size:1.75em;"> @session.Start.ToString("hh:MM")</span>
                      <br/>
-                     <span class="label label-default">Room 201</span>
+                     <span class="label label-default">@session.Venue.Description</span>
+                     <br/>
+                     <span class="text-uppercase label label-@session.Status.ToString().ToLower()">@session.Status</span>
                   </div>
                   <p class="text-muted">
                      @session.Talk.Abstract

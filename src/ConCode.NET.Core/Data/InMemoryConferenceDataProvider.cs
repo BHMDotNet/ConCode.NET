@@ -21,13 +21,43 @@ namespace CodeConf.NET.Core.Data
                         TimesPresented = 1,
                         Speakers = new List<Speaker>{
                             new Speaker{ 
-                                FirstName = "Brandon",
-                                LastName = "Russell"
+                                Id = 1,
+                                Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+                                BlogUri = new Uri("http://theverybestblog.com"),
+                                CreatedAt = DateTime.Now,
+                                FacebookProfile = "blakehelms",
+                                FirstName = "Blake",
+                                LastName = "Helms",
+                                LastUpdated = DateTime.Now,
+                                LinkedInProfile = "blakehelms",
+                                Photo = new Uri("https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg"),
+                                Tagline = "Someone very interesting",
+                                TwitterHandle = "helmsb"
                             }
                         },
                         Tags = new List<string>{
                             "C# 7",
                             ".NET"
+                        },
+                        AdditionalResources = new List<AdditionalResource>{
+                            
+                            new AdditionalResource{
+                                Name = "Handout",
+                                Type = new ResourceType{
+                                    Name = "PDF",
+                                    IconUri = new Uri("http://localhost:5000/images/file-types/pdf.png")
+                                },
+                                Uri = new Uri("https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf")
+                            },
+                            new AdditionalResource{
+                                Name = "Slide Deck",
+                                Type = new ResourceType{
+                                    Name = "PowerPoint",
+                                    IconUri = new Uri("http://localhost:5000/images/file-types/ppt.png")
+                                },
+                                Uri = new Uri("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE")
+                            }
+                            
                         }
                     },
                 TalkType = new TalkType()
@@ -40,12 +70,13 @@ namespace CodeConf.NET.Core.Data
                 {
                     Id = 1,
                     Description = "Main Stage"
-                }
+                },
+                Status = SessionStatus.Full
             },
 
             new Session
             {
-                Id = 1,
+                Id = 2,
                 Start = new DateTime(2016, 8, 4),
                 Talk = new Talk
                     {
@@ -75,7 +106,8 @@ namespace CodeConf.NET.Core.Data
                 {
                     Id = 2,
                     Description = "Room 201"
-                }
+                },
+                Status = SessionStatus.Open
             }
         };
 
