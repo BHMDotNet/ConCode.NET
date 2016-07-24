@@ -1,0 +1,26 @@
+@model ConCode.NET.Web.Models.ViewModels.SessionListViewModel
+@{
+    ViewData["Title"] = "Session List";
+}
+<h1>Session List</h1>
+
+<table>
+    @foreach(var session in Model.SessionList)
+    {
+        <tr>
+            <td>
+                <div class="well well-sm"> @session.Start.ToString("hh:mm")</div>
+            </td>
+            <td>
+                <h2 >@session.Talk.Title</h2>
+            </td>
+        </tr>
+        <tr>
+            <td/>
+            <td>
+                <span class="label label-success">@session.TalkType.Name</span>
+                @session.Venue.Description
+            </td>
+        </tr>
+    }
+</table>

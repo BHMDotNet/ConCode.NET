@@ -5,6 +5,9 @@
     "command": "dotnet",
     "isShellCommand": true,
     "args": [],
+    "options":  {
+        "cwd": "${workspaceRoot}/src/ConCode.NET.Web"
+    },
     "tasks": [
         {
             "taskName": "build",
