@@ -16,7 +16,7 @@
                     <span class="well well-sm"> @session.Start.ToString("hh:mm")</span>
                 </td>
                 <td>
-                    <h3>@session.Talk.Title</h3>
+                    <h3><a asp-controller="Session" asp-action="Details" asp-route-id="@session.Id">@session.Talk.Title</a></h3>
                 </td>
             </tr>
             <tr>

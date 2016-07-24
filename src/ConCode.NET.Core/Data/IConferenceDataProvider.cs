@@ -11,5 +11,13 @@ namespace CodeConf.NET.Core.Data
         IQueryable<Session> Sessions { get; }
 
         void AddSession(Session session);
+
+        IQueryable<Speaker> Speakers { get; }
+
+        IQueryable<Talk> Talks { get; }
+
+        IQueryable<Venue> Venues { get; }
+
+        IEnumerable<TalkType> TalkTypes { get; }
     }
 }
