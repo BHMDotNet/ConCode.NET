@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Speaker";
+}
+
+<h2>Welcome @Model.FirstName!</h2>
+
+<h3>Here are you upcoming Talks:</h3>
+
+<div>
+    <ul>
+        @{ foreach (var talk in Model.Talks)
+            {
+                <li>@talk.Title (@talk.Level)</li>
+            }
+        }
+    </ul>
+</div>

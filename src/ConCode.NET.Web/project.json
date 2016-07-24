@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-ConCode.NET.Web-8e556b6b-a432-4e9b-80d4-4207f9154002",
 
   "dependencies": {
@@ -42,7 +42,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "ConCode.NET.Core": "1.0.0-*"
   },
 
   "tools": {
