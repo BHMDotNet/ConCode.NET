@@ -74,5 +74,10 @@ namespace CodeConf.NET.Core.Data
                 return _sessions.AsQueryable();
             }
         }
+
+        public void AddSession(Session session)
+        {
+            _sessions = new List<Session>(_sessions) { session };
+        }
     }
 }

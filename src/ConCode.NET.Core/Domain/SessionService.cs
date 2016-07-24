@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using ConCode.NET.Core.Domain;
 using CodeConf.NET.Core.Data;
+using System;
 
 namespace CodeConf.NET.Core.Domain
 {
@@ -11,6 +12,11 @@ namespace CodeConf.NET.Core.Domain
         public SessionService(IConferenceDataProvider conferenceDataProvider)
         {
             _conferenceDataProvider = conferenceDataProvider;
+        }
+
+        public void AddSession(Session session)
+        {
+            _conferenceDataProvider.AddSession(session);
         }
 
         public IQueryable<Session> GetSessions()

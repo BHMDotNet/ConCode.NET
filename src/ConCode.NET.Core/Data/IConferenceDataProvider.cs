@@ -9,5 +9,7 @@ namespace CodeConf.NET.Core.Data
     public interface IConferenceDataProvider
     {
         IQueryable<Session> Sessions { get; }
+
+        void AddSession(Session session);
     }
 }

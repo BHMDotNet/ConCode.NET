@@ -1,0 +1,56 @@
+@model ConCode.NET.Web.Models.SessionViewModels.AddSessionViewModel
+
+@{
+    ViewData["Title"] = "Add Session";
+}
+
+<h2>Add</h2>
+
+<form asp-action="Add">
+    <div class="form-horizontal">
+        <h4>Add Session for Speaker</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="TalkId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TalkId" class="form-control" />
+                <span asp-validation-for="TalkId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VenueId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VenueId" class="form-control" />
+                <span asp-validation-for="VenueId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TalkTypeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TalkTypeId" class="form-control" />
+                <span asp-validation-for="TalkTypeId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Start" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
