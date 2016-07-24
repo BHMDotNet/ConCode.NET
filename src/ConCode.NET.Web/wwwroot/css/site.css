@@ -1,19 +1,56 @@
-﻿div.navbar.navbar-default {
-		background-color: #C62C2C;
-		height: 65px;
-	}
-	.navbar-default .navbar-nav > li > a:hover {
-	  color: #f49394;
-	  background-color: transparent;
-	}
-.sessionlisttable h3{
-		margin-top: 11px;
-		margin-left:5px;
+﻿/*BEGIN General Styles*/
+.label-advanced{
+	background-color: #C62C2C;
 }
 
+.label-intermediate{
+	background-color: orange;
+}
+
+.label-beginner{
+	background-color: yellowgreen;
+}
+
+
+/*END General Styles*/
+
+/*BEGIN NavBar*/
+div.navbar.navbar-default {
+	background-color: #C62C2C;
+	height: 65px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #f49394;
+	background-color: transparent;
+}
 .headerbanner > h1{
 	margin-top:-80px;
 	margin-left: 20px;
 	color: white;
 	font-size: 5em;
 }
+/*END NavBar*/
+
+/*BEGIN Session Page*/
+.sessionlisttable h3{
+		margin-top: 11px;
+		margin-left:5px;
+}
+
+/*END Session Page*/
+
+/*BEGIN Speaker Page*/
+.speakers-session-list
+{
+	list-style: none;
+}
+
+.speaker-page img{
+	padding-right:5px;
+	margin-right:10px;
+}
+
+.speaker-page .tagline{
+	margin-top:-15px;
+}
+/*END Speaker Page*/
