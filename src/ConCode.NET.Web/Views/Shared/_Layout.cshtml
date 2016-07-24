@@ -42,6 +42,23 @@
         </div>
     </div>
     <div class="container body-content">
+        <ul class="breadcrumb">
+
+        @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+        {
+            @Html.ActionLink("Home", "Index", "Home")
+            <li class="active">
+                / @ViewBag.Title
+            </li>
+        }
+        else
+        {
+            <li class="active">
+                Home
+            </li>
+        }
+
+    </ul>
         @RenderBody()
         <hr />
         <footer>

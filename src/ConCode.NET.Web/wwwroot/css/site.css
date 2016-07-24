@@ -11,7 +11,20 @@
 	background-color: yellowgreen;
 }
 
+.side-tag{
+	display:inline;
+	font-weight: bold;
+	padding:5px;
+	font-size: .6em;
+}
 
+.breadcrumb{
+	margin-top:10px;
+}
+
+.breadcrumb a{
+	color: #f49394;
+}
 /*END General Styles*/
 
 /*BEGIN NavBar*/

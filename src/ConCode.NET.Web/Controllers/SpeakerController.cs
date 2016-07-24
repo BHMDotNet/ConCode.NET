@@ -30,14 +30,23 @@ namespace ConCode.NET.Web.Controllers
                         Title = "The Color Tuple",
                         Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
                         Level = TalkLevel.Intermediate,
-                        TimesPresented = 1
+                        TimesPresented = 1,
+                        Tags = new List<string>{
+                            "C# 7",
+                            ".NET"
+                        }
                     },
                     new Talk
                     {
                         Title = "Asyncronous In A Syncronous World",
                         Abstract = "Well, that's certainly good to know. The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules.",
                         Level = TalkLevel.Advanced,
-                        TimesPresented = 4
+                        TimesPresented = 4,
+                        Tags = new List<string>{
+                            "Async",
+                            "C#",
+                            ".NET"
+                        }
                     }
                 }
             };
