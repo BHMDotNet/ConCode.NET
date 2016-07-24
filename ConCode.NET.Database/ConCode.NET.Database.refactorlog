@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="d83fcd23-7b74-4ae0-9a81-32b68bc064e0" ChangeDateTime="07/24/2016 12:01:43">
+    <Property Name="ElementName" Value="[dbo].[SpeakerTalks].[TalkId`]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SpeakerTalks]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TalkId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="89c929c4-442e-46d6-94f4-218a94726922" ChangeDateTime="07/24/2016 12:02:57">
+    <Property Name="ElementName" Value="[dbo].[User].[FirstName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LastName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="02d0cc05-13fe-4ef3-918e-f85e1b996b11" ChangeDateTime="07/24/2016 12:03:57">
+    <Property Name="ElementName" Value="[dbo].[User].[BlogURL]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BlogUri" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="25e472f3-e10f-4aa3-8fe1-ef6c7ad35c06" ChangeDateTime="07/24/2016 12:05:43">
+    <Property Name="ElementName" Value="[dbo].[User].[LinkedInProfile]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LinkedInUri" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5a2997ef-ac0e-4898-b63a-f2da13a26812" ChangeDateTime="07/24/2016 12:07:06">
+    <Property Name="ElementName" Value="[dbo].[User].[Photo]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PhotoUri" />
+  </Operation>
+</Operations>
