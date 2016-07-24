@@ -44,7 +44,8 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "ConCode.NET.Core": "1.0.0-*"
+    "ConCode.NET.Core": "1.0.0-*",
+    "Microsoft.AspNetCore.Authentication.Facebook": "1.0.0"
   },
 
   "tools": {

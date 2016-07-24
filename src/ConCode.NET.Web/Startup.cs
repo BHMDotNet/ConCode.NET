@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using ConCode.NET.Web.Data;
 using ConCode.NET.Web.Models;
 using ConCode.NET.Web.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ConCode.NET.Web
 {
@@ -49,6 +50,12 @@ namespace ConCode.NET.Web
 
             services.AddMvc();
 
+            // Require SSL
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
@@ -74,6 +81,15 @@ namespace ConCode.NET.Web
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            app.UseFacebookAuthentication(new FacebookOptions()
+            {
+                //AppId = Configuration["Authentication:Facebook:AppId"],
+                //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+                AppId = "231742630557937",
+                AppSecret = "53eecb60d7ea27581c8366dda3a3f638"
+            });
+
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
