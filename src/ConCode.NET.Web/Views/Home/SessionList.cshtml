@@ -2,25 +2,30 @@
 @{
     ViewData["Title"] = "Session List";
 }
-<h1>Session List</h1>
-
-<table>
-    @foreach(var session in Model.SessionList)
-    {
-        <tr>
-            <td>
-                <div class="well well-sm"> @session.Start.ToString("hh:mm")</div>
-            </td>
-            <td>
-                <h2 >@session.Talk.Title</h2>
-            </td>
-        </tr>
-        <tr>
-            <td/>
-            <td>
-                <span class="label label-success">@session.TalkType.Name</span>
-                @session.Venue.Description
-            </td>
-        </tr>
-    }
-</table>
+<div class="headerbanner">
+    <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
+    <h1>Session List</h1>
+</div>
+<hr/>
+<div>
+    <table class="sessionlisttable">
+        @foreach(var session in Model.SessionList)
+        {
+            <tr>
+                <td>
+                    <span class="well well-sm"> @session.Start.ToString("hh:mm")</span>
+                </td>
+                <td>
+                    <h3>@session.Talk.Title</h3>
+                </td>
+            </tr>
+            <tr>
+                <td/>
+                <td>
+                    <span class="label label-success">@session.TalkType.Name</span>
+                    @session.Venue.Description
+                </td>
+            </tr>
+        }
+    </table>
+</div>
