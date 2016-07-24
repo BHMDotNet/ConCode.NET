@@ -19,6 +19,12 @@ namespace CodeConf.NET.Core.Data
                         Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
                         Level = TalkLevel.Intermediate,
                         TimesPresented = 1,
+                        Speakers = new List<Speaker>{
+                            new Speaker{ 
+                                FirstName = "Brandon",
+                                LastName = "Russell"
+                            }
+                        },
                         Tags = new List<string>{
                             "C# 7",
                             ".NET"
@@ -51,7 +57,13 @@ namespace CodeConf.NET.Core.Data
                             "C# 7",
                             ".NET",
                             "Workflow"
-                        }
+                        },
+                        Speakers = new List<Speaker>{
+                            new Speaker{ 
+                                FirstName = "Blake",
+                                LastName = "Helms"
+                            }
+                        },
                     },
                 TalkType = new TalkType()
                 {

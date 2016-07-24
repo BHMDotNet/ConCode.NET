@@ -1,31 +1,68 @@
 @model ConCode.NET.Web.Models.ViewModels.SessionListViewModel
 @{
-    ViewData["Title"] = "Session List";
+ViewData["Title"] = "Session List";
 }
-<div class="headerbanner">
-    <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
-    <h1>Session List</h1>
-</div>
-<hr />
-<div>
-    <table class="sessionlisttable">
-        @foreach (var session in Model.SessionList)
-        {
-            <tr>
-                <td>
-                    <span class="well well-sm"> @session.Start.ToString("hh:mm")</span>
-                </td>
-                <td>
-                    <h3>@session.Talk.Title</h3>
-                </td>
-            </tr>
-            <tr>
-                <td />
-                <td>
-                    <span class="label label-success">@session.TalkType.Name</span>
-                    @session.Venue.Description
-                </td>
-            </tr>
-        }
-    </table>
+<div class="container-fluid speaker-page">
+   <div class="row">
+      <div class="col-md-8">
+         <div class="headerbanner">
+            <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
+            <h1>Session List</h1>
+         </div>
+         <hr />
+         <div>
+            <div class="speakers-session-list list-group">
+               @foreach (var session in Model.SessionList)
+               {
+               <a href="#" class="list-group-item">
+                  <h3 style="display:inline;">@session.Talk.Title</h3>
+                    @{foreach(var speaker in @session.Talk.Speakers)
+                        {
+                            <p class="text-danger"><em>@speaker.FirstName @speaker.LastName</em></p>   
+                        }
+                    }
+                  <div style="float:right;" class="well well-lg"> <span style="font-size:1.75em;"> @session.Start.ToString("hh:MM")</span>
+                     <br/>
+                     <span class="label label-default">Room 201</span>
+                  </div>
+                  <p class="text-muted">
+                     @session.Talk.Abstract
+                  </p>
+                  <h6 class="text-muted text-uppercase side-tag">Level:</h6>
+                  <span class="label label-@session.Talk.Level.ToString().ToLower()"> 
+                  @session.Talk.Level</span>
+                  <h6 class="text-muted text-uppercase side-tag">Length:</h6>
+                  <span class="label label-info"> 
+                  @session.TalkType.Length.TotalMinutes Minutes</span>
+                  <h6 class="text-muted text-uppercase side-tag">Tags:</h6>
+                  @{foreach(var tag in session.Talk.Tags)
+                    {
+                    <span class="label label-default"> 
+                    @tag</span>
+                    }
+                  }
+                  <p>
+                    <h6 class="text-muted text-uppercase side-tag">Session in Progress</h6>
+                  </p>
+                  <div class="progress progress-striped active">
+                     <div class="progress-bar" style="width: 45%"></div>
+                  </div>
+               </a>
+               }
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Sponsors</h3>
+            </div>
+            <div class="panel-body">
+               <img class="img-responsive" src="http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"/>
+               <img class="img-responsive" src="http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"/>
+               <img class="img-responsive" src="http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"/>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>

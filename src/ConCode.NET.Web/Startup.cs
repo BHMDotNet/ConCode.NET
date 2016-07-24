@@ -56,10 +56,10 @@ namespace ConCode.NET.Web
             services.AddMvc();
 
             // Require SSL
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
+            // services.Configure<MvcOptions>(options =>
+            // {
+            //     options.Filters.Add(new RequireHttpsAttribute());
+            // });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
