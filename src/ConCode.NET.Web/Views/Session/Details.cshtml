@@ -1,0 +1,18 @@
+@model ConCode.NET.Web.Models.SessionViewModels.SessionDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Session Details</h2>
+
+<div>
+    <h4>Details for @Model.Session.Talk.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

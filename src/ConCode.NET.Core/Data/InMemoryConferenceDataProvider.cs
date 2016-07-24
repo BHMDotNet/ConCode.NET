@@ -86,5 +86,42 @@ namespace CodeConf.NET.Core.Data
                 return _sessions.AsQueryable();
             }
         }
+
+        public IQueryable<Speaker> Speakers
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Talk> Talks
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IEnumerable<TalkType> TalkTypes
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Venue> Venues
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void AddSession(Session session)
+        {
+            _sessions = new List<Session>(_sessions) { session };
+        }
     }
 }

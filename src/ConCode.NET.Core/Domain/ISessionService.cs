@@ -9,5 +9,7 @@ namespace CodeConf.NET.Core.Domain
     public interface ISessionService
     {
         IQueryable<Session> GetSessions();
+
+        void AddSession(Session session);
     }
 }
