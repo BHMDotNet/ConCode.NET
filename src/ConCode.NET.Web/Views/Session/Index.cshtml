@@ -6,10 +6,10 @@
     <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
     <h1>Session List</h1>
 </div>
-<hr/>
+<hr />
 <div>
     <table class="sessionlisttable">
-        @foreach(var session in Model.SessionList)
+        @foreach (var session in Model.SessionList)
         {
             <tr>
                 <td>
@@ -20,7 +20,7 @@
                 </td>
             </tr>
             <tr>
-                <td/>
+                <td />
                 <td>
                     <span class="label label-success">@session.TalkType.Name</span>
                     @session.Venue.Description

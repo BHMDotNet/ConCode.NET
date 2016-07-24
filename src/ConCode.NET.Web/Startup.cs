@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using ConCode.NET.Web.Data;
 using ConCode.NET.Web.Models;
 using ConCode.NET.Web.Services;
+using CodeConf.NET.Core.Data;
+using CodeConf.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConCode.NET.Web
@@ -47,6 +49,9 @@ namespace ConCode.NET.Web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
+            services.AddTransient<ISessionService, SessionService>();
 
             services.AddMvc();
 

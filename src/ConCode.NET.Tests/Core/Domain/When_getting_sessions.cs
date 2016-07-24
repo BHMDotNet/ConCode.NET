@@ -30,6 +30,7 @@ namespace CodeConf.NET.Tests.Core.Domain
             // Because
             _sessions = _sessionService.GetSessions();
         }
+
         [Fact]
         public void Should_provide_sessions()
         {
