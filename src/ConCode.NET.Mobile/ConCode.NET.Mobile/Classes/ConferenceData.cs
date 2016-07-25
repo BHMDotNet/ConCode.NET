@@ -47,6 +47,7 @@ namespace ConCode.NET.Mobile
 					{
 						Sessions.Add(new SessionListModel
 						{
+							Id = session.Id,
 							Title = session.Talk.Title,
 							DateTime = session.Start.ToString("hh:MM"),
 							Level = session.Talk.Level.ToString(),
