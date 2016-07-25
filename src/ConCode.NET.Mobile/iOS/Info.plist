@@ -40,5 +40,9 @@
 	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>CFBundleName</key>
 	<string>ConCode</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

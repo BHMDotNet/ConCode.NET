@@ -23,7 +23,13 @@ namespace ConCode.NET.Mobile
 		{
 			get;
 			set;
-		}	
+		}
+
+		public string Length
+		{
+			get;
+			set;
+		}
 	}
 
 }
