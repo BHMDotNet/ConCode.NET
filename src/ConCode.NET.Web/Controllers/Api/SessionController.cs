@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ConCode.NET.Core.Domain;
 using System.Linq;
 
-namespace CodeConf.NET.Web.Controllers.Api
+namespace ConCode.NET.Web.Controllers.Api
 {
     [Produces("application/json")]
     [Route("api/Session")]

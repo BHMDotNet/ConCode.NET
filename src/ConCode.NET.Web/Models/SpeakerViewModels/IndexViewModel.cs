@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CodeConf.NET.Web.Models.SpeakerViewModels
+namespace ConCode.NET.Web.Models.SpeakerViewModels
 {
     public class IndexViewModel
     {

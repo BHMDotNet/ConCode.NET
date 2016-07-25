@@ -4,7 +4,7 @@ using Xunit;
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Core.Data;
 
-namespace CodeConf.NET.Tests.Core.Domain
+namespace ConCode.NET.Tests.Core.Domain
 {
     public class On_the_session_service 
     {

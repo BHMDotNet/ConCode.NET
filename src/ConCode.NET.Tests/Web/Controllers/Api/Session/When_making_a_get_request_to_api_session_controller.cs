@@ -1,11 +1,11 @@
-﻿using CodeConf.NET.Web.Controllers.Api;
+﻿using ConCode.NET.Web.Controllers.Api;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using Moq;
 using ConCode.NET.Core.Domain;
 
-namespace CodeConf.NET.Tests.Web.Controllers.Api.Session
+namespace ConCode.NET.Tests.Web.Controllers.Api.Session
 {
     public class When_making_a_get_request_to_api_session_controller
     {

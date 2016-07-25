@@ -1,14 +1,11 @@
-﻿using CodeConf.NET.Core.Data;
-using CodeConf.NET.Core.Domain;
+﻿using ConCode.NET.Core.Data;
 using ConCode.NET.Core.Domain;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace CodeConf.NET.Tests.Core.Domain
+namespace ConCode.NET.Tests.Core.Domain
 {
     public class When_executing_SpeakerService
     {

@@ -7,7 +7,7 @@ using Xunit;
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Models.SessionViewModels;
 
-namespace CodeConf.NET.Tests.Web.Controllers.Session
+namespace ConCode.NET.Tests.Web.Controllers.Session
 {
     public class When_requesting_index_on_SessionController
     {

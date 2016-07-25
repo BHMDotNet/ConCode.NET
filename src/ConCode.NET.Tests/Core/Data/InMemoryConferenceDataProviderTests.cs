@@ -3,7 +3,7 @@ using ConCode.NET.Core.Domain;
 using System.Linq;
 using Xunit;
 
-namespace CodeConf.NET.Tests.Core.Data
+namespace ConCode.NET.Tests.Core.Data
 {
     public class InMemoryConferenceDataProviderTest
     {

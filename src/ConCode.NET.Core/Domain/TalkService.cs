@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ConCode.NET.Core.Data;
 using System.Linq;
-using System.Threading.Tasks;
-using ConCode.NET.Core.Domain;
-using CodeConf.NET.Core.Data;
 
-namespace CodeConf.NET.Core.Domain
+namespace ConCode.NET.Core.Domain
 {
     public class TalkService : ITalkService
     {

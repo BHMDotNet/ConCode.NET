@@ -1,14 +1,12 @@
-﻿using CodeConf.NET.Core.Domain;
-using CodeConf.NET.Web.Models.SpeakerViewModels;
-using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Controllers;
+using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Linq;
 using Xunit;
 using SpeakerPoco = ConCode.NET.Core.Domain.Speaker;
 
-namespace CodeConf.NET.Tests.Web.Controllers.Speaker
+namespace ConCode.NET.Tests.Web.Controllers.Speaker
 {
     public class When_requesting_Index_on_SpeakerController
     {

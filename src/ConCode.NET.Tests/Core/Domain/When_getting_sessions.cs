@@ -4,7 +4,7 @@ using ConCode.NET.Core.Domain;
 using Moq;
 using ConCode.NET.Core.Data;
 
-namespace CodeConf.NET.Tests.Core.Domain
+namespace ConCode.NET.Tests.Core.Domain
 {
     public class When_getting_sessions
     {

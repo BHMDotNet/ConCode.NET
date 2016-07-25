@@ -1,9 +1,7 @@
-using CodeConf.NET.Core.Domain;
-using CodeConf.NET.Web.Models.SpeakerViewModels;
 using ConCode.NET.Core.Domain;
+using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ConCode.NET.Web.Controllers
@@ -68,7 +66,7 @@ namespace ConCode.NET.Web.Controllers
 
             // Yes, Im randomly picking which speaker to show :)
             var random = new Random();
-            var randomUserId = random.Next(1, speakers.Count());
+            var randomUserId = random.Next(1, speakers.Count() + 1);
             var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
 
             // Create our ViewModel and fire up the View!
