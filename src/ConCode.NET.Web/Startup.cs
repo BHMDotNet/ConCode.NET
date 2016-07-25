@@ -12,8 +12,8 @@ using Microsoft.Extensions.Logging;
 using ConCode.NET.Web.Data;
 using ConCode.NET.Web.Models;
 using ConCode.NET.Web.Services;
-using CodeConf.NET.Core.Data;
-using CodeConf.NET.Core.Domain;
+using ConCode.NET.Core.Data;
+using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConCode.NET.Web
@@ -52,6 +52,7 @@ namespace ConCode.NET.Web
 
             services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
             services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<IVenueService, VenueService>();
 
             services.AddMvc();
 

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Xunit;
 using SpeakerPoco = ConCode.NET.Core.Domain.Speaker;
 
-namespace CodeConf.NET.Tests.Web.Controllers.Speaker
+namespace ConCode.NET.Tests.Web.Controllers.Speaker
 {
     public class When_requesting_Index_on_SpeakerController
     {

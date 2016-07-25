@@ -1,11 +1,11 @@
-﻿using CodeConf.NET.Core.Data;
-using CodeConf.NET.Core.Domain;
+﻿using ConCode.NET.Core.Data;
+using ConCode.NET.Core.Domain;
 using Moq;
 using System.Linq;
 using Xunit;
 using ConCode.NET.Core.Domain;
 
-namespace CodeConf.NET.Tests.Core.Domain
+namespace ConCode.NET.Tests.Core.Domain
 {
     public class On_the_session_service 
     {

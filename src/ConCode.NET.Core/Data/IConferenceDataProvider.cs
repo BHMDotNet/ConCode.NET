@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodeConf.NET.Core.Data
+namespace ConCode.NET.Core.Data
 {
     public interface IConferenceDataProvider
     {
@@ -17,6 +17,8 @@ namespace CodeConf.NET.Core.Data
         IQueryable<Talk> Talks { get; }
 
         IQueryable<Venue> Venues { get; }
+
+        void AddVenue(Venue venue);
 
         IEnumerable<TalkType> TalkTypes { get; }
     }

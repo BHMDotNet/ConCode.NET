@@ -1,0 +1,33 @@
+@model ConCode.NET.Web.Models.VenueViewModels.VenueListViewModel
+
+@{
+    ViewData["Title"] = "Venue List";
+}
+
+
+<div class="headerbanner">
+    <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
+    <h1>Venue List</h1>
+</div>
+
+<div>
+    <table class="venueListTable">
+        @foreach (var venue in Model.VenueList)
+        {
+            <tr>
+                <td>
+                    <span>@venue.Description</span>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+
+        }
+    </table>
+</div>
+<div>
+    <table>
+        <tr><td><a asp-controller="Venue" asp-action="Add">Add a Venue</a></td></tr>
+    </table>
+
+</div>
+

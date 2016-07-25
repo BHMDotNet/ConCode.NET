@@ -1,11 +1,11 @@
-﻿using CodeConf.NET.Core.Domain;
+﻿using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.SessionViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
 
-namespace CodeConf.NET.Tests.Web.Controllers.Session
+namespace ConCode.NET.Tests.Web.Controllers.Session
 {
     public class when_requesting_add_on_SessionController
     {
