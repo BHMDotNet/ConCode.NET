@@ -30,8 +30,9 @@ namespace CodeConf.NET.Core.Data
             });
             modelBuilder.Entity<User>()
                 .HasDiscriminator(x => x.UserType)
-                .HasValue<User>("Attendee")
-                .HasValue<Speaker>("Speaker");
+                .HasValue<User>("User")
+                .HasValue<Speaker>("Speaker")
+                .HasValue<Attendee>("Attendee");
             modelBuilder.Entity<Speaker>(entity =>
             {
                 entity.Ignore(e => e.Talks);
