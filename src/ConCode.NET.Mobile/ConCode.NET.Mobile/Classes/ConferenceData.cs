@@ -14,7 +14,7 @@ namespace ConCode.NET.Mobile
 
 	public class ConferenceData
 	{
-		public List<Session> Sessions { get; private set; }
+		public List<SessionListModel> Sessions { get; private set; }
 		HttpClient client;
 		string Uri = "http://localhost:5000/api/session";
 
@@ -24,14 +24,14 @@ namespace ConCode.NET.Mobile
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public Task<List<Session>> GetSessionsAsync()
+		public Task<List<SessionListModel>> GetSessionsAsync()
 		{
 			return RefreshDataAsync();
 		}
 
-		public async Task<List<Session>> RefreshDataAsync()
+		public async Task<List<SessionListModel>> RefreshDataAsync()
 		{
-			Sessions = new List<Session>();
+			Sessions = new List<SessionListModel>();
 
 			try
 			{
@@ -41,7 +41,17 @@ namespace ConCode.NET.Mobile
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
-					Sessions = JsonConvert.DeserializeObject<List<Session>>(content);
+					var tempSessions = JsonConvert.DeserializeObject<List<Session>>(content);
+
+					foreach (var session in tempSessions)
+					{
+						Sessions.Add(new SessionListModel
+						{
+							Title = session.Talk.Title,
+							DateTime = session.Start.ToString("hh:MM"),
+							Level = session.Talk.Level.ToString()
+						});
+					}
 				}
 			}
 			catch (Exception ex)
