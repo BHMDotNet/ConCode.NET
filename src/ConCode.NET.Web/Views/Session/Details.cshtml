@@ -1,18 +1,126 @@
-@model ConCode.NET.Web.Models.SessionViewModels.SessionDetailsViewModel
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = @Model.Session.Talk.Title;
 }
 
-<h2>Session Details</h2>
-
-<div>
-    <h4>Details for @Model.Session.Talk.Title</h4>
+<div class="container-fluid speaker-page">
+   <div class="row">
+      <div class="col-md-8">
+    <h1>@Model.Session.Talk.Title</h1>
+    @{foreach(var speaker in @Model.Session.Talk.Speakers)
+        {
+            <span class="text-danger"><em>@speaker.FirstName @speaker.LastName </em></span>   
+        }
+    }
+    <p class="text-muted">
+        @Model.Session.Talk.Abstract
+    </p>
     <hr />
+    <h6 class="text-muted text-uppercase side-tag">Level:</h6>
+                  <span class="label label-@Model.Session.Talk.Level.ToString().ToLower()"> 
+                  @Model.Session.Talk.Level</span>
+                  <h6 class="text-muted text-uppercase side-tag">Length:</h6>
+                  <span class="label label-info"> 
+                  @Model.Session.TalkType.Length.TotalMinutes Minutes</span>
+                  <h6 class="text-muted text-uppercase side-tag">Tags:</h6>
+                  @{foreach(var tag in Model.Session.Talk.Tags)
+                    {
+                    <span class="label label-default"> 
+                    @tag</span>
+                    }
+                  }
+    <hr/>
+    <ul class="nav nav-tabs">
+  <li class="active" ><a href="#resources" data-toggle="tab">Resources <span class="badge">@Model.Session.Talk.AdditionalResources?.Count</span></a></li>
+  <li><a href="#videos" data-toggle="tab">Videos <span class="badge">1</span></a></li>
+  
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="resources">
+       @{if(@Model.Session.Talk.AdditionalResources !=null)
+        {
+          <div class="panel panel-default">
+            <div class="panel-body">
+                @{foreach(var resource in @Model.Session.Talk.AdditionalResources)
+                    {
+                        @await Html.PartialAsync("_resource", (object)resource)
+                    }
+                }
+               
+                </div>
+         </div>
+         }
+        }
+      </div>
+        <div class="tab-pane fade" id="videos">
+                <div class="panel panel-default">
+            <div class="panel-body">
+                
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/C8YTnTuBh4A" frameborder="0" allowfullscreen></iframe>
+               
+                </div>
+         </div>
+      </div>
+</div>
+       
     <dl class="dl-horizontal">
     </dl>
+    
+</div>
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Session Info</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                <span class="text-uppercase label label-@Model.Session.Status.ToString().ToLower()" style="font-size:1.5em">
+                    @Model.Session.Status</span>
+                </p>
+                <div class="well" style="font-size:4em; text-align:center;">@Model.Session.Start.ToString("hh:MM")</div>
+                <h6 class="text-muted text-uppercase">Venue</h6>
+                     <span class="label label-default" style="font-size:1.5em;">@Model.Session.Venue.Description</span>
+                <p>
+                    <br/>
+                    <h6 class="text-muted text-uppercase">Session In Progress</h6>
+                  </p>
+                  <div class="progress progress-striped active">
+                     <div class="progress-bar" style="width: 45%"></div>
+                  </div>
+                </div>
+         </div>
+         @{foreach(var speaker in @Model.Session.Talk.Speakers)
+         {
+            <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">About @speaker.FirstName @speaker.LastName</h3>
+            </div>
+            <div class="panel-body">
+                <img class="img-thumbnail img-responsive" style="float:left;" src="@speaker.Photo" width="150px;" />
+                <p class="text-muted">
+                @speaker.Bio
+                </p>
+                <a href="#" class="btn btn-primary">More Info</a>
+                </div>
+         </div>
+         }
+         }
+         
+
+
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Sponsors</h3>
+            </div>
+            <div class="panel-body">
+               <img class="img-responsive" src="http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"/>
+               <img class="img-responsive" src="http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"/>
+               <img class="img-responsive" src="http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"/>
+            </div>
+         </div>
+      </div>
+</div>
+
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>

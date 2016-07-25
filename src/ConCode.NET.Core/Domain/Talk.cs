@@ -15,7 +15,7 @@ namespace ConCode.NET.Core.Domain
 
         public IEnumerable<string> Tags { get; set; }
 
-        public IEnumerable<Uri> AdditionalResources { get; set; }
+        public IEnumerable<AdditionalResource> AdditionalResources { get; set; }
 
         public int TimesPresented { get; set; }
     }

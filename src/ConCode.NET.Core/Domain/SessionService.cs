@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Core.Data;
-using System;
 
 namespace ConCode.NET.Core.Domain
 {

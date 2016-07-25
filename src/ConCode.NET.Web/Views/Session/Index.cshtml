@@ -1,32 +1,62 @@
 @model ConCode.NET.Web.Models.SessionViewModels.SessionListViewModel
 @{
-    ViewData["Title"] = "Session List";
+ViewData["Title"] = "Session List";
 }
-<div class="headerbanner">
-    <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
-    <h1>Session List</h1>
+<div class="container-fluid speaker-page">
+   <div class="row">
+      <div class="col-md-8">
+         <div class="headerbanner">
+            <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
+            <h1>Session List</h1>
+         </div>
+         <hr />
+         <div>
+            <div class="speakers-session-list list-group">
+               @foreach (var session in Model.SessionList)
+               {
+               <a class="list-group-item" asp-controller="Session" asp-action="Details" asp-route-id="@session.Id">
+                  <h3 style="display:inline;">@session.Talk.Title</h3>
+                    @{foreach(var speaker in @session.Talk.Speakers)
+                        {
+                            <p class="text-danger"><em>@speaker.FirstName @speaker.LastName</em></p>   
+                        }
+                    }
+                  <div style="float:right;" class="well well-lg"> <span style="font-size:1.75em;"> @session.Start.ToString("hh:MM")</span>
+                     <br/>
+                     <span class="label label-default">@session.Venue.Description</span>
+                     <br/>
+                     <span class="text-uppercase label label-@session.Status.ToString().ToLower()">@session.Status</span>
+                  </div>
+                  <p class="text-muted">
+                     @session.Talk.Abstract
+                  </p>
+                  <h6 class="text-muted text-uppercase side-tag">Level:</h6>
+                  <span class="label label-@session.Talk.Level.ToString().ToLower()"> 
+                  @session.Talk.Level</span>
+                  <h6 class="text-muted text-uppercase side-tag">Length:</h6>
+                  <span class="label label-info"> 
+                  @session.TalkType.Length.TotalMinutes Minutes</span>
+                  <h6 class="text-muted text-uppercase side-tag">Tags:</h6>
+                  @{foreach(var tag in session.Talk.Tags)
+                    {
+                    <span class="label label-default"> 
+                    @tag</span>
+                    }
+                  }
+                  <p>
+                    <h6 class="text-muted text-uppercase side-tag">Session in Progress</h6>
+                  </p>
+                  <div class="progress progress-striped active">
+                     <div class="progress-bar" style="width: 45%"></div>
+                  </div>
+               </a>
+               }
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+          @await Html.PartialAsync("_sponsors");
+      </div>
+   </div>
 </div>
-<hr />
-<div>
-    <table class="sessionlisttable">
-        @foreach (var session in Model.SessionList)
-        {
-            <tr>
-                <td>
-                    <span class="well well-sm"> @session.Start.ToString("hh:mm")</span>
-                </td>
-                <td>
-                    <h3><a asp-controller="Session" asp-action="Details" asp-route-id="@session.Id">@session.Talk.Title</a></h3>
-                </td>
-            </tr>
-            <tr>
-                <td />
-                <td>
-                    <span class="label label-success">@session.TalkType.Name</span>
-                    @session.Venue.Description
-                </td>
-            </tr>
-        }
-    </table>
-</div>
-<a asp-area="" asp-controller="Session" asp-action="Add">Add a Session</a>
+

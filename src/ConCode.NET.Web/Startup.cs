@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -52,15 +48,18 @@ namespace ConCode.NET.Web
 
             services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
             services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<ISpeakerService, SpeakerService>();
+            services.AddTransient<ITalkService, TalkService>();
+            services.AddTransient<ISponsorService, SponsorService>();
             services.AddTransient<IVenueService, VenueService>();
 
             services.AddMvc();
 
             // Require SSL
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
+            // services.Configure<MvcOptions>(options =>
+            // {
+            //     options.Filters.Add(new RequireHttpsAttribute());
+            // });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

@@ -1,8 +1,6 @@
 ﻿using ConCode.NET.Core.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConCode.NET.Core.Data
 {
@@ -21,5 +19,9 @@ namespace ConCode.NET.Core.Data
         void AddVenue(Venue venue);
 
         IEnumerable<TalkType> TalkTypes { get; }
+
+        IQueryable<Sponsor> Sponsors { get; }
+
+        void AddSponsor(Sponsor sponsor);
     }
 }

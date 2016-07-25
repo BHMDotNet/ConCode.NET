@@ -26,7 +26,7 @@
                         <div class="speakers-session-list list-group">
                             @{ foreach (var talk in Model.Talks)
                                 {
-                                    <a href="#" class="list-group-item">
+                                    <a class="list-group-item" asp-controller="Session" asp-action="Details" asp-route-id="@Model.Id">
                                         <h4>@talk.Title</h4>
                                         <p class="text-muted">
                                             @talk.Abstract
