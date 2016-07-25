@@ -40,21 +40,14 @@ namespace CodeConf.NET.Core.Data
                             ".NET"
                         },
                         AdditionalResources = new List<AdditionalResource>{
-                            
                             new AdditionalResource{
                                 Name = "Handout",
-                                Type = new ResourceType{
-                                    Name = "PDF",
-                                    IconUri = new Uri("http://localhost:5000/images/file-types/pdf.png")
-                                },
+                                Type = ResourceType.PDF,
                                 Uri = new Uri("https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf")
                             },
                             new AdditionalResource{
                                 Name = "Slide Deck",
-                                Type = new ResourceType{
-                                    Name = "PowerPoint",
-                                    IconUri = new Uri("http://localhost:5000/images/file-types/ppt.png")
-                                },
+                                Type = ResourceType.PPT,
                                 Uri = new Uri("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE")
                             }
                             

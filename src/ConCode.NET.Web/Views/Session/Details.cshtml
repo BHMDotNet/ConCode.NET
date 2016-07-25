@@ -42,7 +42,7 @@
             <div class="panel-body">
                 @{foreach(var resource in @Model.Session.Talk.AdditionalResources)
                     {
-                        <a href="@resource.Uri" target="_blank"><img src="@resource.Type.IconUri"/>@resource.Name</a>
+                        @await Html.PartialAsync("_resource", (object)resource)
                     }
                 }
                
