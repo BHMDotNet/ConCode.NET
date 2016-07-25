@@ -14,6 +14,9 @@ namespace ConCode.NET.Mobile.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 
+			UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+			UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(200,43,46);
+
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);

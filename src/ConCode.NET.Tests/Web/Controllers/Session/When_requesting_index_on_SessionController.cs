@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using ConCode.NET.Core.Domain;
-using CodeConf.NET.Core.Domain;
 using ConCode.NET.Web.Models.SessionViewModels;
 
 namespace CodeConf.NET.Tests.Web.Controllers.Session

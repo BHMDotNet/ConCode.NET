@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using ConCode.NET.Core.Domain;
-using CodeConf.NET.Core.Data;
-using System;
+using ConCode.NET.Core.Data;
 
-namespace CodeConf.NET.Core.Domain
+namespace ConCode.NET.Core.Domain
 {
     public class SessionService : ISessionService
     {

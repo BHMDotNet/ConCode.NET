@@ -1,10 +1,8 @@
 ﻿using ConCode.NET.Core.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace CodeConf.NET.Core.Data
+namespace ConCode.NET.Core.Data
 {
     public interface IConferenceDataProvider
     {
@@ -19,5 +17,9 @@ namespace CodeConf.NET.Core.Data
         IQueryable<Venue> Venues { get; }
 
         IEnumerable<TalkType> TalkTypes { get; }
+
+        IQueryable<Sponsor> Sponsors { get; }
+
+        void AddSponsor(Sponsor sponsor);
     }
 }

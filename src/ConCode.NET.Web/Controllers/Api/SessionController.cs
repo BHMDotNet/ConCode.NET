@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ConCode.NET.Core.Domain;
-using CodeConf.NET.Core.Domain;
 using System.Linq;
 
 namespace CodeConf.NET.Web.Controllers.Api

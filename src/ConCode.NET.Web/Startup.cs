@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +8,8 @@ using Microsoft.Extensions.Logging;
 using ConCode.NET.Web.Data;
 using ConCode.NET.Web.Models;
 using ConCode.NET.Web.Services;
-using CodeConf.NET.Core.Data;
-using CodeConf.NET.Core.Domain;
-using Microsoft.AspNetCore.Mvc;
+using ConCode.NET.Core.Data;
+using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Web
 {
@@ -54,6 +49,7 @@ namespace ConCode.NET.Web
             services.AddTransient<ISessionService, SessionService>();
             services.AddTransient<ISpeakerService, SpeakerService>();
             services.AddTransient<ITalkService, TalkService>();
+            services.AddTransient<ISponsorService, SponsorService>();
 
             services.AddMvc();
 
