@@ -22,7 +22,7 @@ namespace ConCode.NET.Web.Controllers
                 ModifiedAt = DateTime.Now,
                 LinkedInProfile = "blakehelms",
                 Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-                TagLine = "Someone very interesting",
+                Tagline = "Someone very interesting",
                 TwitterHandle = "helmsb",
                 //Talks = new List<Talk>()
                 //{

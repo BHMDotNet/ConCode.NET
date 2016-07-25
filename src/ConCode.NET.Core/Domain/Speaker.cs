@@ -10,7 +10,7 @@ namespace ConCode.NET.Core.Domain
    {
         public IEnumerable<Talk> Talks { get; set; }
 
-        public string TagLine { get; set; }
+        public string Tagline { get; set; }
 
 
     }
