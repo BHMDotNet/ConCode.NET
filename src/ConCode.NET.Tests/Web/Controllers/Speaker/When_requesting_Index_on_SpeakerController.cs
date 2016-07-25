@@ -1,5 +1,10 @@
-﻿using ConCode.NET.Web.Controllers;
+﻿using CodeConf.NET.Core.Domain;
+using CodeConf.NET.Web.Models.SpeakerViewModels;
+using ConCode.NET.Core.Domain;
+using ConCode.NET.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 using Xunit;
 using SpeakerPoco = ConCode.NET.Core.Domain.Speaker;
 
@@ -12,7 +17,21 @@ namespace CodeConf.NET.Tests.Web.Controllers.Speaker
 
         public When_requesting_Index_on_SpeakerController()
         {
-            _controller = new SpeakerController();
+            var theSpeaker = new SpeakerPoco
+            {
+                Id = 1,
+                FirstName = "Brandon"
+            };
+
+            var theSpeakerList = new[]
+            {
+                theSpeaker
+            };
+
+            var sessionService = new Moq.Mock<ISpeakerService>();
+            sessionService.Setup(x => x.GetSpeakers()).Returns(theSpeakerList.AsQueryable());
+
+            _controller = new SpeakerController(sessionService.Object);
         }
 
         public void Because()
@@ -31,7 +50,7 @@ namespace CodeConf.NET.Tests.Web.Controllers.Speaker
             Assert.NotNull(_result);
             Assert.NotNull(_result.Model);
 
-            var resultModel = (SpeakerPoco)_result.Model;
+            var resultModel = (IndexViewModel)_result.Model;
             Assert.NotNull(resultModel);
             Assert.False(string.IsNullOrWhiteSpace(resultModel.FirstName));
             Assert.True(resultModel.Id > 0);

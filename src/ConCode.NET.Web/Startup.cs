@@ -52,6 +52,8 @@ namespace ConCode.NET.Web
 
             services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
             services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<ISpeakerService, SpeakerService>();
+            services.AddTransient<ITalkService, TalkService>();
 
             services.AddMvc();
 

@@ -7,6 +7,7 @@ namespace CodeConf.NET.Core.Data
 {
     public class InMemoryConferenceDataProvider : IConferenceDataProvider
     {
+        #region Sessions
         private IEnumerable<Session> _sessions = new List<Session>()
         {
             new Session
@@ -103,6 +104,112 @@ namespace CodeConf.NET.Core.Data
                 Status = SessionStatus.Open
             }
         };
+        #endregion
+
+        #region Speakers Data
+        private IEnumerable<Speaker> _speakers = new List<Speaker>()
+        {
+            new Speaker{
+                Id = 1,
+                Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+                BlogUri = new Uri("http://theverybestblog.com"),
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "blakehelms",
+                FirstName = "Blake",
+                LastName = "Helms",
+                LastUpdated = DateTime.Now,
+                LinkedInProfile = "blakehelms",
+                Photo = new Uri("https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg"),
+                Tagline = "Someone very interesting",
+                TwitterHandle = "helmsb"
+            },
+            new Speaker{
+                Id = 2,
+                Bio = "I collect spores, molds, and fungus.",
+                BlogUri = new Uri("http://theverybestblog.com"),
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "blrussell",
+                FirstName = "Brandon",
+                LastName = "Russell",
+                LastUpdated = DateTime.Now,
+                LinkedInProfile = "toocoolforschool",
+                Photo = new Uri("http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg"),
+                Tagline = "We're ready to believe you!",
+                TwitterHandle = "brussellz"
+            }
+        };
+        #endregion
+
+        #region Talk Data
+        IEnumerable<Talk> _talks = new List<Talk>()
+        {
+            new Talk
+            {
+                Title = "The Color Tuple",
+                Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
+                Level = TalkLevel.Intermediate,
+                TimesPresented = 1,
+                Speakers = new List<Speaker>(),
+                Tags = new List<string>{
+                            "C# 7",
+                            ".NET"
+                        },
+                AdditionalResources = new List<AdditionalResource>{
+                            new AdditionalResource{
+                                Name = "Handout",
+                                Type = ResourceType.PDF,
+                                Uri = new Uri("https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf")
+                            },
+                            new AdditionalResource{
+                                Name = "Slide Deck",
+                                Type = ResourceType.PPT,
+                                Uri = new Uri("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE")
+                            }
+
+                        }
+            },
+            new Talk
+            {
+                Title = "Deep Dive Into Workflow Foundation",
+                Abstract = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+                Level = TalkLevel.Advanced,
+                TimesPresented = 27,
+                Tags = new List<string>{
+                    "C# 7",
+                    ".NET",
+                    "Workflow"
+                },
+                Speakers = new List<Speaker>(),
+            }
+        };
+        #endregion
+
+        public InMemoryConferenceDataProvider()
+        {
+            // Set up some existing speakers to the talks
+            int i = 0;
+            foreach (var talk in _talks)
+            {
+                i++;
+                var speaker = _speakers.DefaultIfEmpty(_speakers.First()).FirstOrDefault(s => s.Id == i);
+                if (speaker == null)
+                {
+                    speaker = _speakers.First();
+                }
+
+                talk.Speakers = new List<Speaker>() { speaker };
+
+                // Also appead this talk to the speakers talk list
+                if (speaker.Talks != null)
+                {
+                    speaker.Talks = new List<Talk>(speaker.Talks) { talk };
+                }
+                else
+                {
+                    speaker.Talks = new List<Talk> { talk };
+                }
+            }
+        }
 
         public IQueryable<Session> Sessions
         {
@@ -116,7 +223,7 @@ namespace CodeConf.NET.Core.Data
         {
             get
             {
-                throw new NotImplementedException();
+                return _speakers.AsQueryable();
             }
         }
 
@@ -124,7 +231,7 @@ namespace CodeConf.NET.Core.Data
         {
             get
             {
-                throw new NotImplementedException();
+                return _talks.AsQueryable();
             }
         }
 

@@ -1,7 +1,10 @@
+using CodeConf.NET.Core.Domain;
+using CodeConf.NET.Web.Models.SpeakerViewModels;
 using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConCode.NET.Web.Controllers
 {
@@ -23,41 +26,55 @@ namespace ConCode.NET.Web.Controllers
                 Photo = new Uri("https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg"),
                 Tagline = "Someone very interesting",
                 TwitterHandle = "helmsb",
-                Talks = new List<Talk>()
-                {
-                    new Talk
-                    {
-                        Title = "The Color Tuple",
-                        Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
-                        Level = TalkLevel.Intermediate,
-                        TimesPresented = 1,
-                        Tags = new List<string>{
-                            "C# 7",
-                            ".NET"
-                        }
-                    },
-                    new Talk
-                    {
-                        Title = "Asyncronous In A Syncronous World",
-                        Abstract = "Well, that's certainly good to know. The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules.",
-                        Level = TalkLevel.Advanced,
-                        TimesPresented = 4,
-                        Tags = new List<string>{
-                            "Async",
-                            "C#",
-                            ".NET"
-                        }
-                    }
-                }
+                //Talks = new List<Talk>()
+                //{
+                //    new Talk
+                //    {
+                //        Title = "The Color Tuple",
+                //        Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
+                //        Level = TalkLevel.Intermediate,
+                //        TimesPresented = 1,
+                //        Tags = new List<string>{
+                //            "C# 7",
+                //            ".NET"
+                //        }
+                //    },
+                //    new Talk
+                //    {
+                //        Title = "Asyncronous In A Syncronous World",
+                //        Abstract = "Well, that's certainly good to know. The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules.",
+                //        Level = TalkLevel.Advanced,
+                //        TimesPresented = 4,
+                //        Tags = new List<string>{
+                //            "Async",
+                //            "C#",
+                //            ".NET"
+                //        }
+                //    }
+                //}
             };
+        }
+
+        private ISpeakerService _speakerService;
+
+        public SpeakerController(ISpeakerService service)
+        {
+            _speakerService = service;
         }
 
         public IActionResult Index()
         {
-            //TODO: Need to get the Speaker object from somewhere right?
-            var speaker = CreateSpeakerPocoTemplate();
+            var speakers = _speakerService.GetSpeakers();
 
-            return View(speaker);
+            // Yes, Im randomly picking which speaker to show :)
+            var random = new Random();
+            var randomUserId = random.Next(1, speakers.Count());
+            var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
+
+            // Create our ViewModel and fire up the View!
+            var speakerViewModel = new IndexViewModel(speaker);
+
+            return View(speakerViewModel);
         }
     }
 }
