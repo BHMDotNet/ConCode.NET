@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using ConCode.NET.Core.Domain;
-using CodeConf.NET.Core.Data;
+using ConCode.NET.Core.Data;
 
-namespace CodeConf.NET.Core.Domain
+namespace ConCode.NET.Core.Domain
 {
     public class SessionService : ISessionService
     {
@@ -14,6 +11,11 @@ namespace CodeConf.NET.Core.Domain
         public SessionService(IConferenceDataProvider conferenceDataProvider)
         {
             _conferenceDataProvider = conferenceDataProvider;
+        }
+
+        public void AddSession(Session session)
+        {
+            _conferenceDataProvider.AddSession(session);
         }
 
         public IQueryable<Session> GetSessions()

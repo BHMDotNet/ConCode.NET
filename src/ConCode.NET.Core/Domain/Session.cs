@@ -12,6 +12,8 @@ namespace ConCode.NET.Core.Domain
         public DateTime Start { get; set; }
         public TalkType TalkType { get; set; }
         public Venue Venue { get; set; }
+
+        public SessionStatus Status {get;set;}
     }
     
 }

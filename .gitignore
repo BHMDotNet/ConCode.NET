@@ -112,6 +112,7 @@ _TeamCity*
 _NCrunch_*
 .*crunch*.local.xml
 nCrunchTemp_*
+*.v2.ncrunchsolution
 
 # MightyMoose
 *.mm.*
@@ -244,3 +245,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 *.espressostorage
+

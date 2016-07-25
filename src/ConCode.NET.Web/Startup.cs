@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +8,9 @@ using Microsoft.Extensions.Logging;
 using ConCode.NET.Web.Data;
 using ConCode.NET.Web.Models;
 using ConCode.NET.Web.Services;
+using ConCode.NET.Core.Data;
+using ConCode.NET.Core.Domain;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ConCode.NET.Web
 {
@@ -47,7 +46,20 @@ namespace ConCode.NET.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
+            services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<ISpeakerService, SpeakerService>();
+            services.AddTransient<ITalkService, TalkService>();
+            services.AddTransient<ISponsorService, SponsorService>();
+            services.AddTransient<IVenueService, VenueService>();
+
             services.AddMvc();
+
+            // Require SSL
+            // services.Configure<MvcOptions>(options =>
+            // {
+            //     options.Filters.Add(new RequireHttpsAttribute());
+            // });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -74,6 +86,15 @@ namespace ConCode.NET.Web
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            app.UseFacebookAuthentication(new FacebookOptions()
+            {
+                //AppId = Configuration["Authentication:Facebook:AppId"],
+                //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+                AppId = "231742630557937",
+                AppSecret = "53eecb60d7ea27581c8366dda3a3f638"
+            });
+
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
