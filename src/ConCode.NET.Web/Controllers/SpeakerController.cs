@@ -14,14 +14,14 @@ namespace ConCode.NET.Web.Controllers
             {
                 Id = 1,
                 Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
-                BlogUri = new Uri("http://theverybestblog.com"),
+                BlogUri = "http://theverybestblog.com",
                 CreatedAt = DateTime.Now,
                 FacebookProfile = "blakehelms",
                 FirstName = "Blake",
                 LastName = "Helms",
-                LastUpdated = DateTime.Now,
+                ModifiedAt = DateTime.Now,
                 LinkedInProfile = "blakehelms",
-                Photo = new Uri("https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg"),
+                Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
                 Tagline = "Someone very interesting",
                 TwitterHandle = "helmsb",
                 //Talks = new List<Talk>()

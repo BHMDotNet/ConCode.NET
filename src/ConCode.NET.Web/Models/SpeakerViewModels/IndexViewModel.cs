@@ -28,7 +28,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
             get { return _speaker.LastName; }
         }
 
-        public Uri Photo
+        public string Photo
         {
             get { return _speaker.Photo; }
         }
@@ -58,7 +58,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
             get { return _speaker.FacebookProfile; }
         }
 
-        public Uri BlogUri
+        public string BlogUri
         {
             get { return _speaker.BlogUri; }
         }
