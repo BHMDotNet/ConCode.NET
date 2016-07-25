@@ -16,6 +16,7 @@ namespace ConCode.NET.Mobile
 		{
 			base.OnAppearing();
 			var cd = new ConferenceData();
+
 			listView.ItemsSource = await cd.GetSessionsAsync();
 		}
 	}
