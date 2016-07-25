@@ -55,16 +55,7 @@ ViewData["Title"] = "Session List";
          </div>
       </div>
       <div class="col-md-4">
-         <div class="panel panel-default">
-            <div class="panel-heading">
-               <h3 class="panel-title">Sponsors</h3>
-            </div>
-            <div class="panel-body">
-               <img class="img-responsive" src="http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"/>
-               <img class="img-responsive" src="http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"/>
-               <img class="img-responsive" src="http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"/>
-            </div>
-         </div>
+          @await Html.PartialAsync("_sponsors");
       </div>
    </div>
 </div>

@@ -1,6 +1,5 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using CodeConf.NET.Core.Domain;
 using ConCode.NET.Web.Models.SessionViewModels;
 using ConCode.NET.Core.Domain;
 

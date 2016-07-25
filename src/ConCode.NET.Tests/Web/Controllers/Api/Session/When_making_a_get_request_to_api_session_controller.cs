@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
-using CodeConf.NET.Core.Domain;
 using Moq;
+using ConCode.NET.Core.Domain;
 
 namespace CodeConf.NET.Tests.Web.Controllers.Api.Session
 {

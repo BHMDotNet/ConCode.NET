@@ -1,9 +1,8 @@
-﻿using CodeConf.NET.Core.Data;
-using CodeConf.NET.Core.Domain;
-using Moq;
+﻿using Moq;
 using System.Linq;
 using Xunit;
 using ConCode.NET.Core.Domain;
+using ConCode.NET.Core.Data;
 
 namespace CodeConf.NET.Tests.Core.Domain
 {

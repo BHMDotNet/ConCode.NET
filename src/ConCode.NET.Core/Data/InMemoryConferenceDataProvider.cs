@@ -3,7 +3,7 @@ using System.Linq;
 using ConCode.NET.Core.Domain;
 using System;
 
-namespace CodeConf.NET.Core.Data
+namespace ConCode.NET.Core.Data
 {
     public class InMemoryConferenceDataProvider : IConferenceDataProvider
     {
@@ -104,6 +104,36 @@ namespace CodeConf.NET.Core.Data
             }
         };
 
+        private IEnumerable<Sponsor> _sponsors = new List<Sponsor>
+        {
+            new Sponsor
+            {
+                Id = 1,
+                ImageUrl = new Uri("http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"),
+                Name = "Initech",
+                SponsorshipLevel = SponsorshipLevel.bronze,
+                WebsiteUrl = new Uri("http://www.initech.com")
+            },
+
+            new Sponsor
+            {
+                Id = 2,
+                ImageUrl = new Uri("http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"),
+                Name = "Dunder Mifflin, Inc.",
+                SponsorshipLevel = SponsorshipLevel.silver,
+                WebsiteUrl = new Uri("http://www.dundermifflin.com")
+            },
+
+            new Sponsor
+            {
+                Id = 3,
+                ImageUrl = new Uri("http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"),
+                Name = "Pied Piper",
+                SponsorshipLevel = SponsorshipLevel.platinum,
+                WebsiteUrl = new Uri("http://www.piedpiper.com")
+            },
+        };
+
         public IQueryable<Session> Sessions
         {
             get
@@ -117,6 +147,14 @@ namespace CodeConf.NET.Core.Data
             get
             {
                 throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Sponsor> Sponsors
+        {
+            get
+            {
+                return _sponsors.AsQueryable();
             }
         }
 
@@ -147,6 +185,11 @@ namespace CodeConf.NET.Core.Data
         public void AddSession(Session session)
         {
             _sessions = new List<Session>(_sessions) { session };
+        }
+
+        public void AddSponsor(Sponsor sponsor)
+        {
+            throw new NotImplementedException();
         }
     }
 }

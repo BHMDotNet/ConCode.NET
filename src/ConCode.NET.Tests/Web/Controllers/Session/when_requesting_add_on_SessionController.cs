@@ -1,4 +1,4 @@
-﻿using CodeConf.NET.Core.Domain;
+﻿using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.SessionViewModels;
 using Microsoft.AspNetCore.Mvc;
