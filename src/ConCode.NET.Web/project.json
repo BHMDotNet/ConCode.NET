@@ -59,7 +59,8 @@
       "imports": [
         "portable-net45+win8"
       ]
-    }
+    },
+    "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final"
   },
 
   "frameworks": {
