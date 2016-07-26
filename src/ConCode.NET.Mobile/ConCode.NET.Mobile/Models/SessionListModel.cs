@@ -36,6 +36,12 @@ namespace ConCode.NET.Mobile
 			get;
 			set;
 		}
+
+		public string Venue
+		{
+			get;
+			set;
+		}
 	}
 
 }
