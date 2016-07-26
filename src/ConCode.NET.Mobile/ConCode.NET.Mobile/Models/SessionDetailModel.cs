@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using ConCode.NET.Core.Domain;
 namespace ConCode.NET.Mobile
 {
-	public class SessionListModel
+	public class SessionDetailModel
 	{
-		public SessionListModel()
+		public SessionDetailModel()
 		{
 		}
 
@@ -57,6 +57,5 @@ namespace ConCode.NET.Mobile
 			set;
 		}
 	}
-
 }
 

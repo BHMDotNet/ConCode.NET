@@ -53,7 +53,8 @@ namespace ConCode.NET.Mobile
 							Level = session.Talk.Level.ToString(),
 							Length = session.TalkType.Length.TotalMinutes.ToString(),
 							Venue = session.Venue.Description,
-			               	Status = session.Status
+			               	Status = session.Status,
+							Tags = session.Talk.Tags
 						});
 					}
 				}

@@ -184,6 +184,38 @@ namespace ConCode.NET.Core.Data
         };
         #endregion
 
+        #region Venue Data
+        private IEnumerable<Venue> _venues = new List<Venue>()
+        {
+            new Venue
+            {
+                Id = 1,
+                Description = "Room 201"
+            },
+            new Venue
+            {
+                Id = 2,
+                Description = "Room 202"
+            },
+            new Venue
+            {
+                Id = 3,
+                Description = "Room 203"
+            },
+             new Venue
+            {
+                Id = 4,
+                Description = "Room 204"
+            },
+              new Venue
+            {
+                Id = 5,
+                Description = "Room 205"
+            }
+
+        };
+        #endregion
+
         public InMemoryConferenceDataProvider()
         {
             // Set up some existing speakers to the talks
@@ -240,37 +272,7 @@ namespace ConCode.NET.Core.Data
                 WebsiteUrl = new Uri("http://www.piedpiper.com")
             },
         };
-
-
-        private IEnumerable<Venue> _venues = new List<Venue>()
-        {
-            new Venue
-            {
-                Id = 1,
-                Description = "Room 201"
-            },
-            new Venue
-            {
-                Id = 2,
-                Description = "Room 202"
-            },
-            new Venue
-            {
-                Id = 3,
-                Description = "Room 203"
-            },
-             new Venue
-            {
-                Id = 4,
-                Description = "Room 204"
-            },
-              new Venue
-            {
-                Id = 5,
-                Description = "Room 205"
-            }
-
-        };
+      
 
         public IQueryable<Session> Sessions
         {
