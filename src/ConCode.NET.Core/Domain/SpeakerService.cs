@@ -1,5 +1,6 @@
 ﻿using ConCode.NET.Core.Data;
 using System.Linq;
+using System;
 
 namespace ConCode.NET.Core.Domain
 {
@@ -15,6 +16,12 @@ namespace ConCode.NET.Core.Domain
         public IQueryable<Speaker> GetSpeakers()
         {
             return _conferenceDataProvider.Speakers;
+        }
+
+        public void SaveSpeaker(Speaker speaker)
+        {
+            //TODO: Implement SaveSpeaker()
+            throw new NotImplementedException();
         }
     }
 }

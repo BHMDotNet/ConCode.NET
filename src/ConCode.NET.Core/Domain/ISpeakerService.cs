@@ -6,5 +6,6 @@ namespace ConCode.NET.Core.Domain
     {
         IQueryable<Speaker> GetSpeakers();
 
+        void SaveSpeaker(Speaker speaker);
     }
 }
