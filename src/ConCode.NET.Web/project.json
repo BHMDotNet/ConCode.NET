@@ -73,7 +73,11 @@
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": {
+      "include": [ "Deploy" ]
+    }
+
   },
 
   "runtimeOptions": {
@@ -88,12 +92,15 @@
       "Views",
       "Areas/**/Views",
       "appsettings.json",
-      "web.config"
+      "web.config",
+      "Deploy"
     ]
   },
 
   "scripts": {
     "prepublish": [ "bower install", "dotnet bundle" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    "postpublish": [
+      "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+    ]
   }
 }
