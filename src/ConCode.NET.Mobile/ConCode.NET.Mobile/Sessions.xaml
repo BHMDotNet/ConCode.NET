@@ -1,30 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.Sessions" Title="Sessions">
-	<ContentPage.Content>
-		<ListView x:Name="listView" SeparatorColor="#fbdbdc" ItemSelected="Handle_ItemSelected">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ViewCell>
-						<StackLayout Padding="20,20,0,0"  Orientation="Horizontal">
-							 <Label Text="{Binding DateTime}"
-                                TextColor="#c82b2e" FontAttributes="Bold"/>
-						<StackLayout Padding="0,0,10,0"  Orientation="Vertical">
-							
-							<StackLayout Orientation="Vertical">
-                               <Label Text="{Binding Title}"
-                                TextColor="#c82b2e" LineBreakMode="WordWrap" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ConCode.NET.Mobile;assembly=ConCode.NET.Mobile" x:Class="ConCode.NET.Mobile.Sessions" Title="Sessions">
+		<ContentPage.Content>
+		<Grid>
+			<StackLayout Padding="10,10,10,0">
 
-								<StackLayout Orientation="Horizontal" >
-                                	<Label Text="{Binding Level}" FontSize="10"/>
-									<Label Text="{Binding Length}" FontSize="10"/>
-									<Label Text="Minutes" FontSize="10"/>
-								</StackLayout>
-                            </StackLayout>
-							</StackLayout>
-						</StackLayout>
-					</ViewCell>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
+				<ListView x:Name="listView" 
+						  SeparatorVisibility="None"
+						  BackgroundColor="Transparent"
+						  SeparatorColor="#DFDFDF"
+						  HasUnevenRows="false"
+						  RowHeight="90" 
+						  ItemSelected="Handle_ItemSelected">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<local:SessionItemTemplate  />
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>	
+				</ListView>
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

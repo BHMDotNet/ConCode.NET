@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.SessionItemTemplate">
+	<ContentView.Content>
+
+		<StackLayout Spacing="0" Padding="0">
+			<Grid Style="{DynamicResource CardStyle}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="85"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="5"/>
+				</Grid.ColumnDefinitions>
+				<StackLayout Grid.Column="0" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
+				<Label Text="{Binding DateTime}" Style="{DynamicResource TimeStyle}"/>
+					<Label Text="{Binding Venue}" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center"/>
+					<Label Text="{Binding Status}" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center"/>
+				</StackLayout>
+				<StackLayout Grid.Column="1" Spacing="0" Padding="0,5">
+					<Label Text="{Binding Title}" Style="{DynamicResource NameStyle}"/>
+					<Label Text="{Binding Level}" Style="{DynamicResource DepartmentStyle}"/>
+				</StackLayout>
+
+				<StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="4" HorizontalOptions="End" Padding="0" VerticalOptions="End">
+						<Label Text="{Binding Length}" FontAttributes="Bold" Style="{DynamicResource LengthStyle}"/>	
+						<Label Text="Minutes" Style="{DynamicResource LengthStyle}"/>
+					</StackLayout>	
+			</Grid>
+		</StackLayout>
+
+	</ContentView.Content>
+</ContentView>
