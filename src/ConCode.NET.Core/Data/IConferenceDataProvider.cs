@@ -23,5 +23,9 @@ namespace ConCode.NET.Core.Data
         IQueryable<Sponsor> Sponsors { get; }
 
         void AddSponsor(Sponsor sponsor);
+
+        void SaveSpeaker(Speaker speaker);
+
+        void AddSpeaker(Speaker speaker);
     }
 }
