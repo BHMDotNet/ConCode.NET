@@ -93,8 +93,7 @@
       "Views",
       "Areas/**/Views",
       "appsettings.json",
-      "web.config",
-      "Deploy"
+      "web.config"
     ]
   },
 
