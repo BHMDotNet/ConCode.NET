@@ -1,5 +1,6 @@
 ﻿using ConCode.NET.Core.Data;
 using System.Linq;
+using System;
 
 namespace ConCode.NET.Core.Domain
 {
@@ -12,9 +13,19 @@ namespace ConCode.NET.Core.Domain
             _conferenceDataProvider = conferenceDataProvider;
         }
 
+        public void CreateSpeaker(Speaker speaker)
+        {
+            _conferenceDataProvider.AddSpeaker(speaker);
+        }
+
         public IQueryable<Speaker> GetSpeakers()
         {
             return _conferenceDataProvider.Speakers;
+        }
+
+        public void SaveSpeaker(Speaker speaker)
+        {
+            _conferenceDataProvider.SaveSpeaker(speaker);
         }
     }
 }
