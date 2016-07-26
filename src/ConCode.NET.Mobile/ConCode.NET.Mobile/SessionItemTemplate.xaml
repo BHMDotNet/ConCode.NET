@@ -12,6 +12,7 @@
 				<StackLayout Grid.Column="0" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
 				<Label Text="{Binding DateTime}" Style="{DynamicResource TimeStyle}"/>
 					<Label Text="{Binding Venue}" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center"/>
+					<Label Text="{Binding Status}" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center"/>
 				</StackLayout>
 				<StackLayout Grid.Column="1" Spacing="0" Padding="0,5">
 					<Label Text="{Binding Title}" Style="{DynamicResource NameStyle}"/>

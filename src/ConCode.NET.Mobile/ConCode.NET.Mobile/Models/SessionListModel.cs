@@ -1,4 +1,5 @@
 ﻿using System;
+using ConCode.NET.Core.Domain;
 namespace ConCode.NET.Mobile
 {
 	public class SessionListModel
@@ -38,6 +39,12 @@ namespace ConCode.NET.Mobile
 		}
 
 		public string Venue
+		{
+			get;
+			set;
+		}
+
+		public SessionStatus Status
 		{
 			get;
 			set;
