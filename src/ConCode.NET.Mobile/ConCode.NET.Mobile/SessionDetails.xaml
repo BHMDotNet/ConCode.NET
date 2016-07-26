@@ -1,10 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.SessionDetails">
 	<ContentPage.Content>
-		<StackLayout Padding="20,0,10,0"  Orientation="Vertical">
-			<Label Text="Deep Dive Into Workflow Foundation" FontSize="40" TextColor="#c82b2e" />
-			<Label Text="I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf." 
-				FontSize="15" TextColor="#6b6b6b" />
+		<StackLayout Padding="7,10,10,0" Orientation="Vertical">
+			
+			<Grid>
+				<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="90"/>
+				<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+
+				<StackLayout Grid.Column="0" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
+					<Label Text="12:00" Style="{DynamicResource TimeStyle}" />
+					<Label Text="Room 201" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center" />
+					<Label Text="Full" Style="{DynamicResource LocationStyle}" HorizontalOptions="Center" />
+				</StackLayout>
+				<StackLayout Grid.Column="1" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+					<Label Text="Deep Dive Into Workflow Foundation" FontSize="30" TextColor="#c82b2e" FontAttributes="Bold" />
+				</StackLayout>
+			</Grid>
+			<Grid Style="{DynamicResource AbstractStyle}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<StackLayout Grid.Column="0" Spacing="0" Padding="10,5,10,10" HorizontalOptions="Center" VerticalOptions="Center">
+					<Label Text="Abstract" FontSize="20" TextColor="#c82b2e" />
+					<Label TextColor="Gray" FontSize="13" Text="I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, &#xA;							human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf." />
+				</StackLayout>
+			</Grid>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

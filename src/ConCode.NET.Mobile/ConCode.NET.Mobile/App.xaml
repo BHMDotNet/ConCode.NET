@@ -39,6 +39,11 @@
 				<Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}"/>
 			</Style>
 
+			<Style x:Key="AbstractStyle" TargetType="Grid">
+				<Setter Property="Padding" Value="5,10,0,10"/>
+				<Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}"/>
+			</Style>
+
 			<Style x:Key="MessageBox" TargetType="Grid">
 				<Setter Property="HeightRequest" Value="25"/>
 				<Setter Property="Padding" Value="10"/>
