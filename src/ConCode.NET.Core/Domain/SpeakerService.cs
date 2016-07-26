@@ -13,6 +13,11 @@ namespace ConCode.NET.Core.Domain
             _conferenceDataProvider = conferenceDataProvider;
         }
 
+        public void CreateSpeaker(Speaker speaker)
+        {
+            _conferenceDataProvider.AddSpeaker(speaker);
+        }
+
         public IQueryable<Speaker> GetSpeakers()
         {
             return _conferenceDataProvider.Speakers;
@@ -20,8 +25,7 @@ namespace ConCode.NET.Core.Domain
 
         public void SaveSpeaker(Speaker speaker)
         {
-            //TODO: Implement SaveSpeaker()
-            throw new NotImplementedException();
+            _conferenceDataProvider.SaveSpeaker(speaker);
         }
     }
 }

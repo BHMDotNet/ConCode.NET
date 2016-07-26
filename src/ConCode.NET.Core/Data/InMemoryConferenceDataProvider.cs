@@ -335,5 +335,15 @@ namespace ConCode.NET.Core.Data
         {
             throw new NotImplementedException();
         }
+
+        public void SaveSpeaker(Speaker speaker)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddSpeaker(Speaker speaker)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

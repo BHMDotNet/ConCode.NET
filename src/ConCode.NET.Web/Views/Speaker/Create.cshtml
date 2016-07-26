@@ -1,0 +1,98 @@
+@model ConCode.NET.Web.Models.SpeakerViewModels.CreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Speaker</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Create Your Profile</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Username" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bio" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Bio" class="form-control" />
+                <span asp-validation-for="Bio" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Photo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogUri" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogUri" class="form-control" />
+                <span asp-validation-for="BlogUri" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TwitterHandle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TwitterHandle" class="form-control" />
+                <span asp-validation-for="TwitterHandle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LinkedInProfile" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LinkedInProfile" class="form-control" />
+                <span asp-validation-for="LinkedInProfile" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FacebookProfile" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FacebookProfile" class="form-control" />
+                <span asp-validation-for="FacebookProfile" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Tagline" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Tagline" class="form-control" />
+                <span asp-validation-for="Tagline" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

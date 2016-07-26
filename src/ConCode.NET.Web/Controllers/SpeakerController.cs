@@ -121,9 +121,48 @@ namespace ConCode.NET.Web.Controllers
             speaker.LinkedInProfile = viewModel.LinkedInProfile;
             speaker.FacebookProfile = viewModel.FacebookProfile;
             speaker.Tagline = viewModel.Tagline;
+            speaker.ModifiedAt = DateTime.Now;
 
             // Actually save this model data!
             _speakerService.SaveSpeaker(speaker);
+
+            // Redirect back to Index()
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new CreateViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Create(CreateViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Something wasn't valid, send them back
+                return View(viewModel);
+            }
+
+            var speaker = new Speaker();
+
+            // Append on top the changes
+            speaker.FirstName = viewModel.FirstName;
+            speaker.LastName = viewModel.LastName;
+            speaker.Username = viewModel.Username;
+            speaker.Bio = viewModel.Bio;
+            speaker.Photo = viewModel.Photo;
+            speaker.BlogUri = viewModel.BlogUri;
+            speaker.TwitterHandle = viewModel.TwitterHandle;
+            speaker.LinkedInProfile = viewModel.LinkedInProfile;
+            speaker.FacebookProfile = viewModel.FacebookProfile;
+            speaker.Tagline = viewModel.Tagline;
+            speaker.CreatedAt = DateTime.Now;
+            speaker.ModifiedAt = speaker.CreatedAt;
+
+            // Actually save this model data!
+            _speakerService.CreateSpeaker(speaker);
 
             // Redirect back to Index()
             return RedirectToAction("Index");
