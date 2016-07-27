@@ -15,7 +15,7 @@
 		<item name="colorPrimaryDark">#9f1e20</item>
 		<!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-		<item name="colorAccent">#eceff1</item>
+		<item name="colorAccent">#ffffff</item>
 		<!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
 		<item name="windowActionModeOverlay">true</item>
