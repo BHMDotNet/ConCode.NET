@@ -15,12 +15,19 @@ namespace ConCode.NET.Core.Domain
 
         public void AddSession(Session session)
         {
+            var maxSessionId = _conferenceDataProvider.Sessions.Max(x => x.Id);
+            session.Id = maxSessionId + 1;
             _conferenceDataProvider.AddSession(session);
         }
 
         public IQueryable<Session> GetSessions()
         {
             return _conferenceDataProvider.Sessions;
+        }
+
+        public Session GetSession(int sessionId)
+        {
+            return _conferenceDataProvider.Sessions.FirstOrDefault(x => x.Id == sessionId);
         }
     }
 }

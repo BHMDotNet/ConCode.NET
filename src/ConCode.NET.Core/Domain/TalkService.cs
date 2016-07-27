@@ -1,5 +1,6 @@
 ﻿using ConCode.NET.Core.Data;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace ConCode.NET.Core.Domain
 {
@@ -15,6 +16,21 @@ namespace ConCode.NET.Core.Domain
         public IQueryable<Talk> GetTalks()
         {
             return _conferenceDataProvider.Talks;
+        }
+
+        public Talk GetTalk(int talkId)
+        {
+            return _conferenceDataProvider.Talks.FirstOrDefault(x => x.Id == talkId);
+        }
+
+        public IEnumerable<TalkType> GetTalkTypes()
+        {
+            return _conferenceDataProvider.TalkTypes;
+        }
+
+        public TalkType GetTalkType(int talkTypeId)
+        {
+            return _conferenceDataProvider.TalkTypes.FirstOrDefault(x => x.Id == talkTypeId);
         }
     }
 }

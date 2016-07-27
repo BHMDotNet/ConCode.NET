@@ -7,5 +7,7 @@ namespace ConCode.NET.Core.Domain
         IQueryable<Venue> GetVenues();
 
         void AddVenue(Venue venue);
+
+        Venue GetVenue(int VenueId);
     }
 }

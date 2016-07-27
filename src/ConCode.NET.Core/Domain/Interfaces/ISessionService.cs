@@ -7,5 +7,7 @@ namespace ConCode.NET.Core.Domain
         IQueryable<Session> GetSessions();
 
         void AddSession(Session session);
+
+        Session GetSession(int sessionId);
     }
 }

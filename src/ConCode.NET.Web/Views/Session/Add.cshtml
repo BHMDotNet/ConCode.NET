@@ -1,4 +1,8 @@
+@using System.Linq
 @model ConCode.NET.Web.Models.SessionViewModels.AddSessionViewModel
+
+@inject ConCode.NET.Core.Domain.IVenueService venueService
+@inject ConCode.NET.Core.Domain.ITalkService talkService
 
 @{
     ViewData["Title"] = "Add Session";
@@ -8,35 +12,49 @@
 
 <form asp-action="Add">
     <div class="form-horizontal">
-        <h4>Add Session for Speaker</h4>
+        <h4>Add New Session</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="TalkId" class="col-md-2 control-label"></label>
+            <label asp-for="VenueId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="TalkId" class="form-control" />
-                <span asp-validation-for="TalkId" class="text-danger" />
+                <select asp-for="VenueId" asp-items="@venueService.GetVenues().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Description  })"></select>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="VenueId" class="col-md-2 control-label"></label>
+            <label asp-for="TalkId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="VenueId" class="form-control" />
-                <span asp-validation-for="VenueId" class="text-danger" />
+                <select asp-for="TalkId" asp-items="@talkService.GetTalks().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Title  })"></select>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="TalkTypeId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="TalkTypeId" class="form-control" />
-                <span asp-validation-for="TalkTypeId" class="text-danger" />
+                <select asp-for="TalkTypeId" asp-items="@talkService.GetTalkTypes().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name  })"></select>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Start" class="col-md-2 control-label"></label>
+            <label asp-for="StartDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Start" class="form-control" />
-                <span asp-validation-for="Start" class="text-danger" />
+                <input type="date" asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StartTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="StartTime">
+                    <option value="7">7:00 AM</option>
+                    <option value="8">8:00 AM</option>
+                    <option value="9">9:00 AM</option>
+                    <option value="10">10:00 AM</option>
+                    <option value="11">11:00 AM</option>
+                    <option value="12">12:00 PM</option>
+                    <option value="13">1:00 PM</option>
+                    <option value="14">2:00 PM</option>
+                    <option value="15">3:00 PM</option>
+                </select>
+                <span asp-validation-for="StartTime" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

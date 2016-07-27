@@ -21,5 +21,10 @@ namespace ConCode.NET.Core.Domain
         {
             return _conferenceDataProvider.Venues;
         }
+
+        public Venue GetVenue(int venueId)
+        {
+            return _conferenceDataProvider.Venues.FirstOrDefault(x => x.Id == venueId);
+        }
     }
 }

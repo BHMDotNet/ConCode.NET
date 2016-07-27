@@ -6,6 +6,7 @@ using System.Linq;
 using Xunit;
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Models.SessionViewModels;
+using Moq;
 
 namespace ConCode.NET.Tests.Web.Controllers.Session
 {
@@ -30,8 +31,10 @@ namespace ConCode.NET.Tests.Web.Controllers.Session
                 theSession
             };
 
-            var sessionService = new Moq.Mock<ISessionService>();
-            var controller = new SessionController(sessionService.Object);
+            var sessionService = new Mock<ISessionService>();
+            var talkService = new Mock<ITalkService>();
+            var venueService = new Mock<IVenueService>();
+            var controller = new SessionController(sessionService.Object, talkService.Object, venueService.Object);
             sessionService.Setup(x => x.GetSessions()).Returns(theSessionList.AsQueryable());
 
             var result = (ViewResult)controller.Index();

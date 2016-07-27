@@ -136,6 +136,20 @@ namespace ConCode.NET.Core.Data
                 Photo = "http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg",
                 Tagline = "We're ready to believe you!",
                 TwitterHandle = "brussellz"
+            },
+            new Speaker{
+                Id = 3,
+                Bio = "I collect spores, molds, and fungus.",
+                BlogUri = "http://theverybestblog.com",
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "stgwilli",
+                FirstName = "Steven",
+                LastName = "Williams",
+                ModifiedAt = DateTime.Now,
+                LinkedInProfile = "the_typing_beard",
+                Photo = "",
+                Tagline = "Watch out for my beard!",
+                TwitterHandle = "@the_typing_beard"
             }
         };
         #endregion
@@ -145,6 +159,7 @@ namespace ConCode.NET.Core.Data
         {
             new Talk
             {
+                Id = 1,
                 Title = "The Color Tuple",
                 Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
                 Level = TalkLevel.Intermediate,
@@ -170,6 +185,7 @@ namespace ConCode.NET.Core.Data
             },
             new Talk
             {
+                Id = 2,
                 Title = "Deep Dive Into Workflow Foundation",
                 Abstract = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
                 Level = TalkLevel.Advanced,
@@ -180,7 +196,36 @@ namespace ConCode.NET.Core.Data
                     "Workflow"
                 },
                 Speakers = new List<Speaker>(),
+            },
+            new Talk
+            {
+                Id = 3,
+                Title = "Deep Dive Into AspNetCore MVC",
+                Abstract = "Dig deeper into .Net Core MVC.",
+                Level = TalkLevel.Advanced,
+                TimesPresented = 27,
+                Tags = new List<string>{
+                    "C# 7",
+                    ".NET",
+                    "MVC"
+                },
+                Speakers = new List<Speaker>(),
+            },
+            new Talk
+            {
+                Id = 4,
+                Title = "Introduction to NServiceBus",
+                Abstract = "Come meet the best Enterprise Service Bus .Net has to offer.",
+                Level = TalkLevel.Advanced,
+                TimesPresented = 27,
+                Tags = new List<string>{
+                    "C# 7",
+                    ".NET",
+                    "MVC"
+                },
+                Speakers = new List<Speaker>(),
             }
+
         };
         #endregion
 
@@ -215,6 +260,36 @@ namespace ConCode.NET.Core.Data
 
         };
         #endregion
+
+
+        IEnumerable<TalkType> _talkTypes = new List<TalkType>() {
+                new TalkType()
+                {
+                    Id = 1,
+                    Length = TimeSpan.FromMinutes(60),
+                    Name = "Deep Dive"
+                },
+                new TalkType()
+                {
+                    Id = 2,
+                    Length = TimeSpan.FromMinutes(10),
+                    Name = "Lightning"
+                },
+                new TalkType()
+                {
+                    Id = 2,
+                    Length = TimeSpan.FromMinutes(15),
+                    Name = "Round Table"
+                },
+                new TalkType()
+                {
+                    Id = 2,
+                    Length = TimeSpan.FromMinutes(30),
+                    Name = "Discussion Panel"
+                }
+        };
+
+        
 
         public InMemoryConferenceDataProvider()
         {
@@ -310,7 +385,7 @@ namespace ConCode.NET.Core.Data
         {
             get
             {
-                throw new NotImplementedException();
+                return _talkTypes.AsQueryable();
             }
         }
 

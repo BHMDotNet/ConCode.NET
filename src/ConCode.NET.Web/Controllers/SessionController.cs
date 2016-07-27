@@ -8,10 +8,14 @@ namespace ConCode.NET.Web.Controllers
     public class SessionController : Controller
     {
         private ISessionService sessionService;
+        private ITalkService talkService;
+        private IVenueService venueService;
 
-        public SessionController(ISessionService service)
+        public SessionController(ISessionService sessionService, ITalkService talkService, IVenueService venueService)
         {
-            this.sessionService = service;
+            this.sessionService = sessionService;
+            this.talkService = talkService;
+            this.venueService = venueService;
         }
 
         public IActionResult Index()
@@ -31,25 +35,19 @@ namespace ConCode.NET.Web.Controllers
             return View(new AddSessionViewModel());
         }
 
+
         [HttpPost]
         public IActionResult Add(AddSessionViewModel model)
         {
-            var maxId = sessionService.GetSessions().Max(x => x.Id);
-            // add the session to the sessionService
-            var session = new Session
+            var talk = talkService.GetTalk(model.TalkId);
+            var venue = venueService.GetVenue(model.VenueId);
+            var session = new Session 
             {
-                Id = maxId + 1,
-                Start = model.Start,
-                Talk = new Talk {
-                    Id = model.TalkId,
-                    Abstract = "Blah Blah",
-                    Tags = new[] { "C#" , ".Net", "Asp.Net" },
-                    Title = "Testing ASP.Net Core - Paradigm Shift"
-                },
-                TalkType = new TalkType {
-                    Id = model.TalkTypeId
-                },
-                Venue = new Venue { Id = model.VenueId, Description = "Main Stage" }
+                Talk = talk,
+                Start = model.StartDate.AddHours(model.StartTime),
+                Venue = venue,
+                TalkType = talkService.GetTalkType(model.TalkTypeId),
+                Status = SessionStatus.Open
             };
 
             sessionService.AddSession(session);
