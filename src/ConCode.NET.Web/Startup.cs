@@ -11,6 +11,9 @@ using ConCode.NET.Web.Services;
 using ConCode.NET.Core.Data;
 using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ConCode.NET.Web
 {
@@ -57,10 +60,10 @@ namespace ConCode.NET.Web
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All);
 
             // Require SSL
-            //services.Configure<MvcOptions>(options =>
-            //{
-            //    options.Filters.Add(new RequireHttpsAttribute());
-            //});
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
