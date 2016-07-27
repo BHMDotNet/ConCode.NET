@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ConCode.NET.Mobile;assembly=ConCode.NET.Mobile" x:Class="ConCode.NET.Mobile.MainPage" >
-	<NavigationPage Title="Home" BarTextColor="White" Icon="Home-30.png" WidthRequest="10">
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ConCode.NET.Mobile;assembly=ConCode.NET.Mobile" x:Class="ConCode.NET.Mobile.MainPage" >
+	<NavigationPage Title="Home" BarTextColor="White" WidthRequest="10" >
 		<x:Arguments>
 			<local:Home />
 		</x:Arguments>
 	</NavigationPage>
-	<NavigationPage Title="Sessions" BarTextColor="White" Icon="Training-30.png" WidthRequest="10">
+	<NavigationPage Title="Sessions" BarTextColor="White"  WidthRequest="10">
 		<x:Arguments>
 			<local:Sessions />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="Speakers" BarTextColor="White" Icon="Speaker-Filled-30.png" WidthRequest="10">
+		<NavigationPage Title="Speakers" BarTextColor="White" WidthRequest="10">
 		<x:Arguments>
 			<local:Speakers />
 		</x:Arguments>

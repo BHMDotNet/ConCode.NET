@@ -16,7 +16,7 @@ namespace ConCode.NET.Mobile
 	{
 		public List<SessionListModel> Sessions { get; private set; }
 		HttpClient client;
-		string Uri = "http://localhost:5000/api/session";
+		string Uri = "http://dev-concodenet.azurewebsites.net/api/session";
 
 		public ConferenceData()
 		{

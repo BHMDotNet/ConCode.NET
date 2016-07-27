@@ -10,6 +10,7 @@ namespace ConCode.NET.Mobile
 		public MainPage()
 		{
 			InitializeComponent();
+
 		}
 
 		protected override void OnAppearing()
