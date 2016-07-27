@@ -53,13 +53,14 @@ namespace ConCode.NET.Web
             services.AddTransient<ISponsorService, SponsorService>();
             services.AddTransient<IVenueService, VenueService>();
 
-            services.AddMvc();
+            // Preserve object references in JSON
+            services.AddMvc().AddJsonOptions(x => x.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All);
 
             // Require SSL
-            // services.Configure<MvcOptions>(options =>
-            // {
-            //     options.Filters.Add(new RequireHttpsAttribute());
-            // });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new RequireHttpsAttribute());
+            //});
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
