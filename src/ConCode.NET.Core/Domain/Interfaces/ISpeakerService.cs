@@ -4,10 +4,10 @@ namespace ConCode.NET.Core.Domain
 {
     public interface ISpeakerService
     {
-        IQueryable<Speaker> GetSpeakers();
+        IQueryable<User> GetSpeakers();
 
-        void SaveSpeaker(Speaker speaker);
+        void SaveSpeaker(User speaker);
 
-        void CreateSpeaker(Speaker speaker);
+        void CreateSpeaker(User speaker);
     }
 }

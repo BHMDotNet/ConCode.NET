@@ -27,15 +27,13 @@ namespace CodeConf.NET.Core.Data
                 entity.Property(e => e.FacebookProfile).HasColumnName("FacebookUri");
                 entity.Property(e => e.LinkedInProfile).HasColumnName("LinkedInUri");
                 entity.Property(e => e.Photo).HasColumnName("PhotoUri");
+                entity.HasOne(e => e.SpeakerInfo).WithOne(e => e.User).HasForeignKey<SpeakerInfo>(e => e.UserId);
             });
-            modelBuilder.Entity<User>()
-                .HasDiscriminator(x => x.UserType)
-                .HasValue<User>("User")
-                .HasValue<Speaker>("Speaker")
-                .HasValue<Attendee>("Attendee");
-            modelBuilder.Entity<Speaker>(entity =>
+            modelBuilder.Entity<SpeakerInfo>(entity =>
             {
+                entity.HasKey(e => e.Id);
                 entity.Ignore(e => e.Talks);
+                entity.Property(e => e.Tagline).HasColumnName("Tagline");
             });
         }
         public override int SaveChanges()
@@ -55,8 +53,7 @@ namespace CodeConf.NET.Core.Data
 
             return base.SaveChanges();
         }
-
-        public DbSet<Speaker> Speakers { get; set; }
+        
         public DbSet<User> Users { get; set; }
     }
 }

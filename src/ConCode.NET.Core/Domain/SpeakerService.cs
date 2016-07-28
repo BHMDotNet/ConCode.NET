@@ -13,17 +13,17 @@ namespace ConCode.NET.Core.Domain
             _conferenceDataProvider = conferenceDataProvider;
         }
 
-        public void CreateSpeaker(Speaker speaker)
+        public void CreateSpeaker(User speaker)
         {
             _conferenceDataProvider.AddSpeaker(speaker);
         }
 
-        public IQueryable<Speaker> GetSpeakers()
+        public IQueryable<User> GetSpeakers()
         {
             return _conferenceDataProvider.Speakers;
         }
 
-        public void SaveSpeaker(Speaker speaker)
+        public void SaveSpeaker(User speaker)
         {
             _conferenceDataProvider.SaveSpeaker(speaker);
         }

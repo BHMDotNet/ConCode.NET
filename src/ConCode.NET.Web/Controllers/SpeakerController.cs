@@ -8,9 +8,9 @@ namespace ConCode.NET.Web.Controllers
 {
     public class SpeakerController : Controller
     {
-        public static Speaker CreateSpeakerPocoTemplate()
+        public static User CreateSpeakerPocoTemplate()
         {
-            return new Speaker
+            return new User
             {
                 Id = 1,
                 Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
@@ -22,8 +22,8 @@ namespace ConCode.NET.Web.Controllers
                 ModifiedAt = DateTime.Now,
                 LinkedInProfile = "blakehelms",
                 Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-                Tagline = "Someone very interesting",
                 TwitterHandle = "helmsb",
+                SpeakerInfo = new SpeakerInfo { Tagline = "Someone very interesting" }
                 //Talks = new List<Talk>()
                 //{
                 //    new Talk
@@ -120,7 +120,7 @@ namespace ConCode.NET.Web.Controllers
             speaker.TwitterHandle = viewModel.TwitterHandle;
             speaker.LinkedInProfile = viewModel.LinkedInProfile;
             speaker.FacebookProfile = viewModel.FacebookProfile;
-            speaker.Tagline = viewModel.Tagline;
+            speaker.SpeakerInfo.Tagline = viewModel.Tagline;
             speaker.ModifiedAt = DateTime.Now;
 
             // Actually save this model data!
@@ -145,7 +145,7 @@ namespace ConCode.NET.Web.Controllers
                 return View(viewModel);
             }
 
-            var speaker = new Speaker();
+            var speaker = new User();
 
             // Append on top the changes
             speaker.FirstName = viewModel.FirstName;
@@ -157,7 +157,7 @@ namespace ConCode.NET.Web.Controllers
             speaker.TwitterHandle = viewModel.TwitterHandle;
             speaker.LinkedInProfile = viewModel.LinkedInProfile;
             speaker.FacebookProfile = viewModel.FacebookProfile;
-            speaker.Tagline = viewModel.Tagline;
+            speaker.SpeakerInfo = new SpeakerInfo { Tagline = viewModel.Tagline };
             speaker.CreatedAt = DateTime.Now;
             speaker.ModifiedAt = speaker.CreatedAt;
 

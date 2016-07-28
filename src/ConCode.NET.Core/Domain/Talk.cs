@@ -10,7 +10,7 @@ namespace ConCode.NET.Core.Domain
         public int Id { get; set; }
         public string Title { get; set; }
         public string Abstract { get; set; }
-        public IEnumerable<Speaker> Speakers { get; set; }
+        public IEnumerable<User> Speakers { get; set; }
         public TalkLevel Level { get; set; }
 
         public IEnumerable<string> Tags { get; set; }

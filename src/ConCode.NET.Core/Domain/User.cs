@@ -21,6 +21,6 @@ namespace ConCode.NET.Core.Domain
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
         public string ModifiedBy { get; set; }
-        public string UserType { get; internal set; }
+        public SpeakerInfo SpeakerInfo { get; set; }
     }
 }

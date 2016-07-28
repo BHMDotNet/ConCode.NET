@@ -20,8 +20,8 @@ namespace ConCode.NET.Core.Data
                         Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
                         Level = TalkLevel.Intermediate,
                         TimesPresented = 1,
-                        Speakers = new List<Speaker>{
-                            new Speaker{ 
+                        Speakers = new List<User>{
+                            new User{ 
                                 Id = 1,
                                 Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
                                 BlogUri = "http://theverybestblog.com",
@@ -32,8 +32,8 @@ namespace ConCode.NET.Core.Data
                                 ModifiedAt = DateTime.Now,
                                 LinkedInProfile = "blakehelms",
                                 Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-                                Tagline = "Someone very interesting",
-                                TwitterHandle = "helmsb"
+                                TwitterHandle = "helmsb",
+                                SpeakerInfo = new SpeakerInfo { Tagline = "Someone very interesting" }
                             }
                         },
                         Tags = new List<string>{
@@ -83,8 +83,8 @@ namespace ConCode.NET.Core.Data
                             ".NET",
                             "Workflow"
                         },
-                        Speakers = new List<Speaker>{
-                            new Speaker{ 
+                        Speakers = new List<User>{
+                            new User{ 
                                 FirstName = "Blake",
                                 LastName = "Helms"
                             }
@@ -107,9 +107,9 @@ namespace ConCode.NET.Core.Data
         #endregion
 
         #region Speakers Data
-        private IEnumerable<Speaker> _speakers = new List<Speaker>()
+        private IEnumerable<User> _speakers = new List<User>()
         {
-            new Speaker{
+            new User{
                 Id = 1,
                 Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
                 BlogUri = "http://theverybestblog.com",
@@ -120,10 +120,13 @@ namespace ConCode.NET.Core.Data
                 ModifiedAt = DateTime.Now,
                 LinkedInProfile = "blakehelms",
                 Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-                Tagline = "Someone very interesting",
-                TwitterHandle = "helmsb"
+                TwitterHandle = "helmsb",
+                SpeakerInfo = new SpeakerInfo
+                {
+                    Tagline = "Someone very interesting",
+                }
             },
-            new Speaker{
+            new User{
                 Id = 2,
                 Bio = "I collect spores, molds, and fungus.",
                 BlogUri = "http://theverybestblog.com",
@@ -134,10 +137,10 @@ namespace ConCode.NET.Core.Data
                 ModifiedAt = DateTime.Now,
                 LinkedInProfile = "toocoolforschool",
                 Photo = "http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg",
-                Tagline = "We're ready to believe you!",
-                TwitterHandle = "brussellz"
+                TwitterHandle = "brussellz",
+                SpeakerInfo = new SpeakerInfo { Tagline = "We're ready to believe you!" }
             },
-            new Speaker{
+            new User{
                 Id = 3,
                 Bio = "I collect spores, molds, and fungus.",
                 BlogUri = "http://theverybestblog.com",
@@ -148,8 +151,8 @@ namespace ConCode.NET.Core.Data
                 ModifiedAt = DateTime.Now,
                 LinkedInProfile = "the_typing_beard",
                 Photo = "",
-                Tagline = "Watch out for my beard!",
-                TwitterHandle = "@the_typing_beard"
+                TwitterHandle = "@the_typing_beard",
+                SpeakerInfo = new SpeakerInfo { Tagline = "Watch out for my beard!" }
             }
         };
         #endregion
@@ -164,7 +167,7 @@ namespace ConCode.NET.Core.Data
                 Abstract = "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
                 Level = TalkLevel.Intermediate,
                 TimesPresented = 1,
-                Speakers = new List<Speaker>(),
+                Speakers = new List<User>(),
                 Tags = new List<string>{
                             "C# 7",
                             ".NET"
@@ -195,7 +198,7 @@ namespace ConCode.NET.Core.Data
                     ".NET",
                     "Workflow"
                 },
-                Speakers = new List<Speaker>(),
+                Speakers = new List<User>(),
             },
             new Talk
             {
@@ -209,7 +212,7 @@ namespace ConCode.NET.Core.Data
                     ".NET",
                     "MVC"
                 },
-                Speakers = new List<Speaker>(),
+                Speakers = new List<User>(),
             },
             new Talk
             {
@@ -223,7 +226,7 @@ namespace ConCode.NET.Core.Data
                     ".NET",
                     "MVC"
                 },
-                Speakers = new List<Speaker>(),
+                Speakers = new List<User>(),
             }
 
         };
@@ -346,16 +349,16 @@ namespace ConCode.NET.Core.Data
                     speaker = _speakers.First();
                 }
 
-                talk.Speakers = new List<Speaker>() { speaker };
+                talk.Speakers = new List<User>() { speaker };
 
                 // Also appead this talk to the speakers talk list
-                if (speaker.Talks != null)
+                if (speaker.SpeakerInfo.Talks != null)
                 {
-                    speaker.Talks = new List<Talk>(speaker.Talks) { talk };
+                    speaker.SpeakerInfo.Talks = new List<Talk>(speaker.SpeakerInfo.Talks) { talk };
                 }
                 else
                 {
-                    speaker.Talks = new List<Talk> { talk };
+                    speaker.SpeakerInfo.Talks = new List<Talk> { talk };
                 }
             }
         }
@@ -399,7 +402,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<Speaker> Speakers
+        public IQueryable<User> Speakers
         {
             get
             {
@@ -463,12 +466,12 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveSpeaker(Speaker speaker)
+        public void SaveSpeaker(User speaker)
         {
             throw new NotImplementedException();
         }
 
-        public void AddSpeaker(Speaker speaker)
+        public void AddSpeaker(User speaker)
         {
             throw new NotImplementedException();
         }

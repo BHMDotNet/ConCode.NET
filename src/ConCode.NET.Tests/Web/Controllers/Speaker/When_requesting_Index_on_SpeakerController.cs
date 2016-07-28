@@ -4,7 +4,7 @@ using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Xunit;
-using SpeakerPoco = ConCode.NET.Core.Domain.Speaker;
+using SpeakerPoco = ConCode.NET.Core.Domain.SpeakerInfo;
 
 namespace ConCode.NET.Tests.Web.Controllers.Speaker
 {
@@ -15,7 +15,7 @@ namespace ConCode.NET.Tests.Web.Controllers.Speaker
 
         public When_requesting_Index_on_SpeakerController()
         {
-            var theSpeaker = new SpeakerPoco
+            var theSpeaker = new User
             {
                 Id = 1,
                 FirstName = "Brandon"

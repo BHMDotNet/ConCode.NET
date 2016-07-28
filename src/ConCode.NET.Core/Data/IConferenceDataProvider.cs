@@ -10,7 +10,7 @@ namespace ConCode.NET.Core.Data
 
         void AddSession(Session session);
 
-        IQueryable<Speaker> Speakers { get; }
+        IQueryable<User> Speakers { get; }
 
         IQueryable<Talk> Talks { get; }
 
@@ -24,9 +24,9 @@ namespace ConCode.NET.Core.Data
 
         void AddSponsor(Sponsor sponsor);
 
-        void SaveSpeaker(Speaker speaker);
+        void SaveSpeaker(User speaker);
 
-        void AddSpeaker(Speaker speaker);
+        void AddSpeaker(User speaker);
 
         IQueryable<Attendee> Attendees { get; }
 

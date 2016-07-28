@@ -6,9 +6,9 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
 {
     public class IndexViewModel
     {
-        private Speaker _speaker;
+        private User _speaker;
 
-        public IndexViewModel(Speaker speaker)
+        public IndexViewModel(User speaker)
         {
             _speaker = speaker;
         }
@@ -35,7 +35,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
 
         public string Tagline
         {
-            get { return _speaker.Tagline; }
+            get { return _speaker.SpeakerInfo.Tagline; }
         }
 
         public string Bio
@@ -65,7 +65,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
 
         public IEnumerable<Talk> Talks
         {
-            get { return _speaker.Talks; }
+            get { return _speaker.SpeakerInfo.Talks; }
         }
     }
 }

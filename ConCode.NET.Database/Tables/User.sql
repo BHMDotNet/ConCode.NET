@@ -13,6 +13,5 @@
     [ModifiedAt] DATETIME2 NOT NULL, 
     [ModifiedBy] NVARCHAR(50) NOT NULL, 
     [Username] NVARCHAR(50) NOT NULL, 
-    [UserType] CHAR(10) NOT NULL, 
-    [Tagline] NVARCHAR(200) NULL
+    [SpeakerInfoId] NCHAR(10) NULL 
 )

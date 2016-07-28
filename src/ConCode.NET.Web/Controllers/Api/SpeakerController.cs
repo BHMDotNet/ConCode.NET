@@ -22,7 +22,7 @@ namespace ConCode.NET.Web.Controllers.Api
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IEnumerable<Speaker> Get()
+        public IEnumerable<User> Get()
         {
             return speakerService.GetSpeakers();
         }
@@ -33,7 +33,7 @@ namespace ConCode.NET.Web.Controllers.Api
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "GetSpeakers")]
-        public Speaker Get(int id)
+        public User Get(int id)
         {
             return speakerService.GetSpeakers().FirstOrDefault(x => x.Id == id);
         }

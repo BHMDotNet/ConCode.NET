@@ -12,7 +12,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
         {
         }
 
-        public EditViewModel(Speaker model)
+        public EditViewModel(User model)
         {
             Id = model.Id;
             FirstName = model.FirstName;
@@ -24,7 +24,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
             TwitterHandle = model.TwitterHandle;
             LinkedInProfile = model.LinkedInProfile;
             FacebookProfile = model.FacebookProfile;
-            Tagline = model.Tagline;
+            Tagline = model.SpeakerInfo.Tagline;
         }
 
         [HiddenInput]

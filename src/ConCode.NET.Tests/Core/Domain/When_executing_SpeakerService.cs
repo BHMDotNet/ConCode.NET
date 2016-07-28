@@ -11,12 +11,12 @@ namespace ConCode.NET.Tests.Core.Domain
     {
         private Mock<IConferenceDataProvider> _mockConferenceDataProvider;
         private ISpeakerService _speakerService;
-        private IQueryable<Speaker> _speakers;
+        private IQueryable<User> _speakers;
 
         public When_executing_SpeakerService()
         {
             _mockConferenceDataProvider = new Mock<IConferenceDataProvider>();
-            _mockConferenceDataProvider.Setup(d => d.Speakers).Returns(new List<Speaker> { new Speaker() }.AsQueryable());
+            _mockConferenceDataProvider.Setup(d => d.Speakers).Returns(new List<User> { new User() }.AsQueryable());
 
             _speakerService = new SpeakerService(_mockConferenceDataProvider.Object);
         }
