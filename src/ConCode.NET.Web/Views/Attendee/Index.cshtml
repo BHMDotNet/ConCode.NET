@@ -1,0 +1,78 @@
+@model ConCode.NET.Web.Models.AttendeeViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Attended</h2>
+
+<div>
+    <h4>Details About Your Profile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogUri)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogUri)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterHandle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TwitterHandle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkedInProfile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LinkedInProfile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookProfile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FacebookProfile)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

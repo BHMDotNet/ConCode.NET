@@ -261,6 +261,50 @@ namespace ConCode.NET.Core.Data
         };
         #endregion
 
+        #region Attendees Data
+        private IEnumerable<Attendee> _attendees = new List<Attendee>()
+        {
+            new Attendee{
+                Id = 1001,
+                Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+                BlogUri = "http://theverybestblog.com",
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "blakehelms",
+                FirstName = "Blake",
+                LastName = "Helms",
+                ModifiedAt = DateTime.Now,
+                LinkedInProfile = "blakehelms",
+                Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
+                TwitterHandle = "helmsb"
+            },
+            new Attendee{
+                Id = 1002,
+                Bio = "I collect spores, molds, and fungus.",
+                BlogUri = "http://theverybestblog.com",
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "blrussell",
+                FirstName = "Brandon",
+                LastName = "Russell",
+                ModifiedAt = DateTime.Now,
+                LinkedInProfile = "toocoolforschool",
+                Photo = "http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg",
+                TwitterHandle = "brussellz"
+            },
+            new Attendee{
+                Id = 1003,
+                Bio = "I collect spores, molds, and fungus.",
+                BlogUri = "http://theverybestblog.com",
+                CreatedAt = DateTime.Now,
+                FacebookProfile = "stgwilli",
+                FirstName = "Steven",
+                LastName = "Williams",
+                ModifiedAt = DateTime.Now,
+                LinkedInProfile = "the_typing_beard",
+                Photo = "",
+                TwitterHandle = "@the_typing_beard"
+            }
+        };
+        #endregion
 
         IEnumerable<TalkType> _talkTypes = new List<TalkType>() {
                 new TalkType()
@@ -287,9 +331,7 @@ namespace ConCode.NET.Core.Data
                     Length = TimeSpan.FromMinutes(30),
                     Name = "Discussion Panel"
                 }
-        };
-
-        
+        };        
 
         public InMemoryConferenceDataProvider()
         {
@@ -398,6 +440,14 @@ namespace ConCode.NET.Core.Data
             }
         }
 
+        public IQueryable<Attendee> Attendees
+        {
+            get
+            {
+                return _attendees.AsQueryable();
+            }
+        }
+
         public void AddVenue(Venue venue)
         {
             _venues = new List<Venue>(_venues) { venue };
@@ -419,6 +469,11 @@ namespace ConCode.NET.Core.Data
         }
 
         public void AddSpeaker(Speaker speaker)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveAttendee(Attendee attendee)
         {
             throw new NotImplementedException();
         }

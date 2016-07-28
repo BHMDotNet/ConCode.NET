@@ -27,5 +27,9 @@ namespace ConCode.NET.Core.Data
         void SaveSpeaker(Speaker speaker);
 
         void AddSpeaker(Speaker speaker);
+
+        IQueryable<Attendee> Attendees { get; }
+
+        void SaveAttendee(Attendee attendee);
     }
 }

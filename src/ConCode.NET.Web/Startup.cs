@@ -11,6 +11,7 @@ using ConCode.NET.Web.Services;
 using ConCode.NET.Core.Data;
 using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
+using ConCode.NET.Core.Domain.Interfaces;
 
 namespace ConCode.NET.Web
 {
@@ -52,6 +53,7 @@ namespace ConCode.NET.Web
             services.AddTransient<ITalkService, TalkService>();
             services.AddTransient<ISponsorService, SponsorService>();
             services.AddTransient<IVenueService, VenueService>();
+            services.AddTransient<IAttendeeService, AttendeeService>();
 
             // Preserve object references in JSON
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All);
