@@ -1,5 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.Speakers" Title="Speakers">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.Speakers" Title="Speakers" xmlns:local="clr-namespace:ConCode.NET.Mobile;assembly=ConCode.NET.Mobile">
 	<ContentPage.Content>
+		<Grid>
+			<StackLayout Padding="10,10,10,0">
+
+				<ListView x:Name="speakerList" 
+						  SeparatorVisibility="None"
+						  BackgroundColor="Transparent"
+						  SeparatorColor="#DFDFDF"
+						  HasUnevenRows="false"
+						  RowHeight="90">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<local:SpeakerItemTemplate/>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>	
+				</ListView>
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

@@ -10,13 +10,10 @@ using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Mobile
 {
-
-
 	public class ConferenceData
 	{
-		public List<SessionListModel> Sessions { get; private set; }
 		HttpClient client;
-		string Uri = "http://dev-concodenet.azurewebsites.net/api/session";
+		string Uri = "http://dev-concodenet.azurewebsites.net/api/";
 
 		public ConferenceData()
 		{
@@ -24,20 +21,61 @@ namespace ConCode.NET.Mobile
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public Task<List<SessionListModel>> GetSessionsAsync()
+		public async Task<List<SpeakerListModel>> GetSpeakersAsync()
 		{
-			return RefreshDataAsync();
-		}
-
-		public async Task<List<SessionListModel>> RefreshDataAsync()
-		{
-			Sessions = new List<SessionListModel>();
+			var Speakers = new List<SpeakerListModel>();
 
 			try
 			{
 				var uri = new Uri(string.Format(Uri, string.Empty));
 
-				var response = await client.GetAsync(uri);
+				var response = await client.GetAsync(uri + "/speaker");
+				if (response.IsSuccessStatusCode)
+				{
+					var content = await response.Content.ReadAsStringAsync();
+					var tempSpeakers = JsonConvert.DeserializeObject<List<Speaker>>(content);
+
+					foreach (var speaker in tempSpeakers)
+					{
+						Speakers.Add(new SpeakerListModel
+						{
+							Id = speaker.Id,
+							FirstName = speaker.FirstName,
+							LastName = speaker.LastName,
+							TagLine = speaker.Tagline,
+							Bio = speaker.Bio,
+							Photo = speaker.Photo
+
+						});
+					}
+
+					response.Dispose();
+					content = null;
+					tempSpeakers = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"ERROR {0}", ex.Message);
+			}
+			finally
+			{
+				client.Dispose();
+
+			}
+
+			return Speakers;
+		}
+
+		public async Task<List<SessionListModel>> GetSessionsAsync()
+		{
+			var Sessions = new List<SessionListModel>();
+
+			try
+			{
+				var uri = new Uri(string.Format(Uri, string.Empty));
+
+				var response = await client.GetAsync(uri + "/session");
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
@@ -53,7 +91,7 @@ namespace ConCode.NET.Mobile
 							Level = session.Talk.Level.ToString(),
 							Length = session.TalkType.Length.TotalMinutes.ToString(),
 							Venue = session.Venue.Description,
-			               	Status = session.Status,
+							Status = session.Status,
 							Tags = session.Talk.Tags
 						});
 					}
@@ -66,6 +104,7 @@ namespace ConCode.NET.Mobile
 
 			return Sessions;
 		}
+
 	}
 
 }

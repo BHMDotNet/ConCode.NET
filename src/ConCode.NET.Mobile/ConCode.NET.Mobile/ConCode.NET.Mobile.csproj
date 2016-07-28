@@ -49,6 +49,9 @@
     <EmbeddedResource Include="SessionItemTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpeakerItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -76,6 +79,10 @@
       <DependentUpon>SessionItemTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\SessionDetailModel.cs" />
+    <Compile Include="Models\SpeakerListModel.cs" />
+    <Compile Include="SpeakerItemTemplate.xaml.cs">
+      <DependentUpon>SpeakerItemTemplate.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

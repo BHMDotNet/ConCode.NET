@@ -11,6 +11,14 @@ namespace ConCode.NET.Mobile
 		{
 			InitializeComponent();
 		}
+
+		protected async override void OnAppearing()
+		{
+			base.OnAppearing();
+			var cd = new ConferenceData();
+
+			speakerList.ItemsSource = await cd.GetSpeakersAsync();
+		}
 	}
 }
 
