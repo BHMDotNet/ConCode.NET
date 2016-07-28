@@ -13,7 +13,7 @@ namespace ConCode.NET.Web.Controllers
         public VenueController(IVenueService venueService)
         {
             this._venueService = venueService;
-        }       
+        }
 
         public IActionResult Index()
         {
@@ -36,9 +36,7 @@ namespace ConCode.NET.Web.Controllers
 
             _venueService.AddVenue(venue);
 
-            return View(_venueService);
-
-           // return View("Index", new VenueListViewModel { VenueList = _venueService.GetVenues().ToList() });
+            return View("Index", new VenueListViewModel { VenueList = _venueService.GetVenues().ToList() });
         }
 
     }
