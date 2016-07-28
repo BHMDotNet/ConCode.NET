@@ -9,7 +9,7 @@ using Xunit;
 namespace CodeConf.NET.Tests.Core.Data
 {
     // Not public so integration tests will be skipped. 
-    public class When_retrieving_users_from_the_database : IDisposable
+    class When_retrieving_users_from_the_database : IDisposable
     {
         private ConferenceDbContext _conferenceDbContext;
         private User _testUser;
