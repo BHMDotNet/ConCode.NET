@@ -3,13 +3,14 @@
 
  # get the SCM URL to use with MSDeploy.  
  # by default this will be the second in the array.
- $msdeployurl = $website.EnabledHostNames[1] + ":443"
+ $msdeployurl = $website.EnabledHostNames[1]
 
  $publishProperties = @{'WebPublishMethod'='MSDeploy';
-                 'MSDeployServiceUrl'=$msdeployurl;
+                 'MSDeployServiceUrl'=$msdeployurl + ":443";
                  'DeployIisAppPath'=$website.Name;
                  'Username'=$website.PublishingUsername;
-                 'Password'=$website.PublishingPassword}
+                 'Password'=$website.PublishingPassword;
+				 'EnableMSDeployAppOffline'='true'}
 
  $publishScript = "${env:ProgramFiles(x86)}\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Web Tools\Publish\Scripts\1.2.0\default-publish.ps1"
 
