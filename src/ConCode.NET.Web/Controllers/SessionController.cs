@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ConCode.NET.Web.Models.SessionViewModels;
@@ -32,7 +33,9 @@ namespace ConCode.NET.Web.Controllers
 
         public IActionResult Add()
         {
-            return View(new AddSessionViewModel());
+            return View(new AddSessionViewModel{
+                StartDate = DateTime.Now.Date
+            });
         }
 
 
