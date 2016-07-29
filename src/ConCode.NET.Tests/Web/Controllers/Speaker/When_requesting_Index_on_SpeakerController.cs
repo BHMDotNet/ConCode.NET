@@ -48,7 +48,7 @@ namespace ConCode.NET.Tests.Web.Controllers.Speaker
             Assert.NotNull(_result);
             Assert.NotNull(_result.Model);
 
-            var resultModel = (IndexViewModel)_result.Model;
+            var resultModel = (SpeakerIndexViewModel)_result.Model;
             Assert.NotNull(resultModel);
             Assert.False(string.IsNullOrWhiteSpace(resultModel.FirstName));
             Assert.True(resultModel.Id > 0);

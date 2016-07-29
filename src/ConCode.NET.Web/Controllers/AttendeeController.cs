@@ -26,7 +26,7 @@ namespace ConCode.NET.Web.Controllers
             var attendee = attendees.FirstOrDefault(s => s.Id == randomUserId);
 
             // Create our ViewModel and fire up the View!
-            var attendeeViewModel = new IndexViewModel(attendee);
+            var attendeeViewModel = new AttendeeIndexViewModel(attendee);
 
             return View(attendeeViewModel);
         }
@@ -42,13 +42,13 @@ namespace ConCode.NET.Web.Controllers
             var attendee = attendees.FirstOrDefault(s => s.Id == randomUserId);
 
             // Create our ViewModel and fire up the View!
-            var attendeeViewModel = new EditViewModel(attendee);
+            var attendeeViewModel = new AttendeeEditViewModel(attendee);
 
             return View(attendeeViewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(EditViewModel viewModel)
+        public IActionResult Edit(AttendeeEditViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {

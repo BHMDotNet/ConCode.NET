@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConCode.NET.Web.Models.SpeakerViewModels
 {
-    public class CreateViewModel
+    public class SpeakerCreateViewModel
     {
         [Required]
         public string FirstName { get; set; }

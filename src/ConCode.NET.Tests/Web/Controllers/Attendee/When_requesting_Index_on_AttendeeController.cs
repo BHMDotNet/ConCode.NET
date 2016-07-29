@@ -48,7 +48,7 @@ namespace ConCode.NET.Tests.Web.Controllers.Attendee
             Assert.NotNull(_result);
             Assert.NotNull(_result.Model);
 
-            var resultModel = (IndexViewModel)_result.Model;
+            var resultModel = (AttendeeIndexViewModel)_result.Model;
             Assert.NotNull(resultModel);
             Assert.False(string.IsNullOrWhiteSpace(resultModel.FirstName));
             Assert.True(resultModel.Id > 0);

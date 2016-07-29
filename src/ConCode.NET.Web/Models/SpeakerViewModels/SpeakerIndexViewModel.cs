@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace ConCode.NET.Web.Models.SpeakerViewModels
 {
-    public class IndexViewModel
+    public class SpeakerIndexViewModel
     {
         private User _speaker;
 
-        public IndexViewModel(User speaker)
+        public SpeakerIndexViewModel(User speaker)
         {
             _speaker = speaker;
         }

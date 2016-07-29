@@ -1,18 +1,16 @@
 ﻿using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ConCode.NET.Web.Models.SpeakerViewModels
+namespace ConCode.NET.Web.Models.AttendeeViewModels
 {
-    public class EditViewModel
+    public class AttendeeIndexViewModel
     {
-        public EditViewModel()
+        public AttendeeIndexViewModel()
         {
         }
 
-        public EditViewModel(User model)
+        public AttendeeIndexViewModel(Attendee model)
         {
             Id = model.Id;
             FirstName = model.FirstName;
@@ -24,7 +22,6 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
             TwitterHandle = model.TwitterHandle;
             LinkedInProfile = model.LinkedInProfile;
             FacebookProfile = model.FacebookProfile;
-            Tagline = model.SpeakerInfo.Tagline;
         }
 
         [HiddenInput]
@@ -52,7 +49,5 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
         public string LinkedInProfile { get; set; }
 
         public string FacebookProfile { get; set; }
-        
-        public string Tagline { get; set; }
     }
 }

@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ConCode.NET.Web.Models.AttendeeViewModels
 {
-    public class EditViewModel
+    public class AttendeeEditViewModel
     {
-        public EditViewModel()
+        public AttendeeEditViewModel()
         {
         }
 
-        public EditViewModel(Attendee model)
+        public AttendeeEditViewModel(Attendee model)
         {
             Id = model.Id;
             FirstName = model.FirstName;

@@ -70,7 +70,7 @@ namespace ConCode.NET.Web.Controllers
             var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
 
             // Create our ViewModel and fire up the View!
-            var speakerViewModel = new IndexViewModel(speaker);
+            var speakerViewModel = new SpeakerIndexViewModel(speaker);
 
             return View(speakerViewModel);
         }
@@ -88,13 +88,14 @@ namespace ConCode.NET.Web.Controllers
             var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
 
             // Create our ViewModel and fire up the View!
-            var speakerViewModel = new EditViewModel(speaker);
+            var speakerViewModel = new SpeakerEditViewModel(speaker);
+
 
             return View(speakerViewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(EditViewModel viewModel)
+        public IActionResult Edit(SpeakerEditViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -133,11 +134,11 @@ namespace ConCode.NET.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(new CreateViewModel());
+            return View(new SpeakerCreateViewModel());
         }
 
         [HttpPost]
-        public IActionResult Create(CreateViewModel viewModel)
+        public IActionResult Create(SpeakerCreateViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
