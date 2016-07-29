@@ -49,5 +49,7 @@ namespace ConCode.NET.Web.Models.AttendeeViewModels
         public string LinkedInProfile { get; set; }
 
         public string FacebookProfile { get; set; }
+
+        public string Greeting{get;set;}
     }
 }
