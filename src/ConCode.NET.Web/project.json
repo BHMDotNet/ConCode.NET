@@ -76,7 +76,7 @@
     "emitEntryPoint": true,
     "preserveCompilationContext": true,
     "copyToOutput": {
-      "include": [ "Deploy" ]
+      "include": [ "Deploy/**" ]
     }
 
   },

@@ -3,6 +3,7 @@ using ConCode.NET.Web.Models.AttendeeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace ConCode.NET.Web.Controllers
 {
@@ -27,7 +28,8 @@ namespace ConCode.NET.Web.Controllers
 
             // Create our ViewModel and fire up the View!
             var attendeeViewModel = new AttendeeIndexViewModel(attendee);
-
+            attendeeViewModel.Greeting = GreetingRandomizer(); 
+            
             return View(attendeeViewModel);
         }
 
@@ -43,6 +45,7 @@ namespace ConCode.NET.Web.Controllers
 
             // Create our ViewModel and fire up the View!
             var attendeeViewModel = new AttendeeEditViewModel(attendee);
+            attendeeViewModel.Greeting = GreetingRandomizer(); 
 
             return View(attendeeViewModel);
         }
@@ -81,6 +84,20 @@ namespace ConCode.NET.Web.Controllers
 
             // Redirect back to Index()
             return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// Serves no purpose other than increasing system whimsy
+        /// </summary>
+        /// <returns></returns>
+        private string GreetingRandomizer()
+        {
+            var names = new List<string> { "Greetings", "Hello", "Hi", "Howdy", "Hey","What's up", "Hi-ya","Aloha", "nuqneH", "Welcome" };
+            var random = new System.Random();
+            int index = random.Next(names.Count);
+            var name = names[index];
+            
+            return name;
         }
     }
 }
