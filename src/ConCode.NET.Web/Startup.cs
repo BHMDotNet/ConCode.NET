@@ -59,10 +59,10 @@ namespace ConCode.NET.Web
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All);
 
             // Require SSL
-            //services.Configure<MvcOptions>(options =>
-            //{
-            //    options.Filters.Add(new RequireHttpsAttribute());
-            //});
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -96,6 +96,12 @@ namespace ConCode.NET.Web
                 //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
                 AppId = "231742630557937",
                 AppSecret = "53eecb60d7ea27581c8366dda3a3f638"
+            });
+
+            app.UseTwitterAuthentication(new TwitterOptions()
+            {
+                ConsumerKey = "iPRM2uhtpwfwPU9GK8QbXXZMW",
+                ConsumerSecret = "CKhhQKPQJjplp8G2o5BrjmvFZeqdpVRYZAobHZrxTtevHIHtLU"
             });
 
 
