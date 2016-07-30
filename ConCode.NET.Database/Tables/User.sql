@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Users]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY (1, 1), 
     [FirstName] NVARCHAR(100) NOT NULL, 
     [LastName] NVARCHAR(100) NOT NULL, 
     [Bio] NVARCHAR(500) NULL, 
@@ -13,5 +13,5 @@
     [ModifiedAt] DATETIME2 NOT NULL, 
     [ModifiedBy] NVARCHAR(50) NOT NULL, 
     [Username] NVARCHAR(50) NOT NULL, 
-    [SpeakerInfoId] NCHAR(10) NULL 
+    [SpeakerInfoId] INT NULL 
 )
