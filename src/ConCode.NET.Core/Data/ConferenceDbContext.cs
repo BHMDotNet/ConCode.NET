@@ -70,7 +70,14 @@ namespace CodeConf.NET.Core.Data
                 entity.HasOne(e => e.Talk).WithMany(e => e.TalkResources).HasForeignKey(e => e.TalkId);
                 entity.HasOne(e => e.Resource).WithOne();
             });
-            //modelBuilder.Ignore<Resource>();
+            modelBuilder.Entity<Sponsor>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name);
+                entity.Property(e => e.WebsiteUrl);
+                entity.Property(e => e.ImageUrl);
+                entity.Ignore(e => e.SponsorshipLevel);
+            });
         }
 
         public override int SaveChanges()
@@ -95,6 +102,8 @@ namespace CodeConf.NET.Core.Data
         public DbSet<User> Users { get; set; }
 
         public DbSet<Talk> Talks { get; set; }
+
+        public DbSet<Sponsor> Sponsors { get; set; }
 
         #region IConferenceDataProvider Implementation
 
@@ -163,7 +172,7 @@ namespace CodeConf.NET.Core.Data
         {
             get
             {
-                return new List<Sponsor>().AsQueryable();
+                return Sponsors;
             }
         }
 

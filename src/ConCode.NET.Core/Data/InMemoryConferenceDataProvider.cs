@@ -368,28 +368,28 @@ namespace ConCode.NET.Core.Data
             new Sponsor
             {
                 Id = 1,
-                ImageUrl = new Uri("http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"),
+                ImageUrl = "http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg",
                 Name = "Initech",
                 SponsorshipLevel = SponsorshipLevel.bronze,
-                WebsiteUrl = new Uri("http://www.initech.com")
+                WebsiteUrl = "http://www.initech.com"
             },
 
             new Sponsor
             {
                 Id = 2,
-                ImageUrl = new Uri("http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"),
+                ImageUrl = "http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png",
                 Name = "Dunder Mifflin, Inc.",
                 SponsorshipLevel = SponsorshipLevel.silver,
-                WebsiteUrl = new Uri("http://www.dundermifflin.com")
+                WebsiteUrl = "http://www.dundermifflin.com"
             },
 
             new Sponsor
             {
                 Id = 3,
-                ImageUrl = new Uri("http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"),
+                ImageUrl = "http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo",
                 Name = "Pied Piper",
                 SponsorshipLevel = SponsorshipLevel.platinum,
-                WebsiteUrl = new Uri("http://www.piedpiper.com")
+                WebsiteUrl = "http://www.piedpiper.com"
             },
         };
 

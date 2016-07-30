@@ -9,12 +9,14 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+DELETE FROM [dbo].[Sponsors]
 DELETE FROM [dbo].[Talks]
 DELETE FROM [dbo].[SpeakerTalks]
 DELETE FROM [dbo].[AttendeeInfo]
 DELETE FROM [dbo].[SpeakerInfo]
 DELETE FROM [dbo].[Users]
 
+DBCC CHECKIDENT ('[dbo].[Sponsors]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[Talks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerTalks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[AttendeeInfo]', RESEED, 0);
@@ -157,3 +159,33 @@ VALUES
 	, 1
 	, 1
 	, 2 )
+
+-------------------------------------
+-- Sponsor Seed Data
+-------------------------------------
+INSERT INTO [dbo].[Sponsors]
+	( [Name]
+	, [WebsiteUrl]
+	, [ImageUrl] )
+VALUES
+	( 'Initech'
+	, 'http://www.initech.com'
+	, 'http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg' )
+
+INSERT INTO [dbo].[Sponsors]
+	( [Name]
+	, [WebsiteUrl]
+	, [ImageUrl] )
+VALUES
+	( 'Dunder Mifflin, Inc.'
+	, 'http://www.dundermifflin.com'
+	, 'http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png' )
+
+INSERT INTO [dbo].[Sponsors]
+	( [Name]
+	, [WebsiteUrl]
+	, [ImageUrl] )
+VALUES
+	( 'Pied Piper'
+	, 'http://www.piedpiper.com'
+	, 'http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo' )
