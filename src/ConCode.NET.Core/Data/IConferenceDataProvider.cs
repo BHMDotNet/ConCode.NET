@@ -12,7 +12,7 @@ namespace ConCode.NET.Core.Data
 
         IQueryable<User> Speakers { get; }
 
-        IQueryable<Talk> Talks { get; }
+        IQueryable<Talk> GetTalks { get; }
 
         IQueryable<Venue> Venues { get; }
 

@@ -7,6 +7,12 @@ namespace ConCode.NET.Core.Domain
 {
     public class Talk
     {
+        public Talk()
+        {
+            Tags = new List<string>();
+            TalkResources = new List<TalkResource>();
+        }
+
         public long Id { get; set; }
         public string Title { get; set; }
         public string Abstract { get; set; }

@@ -418,7 +418,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<Talk> Talks
+        public IQueryable<Talk> GetTalks
         {
             get
             {

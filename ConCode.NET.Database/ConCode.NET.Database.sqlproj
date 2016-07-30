@@ -78,6 +78,6 @@
     <None Include="SchemaComparisons\ProjectToLocal.scmp" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Data Scripts\Seed Data.sql" />
+    <None Include="Data Scripts\Seed Data.sql" />
   </ItemGroup>
 </Project>
