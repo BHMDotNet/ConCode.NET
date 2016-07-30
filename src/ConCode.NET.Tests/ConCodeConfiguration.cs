@@ -17,7 +17,8 @@ namespace ConCode.NET.Tests
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"appsettings.{environmentName}.json", true)
                 .AddEnvironmentVariables()
-                .AddUserSecrets();
+                //.AddUserSecrets()
+                ;
 
             var c = config.Build();
             Config = c;
