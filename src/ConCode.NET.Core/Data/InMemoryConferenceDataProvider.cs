@@ -64,56 +64,7 @@ namespace ConCode.NET.Core.Data
                     Venue = venue
                 });
             }
-        }
-
-        private IEnumerable<Sponsor> _sponsors = new List<Sponsor>
-        {
-            new Sponsor
-            {
-                Id = 1,
-                ImageUrl = "http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg",
-                Name = "Initech",
-                SponsorshipLevel = SponsorshipLevel.bronze,
-                WebsiteUrl = "http://www.initech.com"
-            },
-
-            new Sponsor
-            {
-                Id = 2,
-                ImageUrl = "http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png",
-                Name = "Dunder Mifflin, Inc.",
-                SponsorshipLevel = SponsorshipLevel.silver,
-                WebsiteUrl = "http://www.dundermifflin.com"
-            },
-
-            new Sponsor
-            {
-                Id = 3,
-                ImageUrl = "http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo",
-                Name = "Pied Piper",
-                SponsorshipLevel = SponsorshipLevel.platinum,
-                WebsiteUrl = "http://www.piedpiper.com"
-            },
-        };
-
-        private static ConferenceInfo _conferenceInfo = new ConferenceInfo
-        {
-            Name = "Trekking Across the Stars",
-            Description = "Come learn from people who been there. Meet the crew of the USS Enterprise and learn what it takes to command and run a Constitution class starship.",
-            Dates = new[] { 
-                new DateTime(2016, 8, 4),
-                new DateTime(2016, 8, 5),
-                new DateTime(2016, 8, 6)
-            },
-            Location = new Address() { 
-                Line1 = "Starfleet Academy",
-                City = "San Fransicso",
-                StateOrProvince = "CA",
-                PostalCode = "94110",
-                Country = "United States"
-            }
-        };
-      
+        }      
 
         public IQueryable<Session> Sessions
         {
