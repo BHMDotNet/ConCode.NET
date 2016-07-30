@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Talk]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Title] NVARCHAR(500) NOT NULL, 
     [Abstract] NVARCHAR(2000) NULL, 
     [TimesPresented] INT NOT NULL, 
