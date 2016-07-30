@@ -9,13 +9,13 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-DELETE FROM [ConCode.Net].[dbo].[SpeakerTalks]
-DELETE FROM [ConCode.Net].[dbo].[SpeakerInfo]
-DELETE FROM [ConCode.Net].[dbo].[Users]
+DELETE FROM [dbo].[SpeakerTalks]
+DELETE FROM [dbo].[SpeakerInfo]
+DELETE FROM [dbo].[Users]
 
-DBCC CHECKIDENT ('[ConCode.Net].[dbo].[SpeakerTalks]', RESEED, 0);
-DBCC CHECKIDENT ('[ConCode.Net].[dbo].[SpeakerInfo]', RESEED, 0);
-DBCC CHECKIDENT ('[ConCode.Net].[dbo].[Users]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[SpeakerTalks]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[SpeakerInfo]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[Users]', RESEED, 0);
 GO
 
 DECLARE @UserId INT
@@ -23,7 +23,7 @@ DECLARE @SpeakerId INT
 -------------------------------------
 -- Speaker Seed Data
 -------------------------------------
-INSERT INTO [ConCode.Net].[dbo].[Users]
+INSERT INTO [dbo].[Users]
 	( [FirstName]
 	, [LastName]
 	, [Bio]
@@ -51,7 +51,7 @@ VALUES
 	, 'bhelms@ebsco.com' )
 SELECT @UserId = @@IDENTITY
 
-INSERT INTO [ConCode.Net].[dbo].[SpeakerInfo]
+INSERT INTO [dbo].[SpeakerInfo]
 	( Tagline
 	, UserId )
 VALUES
@@ -59,13 +59,13 @@ VALUES
 	, @UserId )
 SELECT @SpeakerId = @@IDENTITY
 
-UPDATE [ConCode.Net].[dbo].[Users]
+UPDATE [dbo].[Users]
 SET [SpeakerInfoId] = @SpeakerId
 WHERE [Id] = @UserId
 
 
 
-INSERT INTO [ConCode.Net].[dbo].[Users]
+INSERT INTO [dbo].[Users]
 	( [FirstName]
 	, [LastName]
 	, [Bio]
@@ -93,7 +93,7 @@ VALUES
 	, 'brandon@alighttec.com' )
 SELECT @UserId = @@IDENTITY
 
-INSERT INTO [ConCode.Net].[dbo].[SpeakerInfo]
+INSERT INTO [dbo].[SpeakerInfo]
 	( Tagline
 	, UserId )
 VALUES
@@ -101,6 +101,6 @@ VALUES
 	, @UserId )
 SELECT @SpeakerId = @@IDENTITY
 
-UPDATE [ConCode.Net].[dbo].[Users]
+UPDATE [dbo].[Users]
 SET [SpeakerInfoId] = @SpeakerId
 WHERE [Id] = @UserId
