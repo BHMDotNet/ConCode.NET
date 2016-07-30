@@ -101,8 +101,8 @@ namespace ConCode.NET.Web
             {
                 //AppId = Configuration["Authentication:Facebook:AppId"],
                 //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
-                AppId = "231742630557937",
-                AppSecret = "53eecb60d7ea27581c8366dda3a3f638"
+                AppId = "1751083965130261",
+                AppSecret = "c7338a55d95b7477c87224d79a1cc457"
             });
 
             app.UseTwitterAuthentication(new TwitterOptions()
