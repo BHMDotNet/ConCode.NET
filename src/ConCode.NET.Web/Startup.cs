@@ -53,7 +53,7 @@ namespace ConCode.NET.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
+            services.AddSingleton<IConferenceDataProvider, InMemoryConferenceDataProvider>();
             //services.AddTransient<IConferenceDataProvider, ConferenceDbContext>();
             services.AddTransient<ISessionService, SessionService>();
             services.AddTransient<ISpeakerService, SpeakerService>();

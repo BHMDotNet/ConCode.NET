@@ -1,0 +1,53 @@
+[
+  {
+    "Id": 1001,
+    "Username": null,
+    "FirstName": "Blake",
+    "LastName": "Helms",
+    "Bio": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+    "Photo": "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
+    "BlogUri": "http://theverybestblog.com",
+    "TwitterHandle": "helmsb",
+    "LinkedInProfile": "blakehelms",
+    "FacebookProfile": "blakehelms",
+    "CreatedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedBy": null,
+    "SpeakerInfo": null,
+    "AttendeeInfo": null
+  },
+  {
+    "Id": 1002,
+    "Username": null,
+    "FirstName": "Brandon",
+    "LastName": "Russell",
+    "Bio": "I collect spores, molds, and fungus.",
+    "Photo": "http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg",
+    "BlogUri": "http://theverybestblog.com",
+    "TwitterHandle": "brussellz",
+    "LinkedInProfile": "toocoolforschool",
+    "FacebookProfile": "blrussell",
+    "CreatedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedBy": null,
+    "SpeakerInfo": null,
+    "AttendeeInfo": null
+  },
+  {
+    "Id": 1003,
+    "Username": null,
+    "FirstName": "Steven",
+    "LastName": "Williams",
+    "Bio": "I collect spores, molds, and fungus.",
+    "Photo": "",
+    "BlogUri": "http://theverybestblog.com",
+    "TwitterHandle": "@the_typing_beard",
+    "LinkedInProfile": "the_typing_beard",
+    "FacebookProfile": "stgwilli",
+    "CreatedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedAt": "2016-07-30T13:15:00.0234068-05:00",
+    "ModifiedBy": null,
+    "SpeakerInfo": null,
+    "AttendeeInfo": null
+  }
+]

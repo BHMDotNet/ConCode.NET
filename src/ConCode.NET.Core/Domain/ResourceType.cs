@@ -7,7 +7,7 @@ namespace ConCode.NET.Core.Domain
         public string Name { get; }
         public string IconUri { get; }
 
-        private ResourceType(string name, string iconUri)
+        public ResourceType(string name, string iconUri)
         {
             Name = name;
             IconUri = iconUri;

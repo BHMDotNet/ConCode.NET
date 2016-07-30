@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Description": "Room 201"
+  },
+  {
+    "Id": 2,
+    "Description": "Room 202"
+  },
+  {
+    "Id": 3,
+    "Description": "Room 203"
+  },
+  {
+    "Id": 4,
+    "Description": "Room 204"
+  },
+  {
+    "Id": 5,
+    "Description": "Room 205"
+  }
+]

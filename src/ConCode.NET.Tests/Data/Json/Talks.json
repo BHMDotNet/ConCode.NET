@@ -1,0 +1,65 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Color Tuple",
+    "Abstract": "Fate protects fools, little children and ships named Enterprise. I guess it's better to be lucky than good. Why don't we just give everybody a promotion and call it a night - 'Commander'?",
+    "Level": 1,
+    "Tags": [ "C# 7", ".NET" ],
+    "TalkResources": [
+      {
+        "TalkId": 0,
+        "ResourceId": 0,
+        "Resource": {
+          "Id": 0,
+          "Name": "Handout",
+          "Uri": "https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf",
+          "Type": {
+            "Name": "PDF",
+            "IconUri": "~/images/file-types/pdf.png"
+          }
+        }
+      },
+      {
+        "TalkId": 0,
+        "ResourceId": 0,
+        "Resource": {
+          "Id": 0,
+          "Name": "Slide Deck",
+          "Uri": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE",
+          "Type": {
+            "Name": "PPT",
+            "IconUri": "~/images/file-types/ppt.png"
+          }
+        }
+      }
+    ],
+    "TimesPresented": 1
+  },
+  {
+    "Id": 2,
+    "Title": "Deep Dive Into Workflow Foundation",
+    "Abstract": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
+    "Level": 2,
+    "Tags": [ "C# 7", ".NET", "Workflow" ],
+    "TalkResources": [],
+    "TimesPresented": 27
+  },
+  {
+    "Id": 3,
+    "Title": "Deep Dive Into AspNetCore MVC",
+    "Abstract": "Dig deeper into .Net Core MVC.",
+    "Level": 2,
+    "Tags": [ "C# 7", ".NET", "MVC" ],
+    "TalkResources": [],
+    "TimesPresented": 27
+  },
+  {
+    "Id": 4,
+    "Title": "Introduction to NServiceBus",
+    "Abstract": "Come meet the best Enterprise Service Bus .Net has to offer.",
+    "Level": 2,
+    "Tags": [ "C# 7", ".NET", "MVC" ],
+    "TalkResources": [],
+    "TimesPresented": 27
+  }
+]

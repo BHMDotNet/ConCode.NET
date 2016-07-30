@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Name": "Initech",
+    "WebsiteUrl": "http://www.initech.com",
+    "SponsorshipLevel": {
+      "Description": "Bronze",
+      "SponsoredAmount": 100.0
+    },
+    "ImageUrl": "http://moviesmedia.ign.com/movies/image/article/115/1157513/initech_1301965579.jpg"
+  },
+  {
+    "Id": 2,
+    "Name": "Dunder Mifflin, Inc.",
+    "WebsiteUrl": "http://www.dundermifflin.com",
+    "SponsorshipLevel": {
+      "Description": "Silver",
+      "SponsoredAmount": 500.0
+    },
+    "ImageUrl": "http://ih1.redbubble.net/image.55130916.7058/ap,550x550,16x12,1,transparent,t.png"
+  },
+  {
+    "Id": 3,
+    "Name": "Pied Piper",
+    "WebsiteUrl": "http://www.piedpiper.com",
+    "SponsorshipLevel": {
+      "Description": "Platinum",
+      "SponsoredAmount": 5000.0
+    },
+    "ImageUrl": "http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo"
+  }
+]
