@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "Deep Dive",
+    "Length": "01:00:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Lightning",
+    "Length": "00:10:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Round Table",
+    "Length": "00:15:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Discussion Panel",
+    "Length": "00:30:00"
+  }
+]

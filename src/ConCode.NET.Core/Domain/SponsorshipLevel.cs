@@ -5,7 +5,7 @@
         public string Description { get; }
         public decimal SponsoredAmount { get; }
 
-        private SponsorshipLevel(string description, decimal sponsoredAmount)
+        public SponsorshipLevel(string description, decimal sponsoredAmount)
         {
             Description = description;
             SponsoredAmount = sponsoredAmount;

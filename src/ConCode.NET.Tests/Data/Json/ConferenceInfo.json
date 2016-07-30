@@ -1,0 +1,22 @@
+{
+  "Name": "Trekking Across the Stars",
+  "Description": "Come learn from people who been there. Meet the crew of the USS Enterprise and learn what it takes to command and run a Constitution class starship.",
+  "Dates": [ "2016-08-04T00:00:00", "2016-08-05T00:00:00", "2016-08-06T00:00:00" ],
+  "Organizers": null,
+  "Location": {
+    "Name": null,
+    "Line1": "Starfleet Academy",
+    "Line2": null,
+    "Line3": null,
+    "City": "San Fransicso",
+    "PostalCode": "94110",
+    "StateOrProvince": "CA",
+    "Country": "United States"
+  },
+  "SiteUri": null,
+  "TwitterHandle": null,
+  "FacebookPage": null,
+  "CreatedAt": "0001-01-01T00:00:00",
+  "ModifiedAt": "0001-01-01T00:00:00",
+  "ModifiedBy": null
+}
