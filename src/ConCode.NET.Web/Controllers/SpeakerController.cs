@@ -116,7 +116,7 @@ namespace ConCode.NET.Web.Controllers
             // Append on top the changes
             speaker.FirstName = viewModel.FirstName;
             speaker.LastName = viewModel.LastName;
-            speaker.Username = viewModel.Username;
+            speaker.Username = GetUsername();
             speaker.Bio = viewModel.Bio;
             speaker.Photo = viewModel.Photo;
             speaker.BlogUri = viewModel.BlogUri;
@@ -152,7 +152,7 @@ namespace ConCode.NET.Web.Controllers
             // Append on top the changes
             speaker.FirstName = viewModel.FirstName;
             speaker.LastName = viewModel.LastName;
-            speaker.Username = viewModel.Username;
+            speaker.Username = GetUsername();
             speaker.Bio = viewModel.Bio;
             speaker.Photo = viewModel.Photo;
             speaker.BlogUri = viewModel.BlogUri;
@@ -160,8 +160,6 @@ namespace ConCode.NET.Web.Controllers
             speaker.LinkedInProfile = viewModel.LinkedInProfile;
             speaker.FacebookProfile = viewModel.FacebookProfile;
             speaker.SpeakerInfo = new SpeakerInfo { Tagline = viewModel.Tagline };
-            speaker.CreatedAt = DateTime.Now;
-            speaker.ModifiedAt = speaker.CreatedAt;
 
             // Actually save this model data!
             _speakerService.CreateSpeaker(speaker);

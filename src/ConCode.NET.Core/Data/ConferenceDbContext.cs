@@ -82,6 +82,7 @@ namespace CodeConf.NET.Core.Data
                 if (entry.State == EntityState.Added)
                 {
                     entity.CreatedAt = DateTime.UtcNow;
+                    entity.ModifiedAt = entity.CreatedAt;
                 }
                 else if (entry.State == EntityState.Modified)
                 {
@@ -135,7 +136,8 @@ namespace CodeConf.NET.Core.Data
 
         public void AddSpeaker(User speaker)
         {
-            throw new NotImplementedException();
+            Users.Add(speaker);
+            SaveChanges();
         }
 
         public IQueryable<User> GetSpeakers
