@@ -1,5 +1,6 @@
 ﻿using CodeConf.NET.Core.Data;
 using ConCode.NET.Core.Domain;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace CodeConf.NET.Tests.Core.Data
 
         public When_retrieving_users_from_the_database()
         {
-            _conferenceDbContext = new ConferenceDbContext();
+            var connectionOptions = new Moq.Mock<IOptions<ConnectionOption>>();
+            _conferenceDbContext = new ConferenceDbContext(connectionOptions.Object);
 
             _testUser = new User {
                 FirstName = "Luke",

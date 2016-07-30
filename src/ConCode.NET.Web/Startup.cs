@@ -12,6 +12,7 @@ using ConCode.NET.Core.Data;
 using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Mvc;
 using ConCode.NET.Core.Domain.Interfaces;
+using CodeConf.NET.Core.Data;
 
 namespace ConCode.NET.Web
 {
@@ -39,15 +40,21 @@ namespace ConCode.NET.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Setup options with DI
+            services.AddOptions();
+
+            services.Configure<ConnectionOption>(Configuration.GetSection("ConnectionStrings"));
+
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("ConCode")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IConferenceDataProvider, InMemoryConferenceDataProvider>();
+            //services.AddTransient<IConferenceDataProvider, ConferenceDbContext>();
             services.AddTransient<ISessionService, SessionService>();
             services.AddTransient<ISpeakerService, SpeakerService>();
             services.AddTransient<ITalkService, TalkService>();
@@ -94,8 +101,8 @@ namespace ConCode.NET.Web
             {
                 //AppId = Configuration["Authentication:Facebook:AppId"],
                 //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
-                AppId = "231742630557937",
-                AppSecret = "53eecb60d7ea27581c8366dda3a3f638"
+                AppId = "1751083965130261",
+                AppSecret = "c7338a55d95b7477c87224d79a1cc457"
             });
 
             app.UseTwitterAuthentication(new TwitterOptions()

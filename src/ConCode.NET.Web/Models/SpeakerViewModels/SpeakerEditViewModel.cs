@@ -28,7 +28,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
         }
 
         [HiddenInput]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }

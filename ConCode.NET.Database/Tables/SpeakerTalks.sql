@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SpeakerTalks]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
-    [SpeakerId] INT NOT NULL, 
-    [TalkId] INT NOT NULL
+	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY (1, 1), 
+    [SpeakerId] BIGINT NOT NULL, 
+    [TalkId] BIGINT NOT NULL
 )

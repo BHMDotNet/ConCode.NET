@@ -1,5 +1,7 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Core.Data;
+using ConCode.NET.Core.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +9,20 @@ using System.Threading.Tasks;
 
 namespace CodeConf.NET.Core.Data
 {
-    public class ConferenceDbContext : DbContext
+    public class ConferenceDbContext : DbContext, IConferenceDataProvider
     {
-        public ConferenceDbContext()
+        public IOptions<ConnectionOption> _connectionOptionAccessor;
+
+        public ConferenceDbContext(IOptions<ConnectionOption> connectionOptionAccessor)
         {
+
+            _connectionOptionAccessor = connectionOptionAccessor;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=localConCodeNET;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=localConCodeNET;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(_connectionOptionAccessor.Value.ConCode);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,6 +48,7 @@ namespace CodeConf.NET.Core.Data
                 entity.HasKey(e => e.Id);
             });
         }
+
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries<User>())
@@ -58,7 +66,102 @@ namespace CodeConf.NET.Core.Data
 
             return base.SaveChanges();
         }
-        
+
         public DbSet<User> Users { get; set; }
+
+        #region IConferenceDataProvider Implementation
+
+        public void AddSession(Session session)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddVenue(Venue venue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddSponsor(Sponsor sponsor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveAttendee(Attendee attendee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<Session> Sessions
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        #region Speaker
+
+        public void SaveSpeaker(User speaker)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddSpeaker(User speaker)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<User> Speakers
+        {
+            get
+            {
+                return Users
+                    .Include(u => u.SpeakerInfo);
+            }
+        }
+
+        #endregion
+
+        public IQueryable<Talk> Talks
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Venue> Venues
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IEnumerable<TalkType> TalkTypes
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Sponsor> Sponsors
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IQueryable<Attendee> Attendees
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        #endregion
     }
 }

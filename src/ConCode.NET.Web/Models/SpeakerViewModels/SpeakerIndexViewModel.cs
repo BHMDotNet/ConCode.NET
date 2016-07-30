@@ -13,7 +13,7 @@ namespace ConCode.NET.Web.Models.SpeakerViewModels
             _speaker = speaker;
         }
 
-        public int Id
+        public long Id
         {
             get { return _speaker.Id; }
         }
