@@ -10,6 +10,11 @@ namespace ConCode.NET.Web.Controllers.Api
     {
         private IConferenceService conferenceService;
 
+        public ConferenceController(IConferenceService conferenceService)
+        {
+            this.conferenceService = conferenceService;
+        }
+
         [HttpGet]
         public ConferenceInfo Get()
         {
