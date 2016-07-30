@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Moq;
+using ConCode.NET.Tests;
 
 namespace CodeConf.NET.Tests.Core.Data
 {
@@ -20,9 +21,12 @@ namespace CodeConf.NET.Tests.Core.Data
         public When_retrieving_users_from_the_database()
         {
             _mockConnectionOption = new Moq.Mock<IOptions<ConnectionOption>>();
-            _mockConnectionOption.SetupGet(x => x.Value).Returns(new ConnectionOption {
-                ConCode = @"Server=(localdb)\mssqllocaldb;Database=localConCodeNET;Trusted_Connection=True;"
-            });
+            ConnectionOption connectionOption = new ConnectionOption
+            {
+                ConCode = ConCodeConfiguration.Config["ConnectionStrings:ConferenceDbConnectionString"]
+            };
+            Console.WriteLine($"ConcodeConnectionString={connectionOption.ConCode}");
+            _mockConnectionOption.SetupGet(x => x.Value).Returns(connectionOption);
             _conferenceDbContext = new ConferenceDbContext(_mockConnectionOption.Object);
 
             _testUser = new User {
