@@ -51,8 +51,12 @@ namespace CodeConf.NET.Core.Data
             modelBuilder.Entity<Talk>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Title);
+                entity.Property(e => e.Abstract);
+                entity.Property(e => e.TimesPresented);
+                entity.Property(e => e.Level);
+                entity.HasOne(e => e.SpeakerInfo).WithMany(e => e.Talks);
                 entity.Ignore(e => e.Speakers);
-                entity.Ignore(e => e.Level);
                 entity.Ignore(e => e.Tags);
                 entity.Ignore(e => e.AdditionalResources);
 
@@ -78,6 +82,8 @@ namespace CodeConf.NET.Core.Data
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Talk> Talks { get; set; }
 
         #region IConferenceDataProvider Implementation
 
@@ -126,17 +132,18 @@ namespace CodeConf.NET.Core.Data
             get
             {
                 return Users
-                    .Include(u => u.SpeakerInfo);
+                    .Include(u => u.SpeakerInfo)
+                    .Include(s => s.SpeakerInfo.Talks);
             }
         }
 
         #endregion
 
-        public IQueryable<Talk> Talks
+        public IQueryable<Talk> GetTalks
         {
             get
             {
-                throw new NotImplementedException();
+                return Talks;
             }
         }
 

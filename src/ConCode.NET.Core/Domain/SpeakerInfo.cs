@@ -9,20 +9,7 @@ namespace ConCode.NET.Core.Domain
     public class SpeakerInfo
     {
         public long Id { get; set; }
-        List<Talk> _talks;
-        public List<Talk> Talks
-        {
-            get
-            {
-                if (_talks == null)
-                {
-                    return new List<Talk>();
-                }
-                return _talks;
-            }
-            set { _talks = value; }
-        }
-
+        public List<Talk> Talks { get; set; }
         public string Tagline { get; set; }
         public long UserId { get; internal set; }
         public User User { get; internal set; }

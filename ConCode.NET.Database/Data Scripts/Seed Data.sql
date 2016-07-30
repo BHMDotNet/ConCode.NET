@@ -9,10 +9,12 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+DELETE FROM [dbo].[Talks]
 DELETE FROM [dbo].[SpeakerTalks]
 DELETE FROM [dbo].[SpeakerInfo]
 DELETE FROM [dbo].[Users]
 
+DBCC CHECKIDENT ('[dbo].[Talks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerTalks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerInfo]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[Users]', RESEED, 0);
@@ -104,3 +106,33 @@ SELECT @SpeakerId = @@IDENTITY
 UPDATE [dbo].[Users]
 SET [SpeakerInfoId] = @SpeakerId
 WHERE [Id] = @UserId
+
+
+-------------------------------------
+-- Talk Seed Data
+-------------------------------------
+INSERT INTO [dbo].[Talks]
+	( [Title]
+	, [Abstract]
+	, [TimesPresented]
+	, [Level]
+	, [SpeakerInfoId] )
+VALUES
+	( 'Deep Dive Into Workflow Foundation'
+	, 'I recommend you don''t fire until you''re within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by ''advanced'' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you''re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.'
+	, 27
+	, 2
+	, 1 )
+
+INSERT INTO [dbo].[Talks]
+	( [Title]
+	, [Abstract]
+	, [TimesPresented]
+	, [Level]
+	, [SpeakerInfoId] )
+VALUES
+	( 'The Color Tuple'
+	, 'Sometimes we just need to have a talk about these things.'
+	, 1
+	, 1
+	, 2 )

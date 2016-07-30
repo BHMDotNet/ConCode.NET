@@ -15,12 +15,12 @@ namespace ConCode.NET.Core.Domain
 
         public IQueryable<Talk> GetTalks()
         {
-            return _conferenceDataProvider.Talks;
+            return _conferenceDataProvider.GetTalks;
         }
 
         public Talk GetTalk(int talkId)
         {
-            return _conferenceDataProvider.Talks.FirstOrDefault(x => x.Id == talkId);
+            return _conferenceDataProvider.GetTalks.FirstOrDefault(x => x.Id == talkId);
         }
 
         public IEnumerable<TalkType> GetTalkTypes()
