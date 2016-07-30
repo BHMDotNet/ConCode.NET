@@ -20,17 +20,22 @@ namespace ConCode.NET.Core.Domain
 
         public User GetSpeakerById(int userId)
         {
-            return _conferenceDataProvider.Speakers.FirstOrDefault(s => s.Id == userId);
+            return _conferenceDataProvider.GetSpeakers.FirstOrDefault(s => s.Id == userId);
+        }
+
+        public User GetSpeakerByUsername(string username)
+        {
+            return _conferenceDataProvider.GetSpeakers.FirstOrDefault(s => s.Username.Equals(username));
         }
 
         public IQueryable<User> GetSpeakers()
         {
-            return _conferenceDataProvider.Speakers;
+            return _conferenceDataProvider.GetSpeakers;
         }
 
-        public void SaveSpeaker(User speaker)
+        public void SaveSpeaker()
         {
-            _conferenceDataProvider.SaveSpeaker(speaker);
+            _conferenceDataProvider.SaveSpeaker();
         }
     }
 }

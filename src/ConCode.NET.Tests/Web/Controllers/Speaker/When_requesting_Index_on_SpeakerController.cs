@@ -3,7 +3,9 @@ using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Xunit;
 using SpeakerPoco = ConCode.NET.Core.Domain.SpeakerInfo;
 
@@ -19,7 +21,8 @@ namespace ConCode.NET.Tests.Web.Controllers.Speaker
             var theSpeaker = new User
             {
                 Id = 1,
-                FirstName = "Brandon"
+                FirstName = "Brandon",
+                Username = "test123"
             };
 
             var theSpeakerList = new[]
@@ -30,7 +33,17 @@ namespace ConCode.NET.Tests.Web.Controllers.Speaker
             var sessionService = new Moq.Mock<ISpeakerService>();
             var httpContext = new Moq.Mock<IHttpContextAccessor>();
 
-            sessionService.Setup(x => x.GetSpeakers()).Returns(theSpeakerList.AsQueryable());
+            sessionService.Setup(x => x.GetSpeakerByUsername("test123")).Returns(theSpeaker);
+            httpContext.Setup(x => x.HttpContext).Returns(new DefaultHttpContext
+            {
+                User = new System.Security.Claims.ClaimsPrincipal(new List<ClaimsIdentity>
+                {
+                    new ClaimsIdentity(new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, "test123")
+                    })
+                })
+            });
 
             _controller = new SpeakerController(httpContext.Object, sessionService.Object);
         }

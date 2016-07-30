@@ -40,17 +40,17 @@ namespace ConCode.NET.Core.Data
                             "C# 7",
                             ".NET"
                         },
-                        AdditionalResources = new List<AdditionalResource>{
-                            new AdditionalResource{
+                        TalkResources = new List<TalkResource>{
+                            new TalkResource { Resource = new Resource{
                                 Name = "Handout",
                                 Type = ResourceType.PDF,
-                                Uri = new Uri ("https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf")
-                            },
-                            new AdditionalResource{
+                                Uri = "https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf"
+                            } },
+                            new TalkResource { Resource =new Resource{
                                 Name = "Slide Deck",
                                 Type = ResourceType.PPT,
-                                Uri = new Uri ("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE")
-                            }
+                                Uri = "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE"
+                            } }
                             
                         }
                     },
@@ -172,17 +172,17 @@ namespace ConCode.NET.Core.Data
                             "C# 7",
                             ".NET"
                         },
-                AdditionalResources = new List<AdditionalResource>{
-                            new AdditionalResource{
+                TalkResources = new List<TalkResource>{
+                            new TalkResource { Resource =new Resource{
                                 Name = "Handout",
                                 Type = ResourceType.PDF,
-                                Uri = new Uri("https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf")
-                            },
-                            new AdditionalResource{
+                                Uri = "https://www.bu.edu/clarion/guides/Star_Trek_Writers_Guide.pdf"
+                            } },
+                            new TalkResource { Resource =new Resource{
                                 Name = "Slide Deck",
                                 Type = ResourceType.PPT,
-                                Uri = new Uri("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE")
-                            }
+                                Uri = "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=0ahUKEwi7uLDKhY3OAhXBQSYKHSD3DpY4ChAWCCcwAg&url=http%3A%2F%2Fwww.damiantgordon.com%2FCourses%2FOperatingSystems1%2FDemos%2FF-OS1-LCARS.pptx&usg=AFQjCNFr1Zu_eoCHZDHn97dD8NXDPBwRBg&sig2=DRzOLEK-_pGqSs8Vl4ntnQ&bvm=bv.127984354,d.eWE"
+                            } }
 
                         }
             },
@@ -420,7 +420,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<User> Speakers
+        public IQueryable<User> GetSpeakers
         {
             get
             {
@@ -436,7 +436,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<Talk> Talks
+        public IQueryable<Talk> GetTalks
         {
             get
             {
@@ -484,7 +484,7 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveSpeaker(User speaker)
+        public void SaveSpeaker()
         {
             throw new NotImplementedException();
         }

@@ -23,9 +23,8 @@ namespace CodeConf.NET.Tests.Core.Data
             _mockConnectionOption = new Moq.Mock<IOptions<ConnectionOption>>();
             ConnectionOption connectionOption = new ConnectionOption
             {
-                ConCode = ConCodeConfiguration.Config["ConnectionStrings:ConferenceDbConnectionString"]
+                ConCode = ConCodeConfiguration.Config["ConnectionStrings:ConCode"]
             };
-            Console.WriteLine($"ConcodeConnectionString={connectionOption.ConCode}");
             _mockConnectionOption.SetupGet(x => x.Value).Returns(connectionOption);
             _conferenceDbContext = new ConferenceDbContext(_mockConnectionOption.Object);
 
@@ -86,6 +85,33 @@ namespace CodeConf.NET.Tests.Core.Data
             _conferenceDbContext.SaveChanges();
             user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
             Assert.Equal(true, user.AttendeeInfo.IsAttending);
+        }
+        [Fact]
+        public void Should_save_speaker_talk()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            user.SpeakerInfo = new SpeakerInfo { Talks = new List<Talk> { new Talk { Title = "How to find your father" } } };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            Assert.NotNull(user.SpeakerInfo.Talks.First());
+        }
+        [Fact]
+        public void Should_save_talk_resources()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            user.SpeakerInfo = new SpeakerInfo { Talks = new List<Talk> { new Talk {
+                Title = "How to find your father",
+                TalkResources = new List<TalkResource>
+                {
+                    new TalkResource { Resource =
+                        new Resource { Name = "Related blog post", Uri = "http://www.dotnetcatch.com/2016/05/05/continuous-delivery-incrementally/" }
+                    }
+                }
+            } } };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            var resource = user.SpeakerInfo.Talks.First().TalkResources.First().Resource;
+            Assert.NotNull(resource);
         }
 
         public void Dispose()

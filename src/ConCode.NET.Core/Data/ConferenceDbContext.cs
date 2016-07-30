@@ -41,13 +41,38 @@ namespace CodeConf.NET.Core.Data
             modelBuilder.Entity<SpeakerInfo>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Ignore(e => e.Talks);
+                entity.HasMany(e => e.Talks).WithOne(e => e.SpeakerInfo).HasForeignKey(e => e.SpeakerInfoId);
                 entity.Property(e => e.Tagline).HasColumnName("Tagline");
             });
             modelBuilder.Entity<AttendeeInfo>(entity =>
             {
                 entity.HasKey(e => e.Id);
             });
+            modelBuilder.Entity<Talk>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Title);
+                entity.Property(e => e.Abstract);
+                entity.Property(e => e.TimesPresented);
+                entity.Property(e => e.Level);
+                entity.HasOne(e => e.SpeakerInfo).WithMany(e => e.Talks);
+                entity.Ignore(e => e.Speakers);
+                entity.Ignore(e => e.Tags);
+                entity.HasMany(e => e.TalkResources).WithOne(e => e.Talk);
+            });
+            modelBuilder.Entity<Resource>(entity =>
+            {
+                entity.ToTable("Resource");
+                entity.HasKey(e => e.Id);
+                entity.Ignore(e => e.Type);
+            });
+            modelBuilder.Entity<TalkResource>(entity =>
+            {
+                entity.HasKey(e => new { e.TalkId, e.ResourceId });
+                entity.HasOne(e => e.Talk).WithMany(e => e.TalkResources).HasForeignKey(e => e.TalkId);
+                entity.HasOne(e => e.Resource).WithOne();
+            });
+            //modelBuilder.Ignore<Resource>();
         }
 
         public override int SaveChanges()
@@ -69,6 +94,8 @@ namespace CodeConf.NET.Core.Data
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Talk> Talks { get; set; }
 
         #region IConferenceDataProvider Implementation
 
@@ -102,9 +129,9 @@ namespace CodeConf.NET.Core.Data
 
         #region Speaker
 
-        public void SaveSpeaker(User speaker)
+        public void SaveSpeaker()
         {
-            throw new NotImplementedException();
+            SaveChanges();
         }
 
         public void AddSpeaker(User speaker)
@@ -112,22 +139,23 @@ namespace CodeConf.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public IQueryable<User> Speakers
+        public IQueryable<User> GetSpeakers
         {
             get
             {
-                return Users
-                    .Include(u => u.SpeakerInfo);
+                return Users.Where(u => u.SpeakerInfo != null)
+                    .Include(u => u.SpeakerInfo)
+                    .Include(s => s.SpeakerInfo.Talks);
             }
         }
 
         #endregion
 
-        public IQueryable<Talk> Talks
+        public IQueryable<Talk> GetTalks
         {
             get
             {
-                throw new NotImplementedException();
+                return Talks;
             }
         }
 

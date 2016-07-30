@@ -16,7 +16,7 @@ namespace ConCode.NET.Tests.Core.Domain
         public When_executing_SpeakerService()
         {
             _mockConferenceDataProvider = new Mock<IConferenceDataProvider>();
-            _mockConferenceDataProvider.Setup(d => d.Speakers).Returns(new List<User> { new User() }.AsQueryable());
+            _mockConferenceDataProvider.Setup(d => d.GetSpeakers).Returns(new List<User> { new User() }.AsQueryable());
 
             _speakerService = new SpeakerService(_mockConferenceDataProvider.Object);
         }
@@ -26,7 +26,7 @@ namespace ConCode.NET.Tests.Core.Domain
         {
             _speakers = _speakerService.GetSpeakers();
 
-            _mockConferenceDataProvider.Verify(x => x.Speakers);
+            _mockConferenceDataProvider.Verify(x => x.GetSpeakers);
             Assert.NotEmpty(_speakers);
         }
     }
