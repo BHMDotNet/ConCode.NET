@@ -25,7 +25,7 @@ namespace ConCode.NET.Web.Models.AttendeeViewModels
         }
 
         [HiddenInput]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }
