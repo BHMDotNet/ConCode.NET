@@ -6,6 +6,8 @@ namespace ConCode.NET.Core.Data
 {
     public interface IConferenceDataProvider
     {
+        ConferenceInfo ConferenceInfo { get; }
+        
         IQueryable<Session> Sessions { get; }
 
         void AddSession(Session session);

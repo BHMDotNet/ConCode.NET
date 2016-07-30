@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ConCode.NET.Core;
 
 namespace CodeConf.NET.Core.Data
 {
@@ -185,6 +186,14 @@ namespace CodeConf.NET.Core.Data
         }
 
         public IQueryable<User> Attendees
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public ConferenceInfo ConferenceInfo
         {
             get
             {

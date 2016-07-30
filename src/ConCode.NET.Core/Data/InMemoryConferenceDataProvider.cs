@@ -392,6 +392,24 @@ namespace ConCode.NET.Core.Data
                 WebsiteUrl = new Uri("http://www.piedpiper.com")
             },
         };
+
+        private static ConferenceInfo _conferenceInfo = new ConferenceInfo
+        {
+            Name = "Trekking Across the Stars",
+            Description = "Come learn from people who been there. Meet the crew of the USS Enterprise and learn what it takes to command and run a Constitution class starship.",
+            Dates = new[] { 
+                new DateTime(2016, 8, 4),
+                new DateTime(2016, 8, 5),
+                new DateTime(2016, 8, 6)
+            },
+            Location = new Address() { 
+                Line1 = "Starfleet Academy",
+                City = "San Fransicso",
+                StateOrProvince = "CA",
+                PostalCode = "94110",
+                Country = "United States"
+            }
+        };
       
 
         public IQueryable<Session> Sessions
@@ -479,6 +497,14 @@ namespace ConCode.NET.Core.Data
         public void SaveAttendee(User attendee)
         {
             throw new NotImplementedException();
+        }
+
+        public ConferenceInfo ConferenceInfo
+        {
+            get
+            {
+                return _conferenceInfo;
+            }
         }
     }
 }

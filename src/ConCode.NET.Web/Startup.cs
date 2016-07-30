@@ -61,6 +61,7 @@ namespace ConCode.NET.Web
             services.AddTransient<ISponsorService, SponsorService>();
             services.AddTransient<IVenueService, VenueService>();
             services.AddTransient<IAttendeeService, AttendeeService>();
+            services.AddTransient<IConferenceService, ConferenceService>();
 
             // Preserve object references in JSON
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All);
@@ -68,7 +69,7 @@ namespace ConCode.NET.Web
             // Require SSL
             services.Configure<MvcOptions>(options =>
             {
-                options.Filters.Add(new RequireHttpsAttribute());
+                //options.Filters.Add(new RequireHttpsAttribute());
             });
 
             // Add application services.
