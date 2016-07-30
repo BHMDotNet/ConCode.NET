@@ -29,6 +29,8 @@ namespace ConCode.NET.Domain.Interfaces
         IQueryable<Sponsor> GetSponsors { get; }
 
         void AddSponsor(Sponsor sponsor);
+
+        void SaveSponsor();
         #endregion
 
         #region Speaker
