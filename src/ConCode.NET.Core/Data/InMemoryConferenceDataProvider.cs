@@ -2,11 +2,10 @@
 using System.Linq;
 using ConCode.NET.Core.Domain;
 using System;
-using ConCode.NET.Core;
 
 namespace ConCode.NET.Core.Data
 {
-    public class InMemoryConferenceDataProvider2 : IConferenceDataProvider
+    public class InMemoryConferenceDataProvider : IConferenceDataProvider
     {
         #region Sessions
         private IEnumerable<Session> _sessions = new List<Session>()
@@ -394,7 +393,7 @@ namespace ConCode.NET.Core.Data
             },
         };
 
-        private static _conferenceInfo = new ConferenceInfo
+        private static ConferenceInfo _conferenceInfo = new ConferenceInfo
         {
             Name = "Trekking Across the Stars",
             Description = "Come learn from people who been there. Meet the crew of the USS Enterprise and learn what it takes to command and run a Constitution class starship.",
@@ -407,7 +406,7 @@ namespace ConCode.NET.Core.Data
                 Line1 = "Starfleet Academy",
                 City = "San Fransicso",
                 StateOrProvince = "CA",
-                PostalCode = 94110,
+                PostalCode = "94110",
                 Country = "United States"
             }
         };
@@ -500,9 +499,12 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public ConferenceInfo ConferenceInfo()
+        public ConferenceInfo ConferenceInfo
         {
-            return _conferenceInfo;
+            get
+            {
+                return _conferenceInfo;
+            }
         }
     }
 }

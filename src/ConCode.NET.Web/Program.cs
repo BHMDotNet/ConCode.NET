@@ -8,11 +8,6 @@ namespace ConCode.NET.Web
     {
         public static void Main(string[] args)
         {
-            var speakers = File.ReadAllText("Speakers.json", Encoding.UTF8);
-
-            Console.WriteLine(speakers);
-
-
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

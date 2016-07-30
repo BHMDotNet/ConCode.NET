@@ -1,4 +1,5 @@
 using ConCode.NET.Core;
+using ConCode.NET.Core.Data;
 
 namespace ConCode.NET.Core.Domain
 {
