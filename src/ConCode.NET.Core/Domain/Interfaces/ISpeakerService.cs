@@ -8,7 +8,9 @@ namespace ConCode.NET.Core.Domain
 
         User GetSpeakerById(int userId);
 
-        void SaveSpeaker(User speaker);
+        User GetSpeakerByUsername(string username);
+
+        void SaveSpeaker();
 
         void CreateSpeaker(User speaker);
     }

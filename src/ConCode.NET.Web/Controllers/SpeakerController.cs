@@ -1,9 +1,11 @@
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Models.SpeakerViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Security.Claims;
 
 namespace ConCode.NET.Web.Controllers
 {
@@ -18,14 +20,53 @@ namespace ConCode.NET.Web.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
 
+        #region Method(s)
+        /// <summary>
+        /// Quick way to get the username of the currently logged in user.
+        /// </summary>
+        /// <returns>Username</returns>
+        public string GetUsername()
+        {
+            // Sanity check
+            if (_httpContextAccessor == null || 
+                _httpContextAccessor.HttpContext == null || 
+                _httpContextAccessor.HttpContext.User == null)
+            {
+                return string.Empty;
+            }
+
+            return _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name).Value;
+        }
+
+        /// <summary>
+        /// Return the User domain object based off the currently logged in user.
+        /// </summary>
+        /// <returns>User domain object</returns>
+        public User GetLoggedInUser()
+        {
+            var username = GetUsername();
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return null;
+            }
+
+            // Obtain the speaker from the DataAccess service
+            return _speakerService.GetSpeakerByUsername(username);
+        }
+        #endregion
+
+        #region Action(s)
+        [HttpGet]
+        [Authorize]
         public IActionResult Index()
         {
-            var speakers = _speakerService.GetSpeakers();
-
-            // Yes, Im randomly picking which speaker to show :)
-            var random = new Random();
-            var randomUserId = random.Next(1, speakers.Count() + 1);
-            var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
+            var speaker = GetLoggedInUser();
+            
+            // Sanity check
+            if (speaker == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
 
             // Create our ViewModel and fire up the View!
             var speakerViewModel = new SpeakerIndexViewModel(speaker);
@@ -34,16 +75,16 @@ namespace ConCode.NET.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Edit()
         {
-            //TODO: Need some way of knowing the current caller's UserType and be able to
-            //grab the speaker from the collection based on some stored value in the user session?
-            var speakers = _speakerService.GetSpeakers();
+            var speaker = GetLoggedInUser();
 
-            // Yes, Im randomly picking which speaker to show :)
-            var random = new Random();
-            var randomUserId = random.Next(1, speakers.Count() + 1);
-            var speaker = speakers.FirstOrDefault(s => s.Id == randomUserId);
+            // Sanity check
+            if (speaker == null)
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
 
             // Create our ViewModel and fire up the View!
             var speakerViewModel = new SpeakerEditViewModel(speaker);
@@ -53,6 +94,7 @@ namespace ConCode.NET.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Edit(SpeakerEditViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -62,7 +104,9 @@ namespace ConCode.NET.Web.Controllers
             }
 
             // Rehydrate the model object and then append on top our changes
-            var speaker = _speakerService.GetSpeakers().FirstOrDefault(s => s.Id == viewModel.Id);
+            var speaker = GetLoggedInUser();
+
+            // Sanity check
             if (speaker == null)
             {
                 ModelState.AddModelError(string.Empty, "Error locating your Speaker profile from the database.");
@@ -80,10 +124,9 @@ namespace ConCode.NET.Web.Controllers
             speaker.LinkedInProfile = viewModel.LinkedInProfile;
             speaker.FacebookProfile = viewModel.FacebookProfile;
             speaker.SpeakerInfo.Tagline = viewModel.Tagline;
-            speaker.ModifiedAt = DateTime.Now;
 
             // Actually save this model data!
-            _speakerService.SaveSpeaker(speaker);
+            _speakerService.SaveSpeaker();
 
             // Redirect back to Index()
             return RedirectToAction("Index");
@@ -126,5 +169,6 @@ namespace ConCode.NET.Web.Controllers
             // Redirect back to Index()
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }

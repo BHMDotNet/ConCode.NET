@@ -402,7 +402,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<User> Speakers
+        public IQueryable<User> GetSpeakers
         {
             get
             {
@@ -466,7 +466,7 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveSpeaker(User speaker)
+        public void SaveSpeaker()
         {
             throw new NotImplementedException();
         }
