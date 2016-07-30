@@ -93,16 +93,25 @@ namespace CodeConf.NET.Tests.Core.Data
             user.SpeakerInfo = new SpeakerInfo { Talks = new List<Talk> { new Talk { Title = "How to find your father" } } };
             _conferenceDbContext.SaveChanges();
             user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
-            Assert.NotNull(user.SpeakerInfo);
+            Assert.NotNull(user.SpeakerInfo.Talks.First());
         }
         [Fact]
         public void Should_save_talk_resources()
         {
             var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
-            //user.SpeakerInfo = new SpeakerInfo { };
+            user.SpeakerInfo = new SpeakerInfo { Talks = new List<Talk> { new Talk {
+                Title = "How to find your father",
+                TalkResources = new List<TalkResource>
+                {
+                    new TalkResource { Resource =
+                        new Resource { Name = "Related blog post", Uri = "http://www.dotnetcatch.com/2016/05/05/continuous-delivery-incrementally/" }
+                    }
+                }
+            } } };
             _conferenceDbContext.SaveChanges();
             user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
-            Assert.NotNull(user.SpeakerInfo);
+            var resource = user.SpeakerInfo.Talks.First().TalkResources.First().Resource;
+            Assert.NotNull(resource);
         }
 
         public void Dispose()

@@ -49,4 +49,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="SpeakerTagline" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="ef9cf0dc-10c8-4264-9326-38a6e25ab624" ChangeDateTime="07/30/2016 14:24:47">
+    <Property Name="ElementName" Value="[dbo].[TalkResource].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TalkResource]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TalkId" />
+  </Operation>
 </Operations>

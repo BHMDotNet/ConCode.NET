@@ -67,6 +67,8 @@
     <Build Include="Tables\SpeakerInfo.sql" />
     <Build Include="Tables\AttendeeInfo.sql" />
     <Build Include="Tables\Talk.sql" />
+    <Build Include="Tables\Resource.sql" />
+    <Build Include="Tables\TalkResource.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ConCode.NET.Database.refactorlog" />

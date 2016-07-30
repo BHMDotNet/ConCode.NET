@@ -51,12 +51,25 @@ namespace CodeConf.NET.Core.Data
             modelBuilder.Entity<Talk>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.HasMany(e => e.TalkResources);
                 entity.Ignore(e => e.Speakers);
                 entity.Ignore(e => e.Level);
                 entity.Ignore(e => e.Tags);
-                entity.Ignore(e => e.AdditionalResources);
 
             });
+            modelBuilder.Entity<Resource>(entity =>
+            {
+                entity.ToTable("Resource");
+                entity.HasKey(e => e.Id);
+                entity.Ignore(e => e.Type);
+            });
+            modelBuilder.Entity<TalkResource>(entity =>
+            {
+                entity.HasKey(e => new { e.TalkId, e.ResourceId });
+                entity.HasOne(e => e.Talk).WithMany(e => e.TalkResources).HasForeignKey(e => e.TalkId);
+                entity.HasOne(e => e.Resource).WithOne();
+            });
+            modelBuilder.Ignore<Resource>();
         }
 
         public override int SaveChanges()
