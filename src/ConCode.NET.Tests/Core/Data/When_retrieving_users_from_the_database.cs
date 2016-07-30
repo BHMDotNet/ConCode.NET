@@ -12,20 +12,19 @@ using ConCode.NET.Tests;
 namespace CodeConf.NET.Tests.Core.Data
 {
     // Not public so db integration tests will be skipped. 
-    class When_retrieving_users_from_the_database : IDisposable
+    public class When_retrieving_users_from_the_database : IDisposable
     {
         private ConferenceDbContext _conferenceDbContext;
         private User _testUser;
         private Mock<IOptions<ConnectionOption>> _mockConnectionOption;
 
-        public When_retrieving_users_from_the_database()
+        When_retrieving_users_from_the_database()
         {
             _mockConnectionOption = new Moq.Mock<IOptions<ConnectionOption>>();
             ConnectionOption connectionOption = new ConnectionOption
             {
-                ConCode = ConCodeConfiguration.Config["ConnectionStrings:ConferenceDbConnectionString"]
+                ConCode = ConCodeConfiguration.Config["ConnectionStrings:ConCode"]
             };
-            Console.WriteLine($"ConcodeConnectionString={connectionOption.ConCode}");
             _mockConnectionOption.SetupGet(x => x.Value).Returns(connectionOption);
             _conferenceDbContext = new ConferenceDbContext(_mockConnectionOption.Object);
 
@@ -86,6 +85,15 @@ namespace CodeConf.NET.Tests.Core.Data
             _conferenceDbContext.SaveChanges();
             user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
             Assert.Equal(true, user.AttendeeInfo.IsAttending);
+        }
+        [Fact]
+        public void Should_save_speaker_talk()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            //user.SpeakerInfo = new SpeakerInfo { };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            Assert.NotNull(user.SpeakerInfo);
         }
 
         public void Dispose()

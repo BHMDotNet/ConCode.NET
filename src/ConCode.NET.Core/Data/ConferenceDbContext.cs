@@ -40,12 +40,22 @@ namespace CodeConf.NET.Core.Data
             modelBuilder.Entity<SpeakerInfo>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Ignore(e => e.Talks);
+                //entity.Ignore(e => e.Talks);
+                entity.HasMany(e => e.Talks).WithOne(e => e.SpeakerInfo).HasForeignKey(e => e.SpeakerInfoId);
                 entity.Property(e => e.Tagline).HasColumnName("Tagline");
             });
             modelBuilder.Entity<AttendeeInfo>(entity =>
             {
                 entity.HasKey(e => e.Id);
+            });
+            modelBuilder.Entity<Talk>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Ignore(e => e.Speakers);
+                entity.Ignore(e => e.Level);
+                entity.Ignore(e => e.Tags);
+                entity.Ignore(e => e.AdditionalResources);
+
             });
         }
 

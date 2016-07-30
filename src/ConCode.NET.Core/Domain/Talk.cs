@@ -18,6 +18,9 @@ namespace ConCode.NET.Core.Domain
         public IEnumerable<AdditionalResource> AdditionalResources { get; set; }
 
         public int TimesPresented { get; set; }
+
+        public long SpeakerInfoId { get; set; }
+        public SpeakerInfo SpeakerInfo { get; set; }
     }
     
 }
