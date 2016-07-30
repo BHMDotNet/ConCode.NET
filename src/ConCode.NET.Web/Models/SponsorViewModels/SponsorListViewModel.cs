@@ -1,4 +1,4 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
 using System.Collections.Generic;
 
 namespace ConCode.NET.Web.Models.SponsorViewModels

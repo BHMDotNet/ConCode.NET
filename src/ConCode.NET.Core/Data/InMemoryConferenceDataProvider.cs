@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ConCode.NET.Core.Domain;
-using System;
+﻿using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ConCode.NET.Core.Data
 {

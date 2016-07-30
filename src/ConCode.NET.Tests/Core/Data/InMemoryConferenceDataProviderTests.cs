@@ -1,5 +1,5 @@
 ﻿using ConCode.NET.Core.Data;
-using ConCode.NET.Core.Domain;
+using ConCode.NET.Domain;
 using System.Linq;
 using Xunit;
 

@@ -1,10 +1,9 @@
-using ConCode.NET.Core.Domain;
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 using System.Security.Claims;
 
 namespace ConCode.NET.Web.Controllers

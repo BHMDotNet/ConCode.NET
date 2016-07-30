@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Xunit;
-using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using Moq;
-using ConCode.NET.Core.Data;
+using System.Linq;
+using Xunit;
 
 namespace ConCode.NET.Tests.Core.Domain
 {

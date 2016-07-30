@@ -1,25 +1,25 @@
-﻿using ConCode.NET.Web.Controllers.Api;
+﻿using ConCode.NET.Domain.Interfaces;
+using ConCode.NET.Web.Controllers.Api;
+using Moq;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
-using Moq;
-using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Tests.Web.Controllers.Api.Session
 {
     public class When_making_a_get_request_to_api_session_controller
     {
 
-        private ConCode.NET.Core.Domain.Session theSession = new ConCode.NET.Core.Domain.Session
+        private ConCode.NET.Domain.Session theSession = new ConCode.NET.Domain.Session
         {
             Id = 5
         };
 
-        private List<ConCode.NET.Core.Domain.Session> theSessionList = new List<ConCode.NET.Core.Domain.Session>
+        private List<ConCode.NET.Domain.Session> theSessionList = new List<ConCode.NET.Domain.Session>
         {
-            new ConCode.NET.Core.Domain.Session(),
-            new ConCode.NET.Core.Domain.Session(),
-            new ConCode.NET.Core.Domain.Session(),
+            new ConCode.NET.Domain.Session(),
+            new ConCode.NET.Domain.Session(),
+            new ConCode.NET.Domain.Session(),
         };
 
         [Fact]

@@ -1,7 +1,8 @@
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using ConCode.NET.Web.Models.VenueViewModels;
-using ConCode.NET.Core.Domain;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace ConCode.NET.Web.Controllers
 {

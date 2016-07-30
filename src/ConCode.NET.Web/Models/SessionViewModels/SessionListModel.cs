@@ -1,5 +1,5 @@
+using ConCode.NET.Domain;
 using System.Collections.Generic;
-using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Web.Models.SessionViewModels
 {

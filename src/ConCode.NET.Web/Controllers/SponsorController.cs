@@ -1,6 +1,5 @@
+using ConCode.NET.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using ConCode.NET.Web.Models.SponsorViewModels;
-using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Web.Controllers
 {

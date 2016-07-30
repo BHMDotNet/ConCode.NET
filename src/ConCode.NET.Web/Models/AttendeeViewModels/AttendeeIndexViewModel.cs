@@ -1,4 +1,4 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 

@@ -1,8 +1,5 @@
-﻿using ConCode.NET.Core.Domain;
-using System;
+﻿using ConCode.NET.Domain;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConCode.NET.Web.Models.VenueViewModels
 {

@@ -1,5 +1,4 @@
-using ConCode.NET.Core;
-using ConCode.NET.Core.Domain;
+using ConCode.NET.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConCode.NET.Web.Controllers.Api

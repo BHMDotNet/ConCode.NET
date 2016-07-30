@@ -1,13 +1,11 @@
-using ConCode.NET.Core.Domain.Interfaces;
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using ConCode.NET.Web.Models.AttendeeViewModels;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
-using ConCode.NET.Core.Domain;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace ConCode.NET.Web.Controllers
 {

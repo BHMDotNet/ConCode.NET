@@ -1,5 +1,4 @@
-﻿using ConCode.NET.Core.Domain;
-using System;
+﻿using ConCode.NET.Domain;
 using System.Collections.Generic;
 
 namespace ConCode.NET.Web.Models.SpeakerViewModels

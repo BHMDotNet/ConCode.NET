@@ -1,14 +1,12 @@
-﻿using ConCode.NET.Core.Data;
-using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ConCode.NET.Core;
 
-namespace CodeConf.NET.Core.Data
+namespace ConCode.NET.Core.Data
 {
     public class ConferenceDbContext : DbContext, IConferenceDataProvider
     {

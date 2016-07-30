@@ -1,11 +1,6 @@
-﻿using ConCode.NET.Core;
-using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
 using ConCode.NET.Web.Controllers.Api;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace ConCode.NET.Tests.Web.Controllers.Api.ConferenceInfoTest

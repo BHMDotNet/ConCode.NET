@@ -1,10 +1,11 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.SessionViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using Xunit;
 using System;
+using Xunit;
 
 namespace ConCode.NET.Tests.Web.Controllers.Session
 {

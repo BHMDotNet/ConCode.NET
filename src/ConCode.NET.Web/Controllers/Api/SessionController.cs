@@ -1,6 +1,7 @@
-using System.Collections.Generic;
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using ConCode.NET.Core.Domain;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ConCode.NET.Web.Controllers.Api

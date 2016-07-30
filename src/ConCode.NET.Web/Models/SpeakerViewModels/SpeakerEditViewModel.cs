@@ -1,7 +1,5 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ConCode.NET.Web.Models.SpeakerViewModels

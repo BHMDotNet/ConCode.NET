@@ -1,14 +1,12 @@
-﻿using ConCode.NET.Core.Domain;
-using ConCode.NET.Core.Domain.Interfaces;
+﻿using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.AttendeeViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using Xunit;
-using AttendeePoco = ConCode.NET.Core.Domain.AttendeeInfo;
 
 namespace ConCode.NET.Tests.Web.Controllers.Attendee
 {

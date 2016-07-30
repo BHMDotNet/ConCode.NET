@@ -1,4 +1,5 @@
-﻿using ConCode.NET.Core.Domain;
+﻿using ConCode.NET.Domain;
+
 namespace ConCode.NET.Web.Models.SessionViewModels
 {
     public class SessionDetailsViewModel

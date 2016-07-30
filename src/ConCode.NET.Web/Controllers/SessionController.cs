@@ -1,8 +1,9 @@
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
+using ConCode.NET.Web.Models.SessionViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using ConCode.NET.Web.Models.SessionViewModels;
-using ConCode.NET.Core.Domain;
 
 namespace ConCode.NET.Web.Controllers
 {

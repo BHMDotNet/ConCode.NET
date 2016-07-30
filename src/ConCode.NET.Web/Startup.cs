@@ -1,18 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ConCode.NET.Core.Data;
+using ConCode.NET.Domain;
+using ConCode.NET.Domain.Interfaces;
+using ConCode.NET.Web.Data;
+using ConCode.NET.Web.Models;
+using ConCode.NET.Web.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ConCode.NET.Web.Data;
-using ConCode.NET.Web.Models;
-using ConCode.NET.Web.Services;
-using ConCode.NET.Core.Data;
-using ConCode.NET.Core.Domain;
-using Microsoft.AspNetCore.Mvc;
-using ConCode.NET.Core.Domain.Interfaces;
-using CodeConf.NET.Core.Data;
 
 namespace ConCode.NET.Web
 {
