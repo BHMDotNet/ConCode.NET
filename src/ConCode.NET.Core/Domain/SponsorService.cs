@@ -19,7 +19,7 @@ namespace ConCode.NET.Core.Domain
 
         public IQueryable<Sponsor> GetSponsors()
         {
-            return dataProvider.Sponsors;
+            return dataProvider.GetSponsors;
         }
     }
 }

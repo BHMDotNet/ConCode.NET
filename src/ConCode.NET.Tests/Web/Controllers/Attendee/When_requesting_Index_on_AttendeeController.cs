@@ -2,8 +2,11 @@
 using ConCode.NET.Core.Domain.Interfaces;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.AttendeeViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Xunit;
 using AttendeePoco = ConCode.NET.Core.Domain.AttendeeInfo;
 
@@ -27,10 +30,22 @@ namespace ConCode.NET.Tests.Web.Controllers.Attendee
                 theAttendee
             };
 
-            var service = new Moq.Mock<IAttendeeService>();
-            service.Setup(x => x.GetAttendees()).Returns(theAttendeeList.AsQueryable());
+            var sessionService = new Moq.Mock<IAttendeeService>();
+            var httpContext = new Moq.Mock<IHttpContextAccessor>();
 
-            _controller = new AttendeeController(service.Object);
+            sessionService.Setup(x => x.GetAttendeeByUsername("test123")).Returns(theAttendee);
+            httpContext.Setup(x => x.HttpContext).Returns(new DefaultHttpContext
+            {
+                User = new System.Security.Claims.ClaimsPrincipal(new List<ClaimsIdentity>
+                {
+                    new ClaimsIdentity(new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, "test123")
+                    })
+                })
+            });
+
+            _controller = new AttendeeController(httpContext.Object, sessionService.Object);
         }
 
         public void Because()

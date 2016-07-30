@@ -9,6 +9,8 @@ namespace ConCode.NET.Core.Domain.Interfaces
     {
         IQueryable<User> GetAttendees();
 
-        void SaveAttendee(User model);
+        User GetAttendeeByUsername(string username);
+
+        void SaveAttendee();
     }
 }

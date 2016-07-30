@@ -17,7 +17,7 @@ namespace ConCode.NET.Tests.Core.Domain
         public When_executing_AttendeeService()
         {
             _mockConferenceDataProvider = new Mock<IConferenceDataProvider>();
-            _mockConferenceDataProvider.Setup(d => d.Attendees).Returns(new List<User> { new User() }.AsQueryable());
+            _mockConferenceDataProvider.Setup(d => d.GetAttendees).Returns(new List<User> { new User() }.AsQueryable());
 
             _attendeeService = new AttendeeService(_mockConferenceDataProvider.Object);
         }
@@ -27,7 +27,7 @@ namespace ConCode.NET.Tests.Core.Domain
         {
             _attendees = _attendeeService.GetAttendees();
 
-            _mockConferenceDataProvider.Verify(x => x.Attendees);
+            _mockConferenceDataProvider.Verify(x => x.GetAttendees);
             Assert.NotEmpty(_attendees);
         }
     }
