@@ -13,5 +13,6 @@
     [ModifiedAt] DATETIME2 NOT NULL, 
     [ModifiedBy] NVARCHAR(50) NOT NULL, 
     [Username] NVARCHAR(50) NOT NULL, 
-    [SpeakerInfoId] BIGINT NULL 
+    [SpeakerInfoId] BIGINT NULL, 
+    [AttendeeInfoId] BIGINT NULL 
 )

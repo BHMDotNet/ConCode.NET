@@ -16,13 +16,11 @@ namespace CodeConf.NET.Core.Data
 
         public ConferenceDbContext(IOptions<ConnectionOption> connectionOptionAccessor)
         {
-
             _connectionOptionAccessor = connectionOptionAccessor;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=localConCodeNET;Trusted_Connection=True;");
             optionsBuilder.UseSqlServer(_connectionOptionAccessor.Value.ConCode);
         }
 
@@ -110,16 +108,6 @@ namespace CodeConf.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void AddSponsor(Sponsor sponsor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveAttendee(User attendee)
-        {
-            throw new NotImplementedException();
-        }
-
         public IQueryable<Session> Sessions
         {
             get
@@ -153,19 +141,44 @@ namespace CodeConf.NET.Core.Data
 
         #endregion
 
+        #region Attendee
+        public IQueryable<User> GetAttendees
+        {
+            get
+            {
+                return Users.Where(u => u.AttendeeInfo != null)
+                    .Include(u => u.AttendeeInfo);
+            }
+        }
+
+        public void SaveAttendee()
+        {
+            SaveChanges();
+        }
+
+        #endregion
+
+        #region Sponsor
+        public IQueryable<Sponsor> GetSponsors
+        {
+            get
+            {
+                return new List<Sponsor>().AsQueryable();
+            }
+        }
+
+        public void AddSponsor(Sponsor sponsor)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Talk
         public IQueryable<Talk> GetTalks
         {
             get
             {
                 return Talks;
-            }
-        }
-
-        public IQueryable<Venue> Venues
-        {
-            get
-            {
-                throw new NotImplementedException();
             }
         }
 
@@ -176,16 +189,9 @@ namespace CodeConf.NET.Core.Data
                 throw new NotImplementedException();
             }
         }
+        #endregion
 
-        public IQueryable<Sponsor> Sponsors
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IQueryable<User> Attendees
+        public IQueryable<Venue> Venues
         {
             get
             {

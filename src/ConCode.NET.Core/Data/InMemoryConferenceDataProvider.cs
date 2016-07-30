@@ -83,7 +83,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<Sponsor> Sponsors
+        public IQueryable<Sponsor> GetSponsors
         {
             get
             {
@@ -116,7 +116,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<User> Attendees
+        public IQueryable<User> GetAttendees
         {
             get
             {
@@ -149,7 +149,7 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveAttendee(User attendee)
+        public void SaveAttendee()
         {
             throw new NotImplementedException();
         }

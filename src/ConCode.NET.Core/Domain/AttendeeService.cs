@@ -16,14 +16,19 @@ namespace ConCode.NET.Core.Domain
             _conferenceDataProvider = conferenceDataProvider;
         }
 
-        public IQueryable<User> GetAttendees()
+        public User GetAttendeeByUsername(string username)
         {
-            return _conferenceDataProvider.Attendees;
+            return _conferenceDataProvider.GetAttendees.FirstOrDefault(s => s.Username.Equals(username));
         }
 
-        public void SaveAttendee(User model)
+        public IQueryable<User> GetAttendees()
         {
-            _conferenceDataProvider.SaveAttendee(model);
+            return _conferenceDataProvider.GetAttendees;
+        }
+
+        public void SaveAttendee()
+        {
+            _conferenceDataProvider.SaveAttendee();
         }
     }
 }

@@ -11,16 +11,19 @@ Post-Deployment Script Template
 */
 DELETE FROM [dbo].[Talks]
 DELETE FROM [dbo].[SpeakerTalks]
+DELETE FROM [dbo].[AttendeeInfo]
 DELETE FROM [dbo].[SpeakerInfo]
 DELETE FROM [dbo].[Users]
 
 DBCC CHECKIDENT ('[dbo].[Talks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerTalks]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[AttendeeInfo]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerInfo]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[Users]', RESEED, 0);
 GO
 
 DECLARE @UserId INT
+DECLARE @AttendeeId INT
 DECLARE @SpeakerId INT
 -------------------------------------
 -- Speaker Seed Data
@@ -61,8 +64,17 @@ VALUES
 	, @UserId )
 SELECT @SpeakerId = @@IDENTITY
 
+INSERT INTO [dbo].[AttendeeInfo]
+	( IsAttending
+	, UserId )
+VALUES
+	( 1
+	, @UserId )
+SELECT @AttendeeId = @@IDENTITY
+
 UPDATE [dbo].[Users]
 SET [SpeakerInfoId] = @SpeakerId
+	, [AttendeeInfoId] = @AttendeeId
 WHERE [Id] = @UserId
 
 
@@ -103,8 +115,17 @@ VALUES
 	, @UserId )
 SELECT @SpeakerId = @@IDENTITY
 
+INSERT INTO [dbo].[AttendeeInfo]
+	( IsAttending
+	, UserId )
+VALUES
+	( 1
+	, @UserId )
+SELECT @AttendeeId = @@IDENTITY
+
 UPDATE [dbo].[Users]
 SET [SpeakerInfoId] = @SpeakerId
+	, [AttendeeInfoId] = @AttendeeId
 WHERE [Id] = @UserId
 
 
