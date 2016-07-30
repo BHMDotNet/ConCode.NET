@@ -1,6 +1,7 @@
 ﻿using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.SpeakerViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Xunit;
@@ -27,9 +28,11 @@ namespace ConCode.NET.Tests.Web.Controllers.Speaker
             };
 
             var sessionService = new Moq.Mock<ISpeakerService>();
+            var httpContext = new Moq.Mock<IHttpContextAccessor>();
+
             sessionService.Setup(x => x.GetSpeakers()).Returns(theSpeakerList.AsQueryable());
 
-            _controller = new SpeakerController(sessionService.Object);
+            _controller = new SpeakerController(httpContext.Object, sessionService.Object);
         }
 
         public void Because()

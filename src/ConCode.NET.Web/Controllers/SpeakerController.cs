@@ -1,5 +1,6 @@
 using ConCode.NET.Core.Domain;
 using ConCode.NET.Web.Models.SpeakerViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -54,10 +55,12 @@ namespace ConCode.NET.Web.Controllers
         }
 
         private ISpeakerService _speakerService;
+        private IHttpContextAccessor _httpContextAccessor;
 
-        public SpeakerController(ISpeakerService service)
+        public SpeakerController(IHttpContextAccessor httpContextAccessor, ISpeakerService service)
         {
             _speakerService = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public IActionResult Index()

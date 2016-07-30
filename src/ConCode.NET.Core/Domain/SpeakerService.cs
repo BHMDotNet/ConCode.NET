@@ -18,6 +18,11 @@ namespace ConCode.NET.Core.Domain
             _conferenceDataProvider.AddSpeaker(speaker);
         }
 
+        public User GetSpeakerById(int userId)
+        {
+            return _conferenceDataProvider.Speakers.FirstOrDefault(s => s.Id == userId);
+        }
+
         public IQueryable<User> GetSpeakers()
         {
             return _conferenceDataProvider.Speakers;

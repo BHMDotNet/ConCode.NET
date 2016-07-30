@@ -6,6 +6,8 @@ namespace ConCode.NET.Core.Domain
     {
         IQueryable<User> GetSpeakers();
 
+        User GetSpeakerById(int userId);
+
         void SaveSpeaker(User speaker);
 
         void CreateSpeaker(User speaker);
