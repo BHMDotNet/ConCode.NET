@@ -86,7 +86,7 @@ namespace CodeConf.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveAttendee(Attendee attendee)
+        public void SaveAttendee(User attendee)
         {
             throw new NotImplementedException();
         }
@@ -154,7 +154,7 @@ namespace CodeConf.NET.Core.Data
             }
         }
 
-        public IQueryable<Attendee> Attendees
+        public IQueryable<User> Attendees
         {
             get
             {

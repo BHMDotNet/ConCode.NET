@@ -7,9 +7,9 @@ namespace ConCode.NET.Core.Domain
 {
     public class AttendeeInfo
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public bool IsAttending { get; set; }
-        public int UserId { get; internal set; }
+        public long UserId { get; internal set; }
         public User User { get; internal set; }
     }
 }

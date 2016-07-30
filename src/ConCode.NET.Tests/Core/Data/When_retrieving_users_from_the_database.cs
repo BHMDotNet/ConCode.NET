@@ -6,19 +6,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
+using Moq;
 
 namespace CodeConf.NET.Tests.Core.Data
 {
-    // Not public so integration tests will be skipped. 
-    public class When_retrieving_users_from_the_database : IDisposable
+    // Not public so db integration tests will be skipped. 
+    class When_retrieving_users_from_the_database : IDisposable
     {
         private ConferenceDbContext _conferenceDbContext;
         private User _testUser;
+        private Mock<IOptions<ConnectionOption>> _mockConnectionOption;
 
         public When_retrieving_users_from_the_database()
         {
-            var connectionOptions = new Moq.Mock<IOptions<ConnectionOption>>();
-            _conferenceDbContext = new ConferenceDbContext(connectionOptions.Object);
+            _mockConnectionOption = new Moq.Mock<IOptions<ConnectionOption>>();
+            _mockConnectionOption.SetupGet(x => x.Value).Returns(new ConnectionOption {
+                ConCode = @"Server=(localdb)\mssqllocaldb;Database=localConCodeNET;Trusted_Connection=True;"
+            });
+            _conferenceDbContext = new ConferenceDbContext(_mockConnectionOption.Object);
 
             _testUser = new User {
                 FirstName = "Luke",

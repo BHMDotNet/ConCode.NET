@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[AttendeeInfo]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
     [IsAttending] BIT NOT NULL DEFAULT 0, 
-    [UserId] INT NOT NULL
+    [UserId] BIGINT NOT NULL
 )
