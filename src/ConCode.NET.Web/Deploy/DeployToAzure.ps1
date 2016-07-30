@@ -10,7 +10,8 @@
                  'DeployIisAppPath'=$website.Name;
                  'Username'=$website.PublishingUsername;
                  'Password'=$website.PublishingPassword;
-				 'EnableMSDeployAppOffline'='true'}
+				 'EnableMSDeployAppOffline'='true';
+				 'test'='testingcheckin'}
 
  $publishScript = "${env:ProgramFiles(x86)}\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Web Tools\Publish\Scripts\1.2.0\default-publish.ps1"
 

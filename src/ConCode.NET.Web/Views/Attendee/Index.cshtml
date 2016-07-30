@@ -3,76 +3,55 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="container-fluid speaker-page">
+   <div class="row">
+      <div class="col-md-8">
+        <h2>@Model.Greeting @Model.FirstName!</h2>
 
-<h2>Attended</h2>
+        <div>
+            <h4>Details About Your Profile</h4>
+            <div style="background-image: url('/images/BadgeTemplate.png');  background-size: 450px 600px; width:450px; Height:600px; Padding:15px;">
+                <span><img src="@Model.Photo" width="90px" style="Float:Left; margin-top: 130px; margin-left: 60px"/></span>
+                <h2 style="margin-top: 125px; margin-left: 160px; width:200px;">@Model.FirstName @Model.LastName</h2>
+                <h6 style="margin-left:165px;"> @Html.DisplayNameFor(model => model.Username) @Html.DisplayNameFor(model => model.Username)</h6>
+                <dl class="dl-horizontal" style="width:360px;padding-left: 5px;padding-top: 20px;text-overflow: ellipsis;">
+                <dt>
+                    Blog
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.BlogUri)
+                </dd>
+                <dt>
+                    Twitter
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TwitterHandle)
+                </dd>
+                <dt>
+                    LinkedIn
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LinkedInProfile)
+                </dd>
+                <dt>
+                   Facebook
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FacebookProfile)
+                </dd>
+            </dl>
+            <div style="width:325px;margin-left: 55px;" class="text-muted">
+                @Model.Bio
+                </div>
 
-<div>
-    <h4>Details About Your Profile</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Bio)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Bio)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BlogUri)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BlogUri)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TwitterHandle)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TwitterHandle)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LinkedInProfile)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LinkedInProfile)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FacebookProfile)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FacebookProfile)
-        </dd>
-    </dl>
+        </div>
+    </div>
+    <div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ })
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+      </div>
+<div class="col-md-4">
+    @await Html.PartialAsync("_sponsors")
+</div>
+</div>
 </div>
