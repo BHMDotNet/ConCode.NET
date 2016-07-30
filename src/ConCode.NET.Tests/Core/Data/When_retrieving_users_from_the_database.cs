@@ -9,7 +9,7 @@ using Xunit;
 namespace CodeConf.NET.Tests.Core.Data
 {
     // Not public so integration tests will be skipped. 
-    class When_retrieving_users_from_the_database : IDisposable
+    public class When_retrieving_users_from_the_database : IDisposable
     {
         private ConferenceDbContext _conferenceDbContext;
         private User _testUser;
@@ -57,6 +57,24 @@ namespace CodeConf.NET.Tests.Core.Data
             _conferenceDbContext.SaveChanges();
             user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
             Assert.Null(user);
+        }
+        [Fact]
+        public void Should_save_attendee_info()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            user.AttendeeInfo = new AttendeeInfo { };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            Assert.NotNull(user.AttendeeInfo);
+        }
+        [Fact]
+        public void Should_save_attendee_is_attending()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            user.AttendeeInfo = new AttendeeInfo { IsAttending = true };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            Assert.Equal(true, user.AttendeeInfo.IsAttending);
         }
 
         public void Dispose()

@@ -28,8 +28,8 @@ namespace ConCode.NET.Core.Data
 
         void AddSpeaker(User speaker);
 
-        IQueryable<Attendee> Attendees { get; }
+        IQueryable<User> Attendees { get; }
 
-        void SaveAttendee(Attendee attendee);
+        void SaveAttendee(User attendee);
     }
 }

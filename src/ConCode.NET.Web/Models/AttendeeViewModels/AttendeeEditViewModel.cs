@@ -10,7 +10,7 @@ namespace ConCode.NET.Web.Models.AttendeeViewModels
         {
         }
 
-        public AttendeeEditViewModel(Attendee model)
+        public AttendeeEditViewModel(User model)
         {
             Id = model.Id;
             FirstName = model.FirstName;

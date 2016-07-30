@@ -1,10 +1,11 @@
-﻿using ConCode.NET.Core.Domain.Interfaces;
+﻿using ConCode.NET.Core.Domain;
+using ConCode.NET.Core.Domain.Interfaces;
 using ConCode.NET.Web.Controllers;
 using ConCode.NET.Web.Models.AttendeeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Xunit;
-using AttendeePoco = ConCode.NET.Core.Domain.Attendee;
+using AttendeePoco = ConCode.NET.Core.Domain.AttendeeInfo;
 
 namespace ConCode.NET.Tests.Web.Controllers.Attendee
 {
@@ -15,7 +16,7 @@ namespace ConCode.NET.Tests.Web.Controllers.Attendee
 
         public When_requesting_Index_on_AttendeeController()
         {
-            var theAttendee = new AttendeePoco
+            var theAttendee = new User
             {
                 Id = 1001,
                 FirstName = "Brandon"

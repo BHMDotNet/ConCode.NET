@@ -28,12 +28,17 @@ namespace CodeConf.NET.Core.Data
                 entity.Property(e => e.LinkedInProfile).HasColumnName("LinkedInUri");
                 entity.Property(e => e.Photo).HasColumnName("PhotoUri");
                 entity.HasOne(e => e.SpeakerInfo).WithOne(e => e.User).HasForeignKey<SpeakerInfo>(e => e.UserId);
+                entity.HasOne(e => e.AttendeeInfo).WithOne(e => e.User).HasForeignKey<AttendeeInfo>(e => e.UserId);
             });
             modelBuilder.Entity<SpeakerInfo>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Ignore(e => e.Talks);
                 entity.Property(e => e.Tagline).HasColumnName("Tagline");
+            });
+            modelBuilder.Entity<AttendeeInfo>(entity =>
+            {
+                entity.HasKey(e => e.Id);
             });
         }
         public override int SaveChanges()

@@ -265,9 +265,9 @@ namespace ConCode.NET.Core.Data
         #endregion
 
         #region Attendees Data
-        private IEnumerable<Attendee> _attendees = new List<Attendee>()
+        private IEnumerable<User> _attendees = new List<User>()
         {
-            new Attendee{
+            new User{
                 Id = 1001,
                 Bio = "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
                 BlogUri = "http://theverybestblog.com",
@@ -280,7 +280,7 @@ namespace ConCode.NET.Core.Data
                 Photo = "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
                 TwitterHandle = "helmsb"
             },
-            new Attendee{
+            new User{
                 Id = 1002,
                 Bio = "I collect spores, molds, and fungus.",
                 BlogUri = "http://theverybestblog.com",
@@ -293,7 +293,7 @@ namespace ConCode.NET.Core.Data
                 Photo = "http://photos1.meetupstatic.com/photos/member/c/8/6/0/member_257331296.jpeg",
                 TwitterHandle = "brussellz"
             },
-            new Attendee{
+            new User{
                 Id = 1003,
                 Bio = "I collect spores, molds, and fungus.",
                 BlogUri = "http://theverybestblog.com",
@@ -443,7 +443,7 @@ namespace ConCode.NET.Core.Data
             }
         }
 
-        public IQueryable<Attendee> Attendees
+        public IQueryable<User> Attendees
         {
             get
             {
@@ -476,7 +476,7 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        public void SaveAttendee(Attendee attendee)
+        public void SaveAttendee(User attendee)
         {
             throw new NotImplementedException();
         }

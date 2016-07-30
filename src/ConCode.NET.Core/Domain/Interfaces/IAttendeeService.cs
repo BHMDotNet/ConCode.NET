@@ -7,8 +7,8 @@ namespace ConCode.NET.Core.Domain.Interfaces
 {
     public interface IAttendeeService
     {
-        IQueryable<Attendee> GetAttendees();
+        IQueryable<User> GetAttendees();
 
-        void SaveAttendee(Attendee model);
+        void SaveAttendee(User model);
     }
 }
