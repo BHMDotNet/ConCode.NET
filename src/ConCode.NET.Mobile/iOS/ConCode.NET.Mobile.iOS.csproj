@@ -141,6 +141,9 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default~iphone.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x~iphone_640x960.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x~iphone_640x1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape-736h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait-736h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-667h%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
