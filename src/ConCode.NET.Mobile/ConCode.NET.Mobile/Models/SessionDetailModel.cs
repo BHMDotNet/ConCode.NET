@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConCode.NET.Core.Domain;
+using ConCode.NET.Domain;
 namespace ConCode.NET.Mobile
 {
 	public class SessionDetailModel
