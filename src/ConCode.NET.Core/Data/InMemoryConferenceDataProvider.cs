@@ -50,6 +50,7 @@ namespace ConCode.NET.Core.Data
                 var status = statuses[rnd.Next(statuses.Length)];
                 var talkType = _talkTypes[rnd.Next(_talkTypes.Count)];
 
+                speaker.SpeakerInfo.Talks = new List<Talk> { talk };
                 talk.Speakers = new[] { speaker };
                 talk.Level = levels[rnd.Next(levels.Length)];
 
