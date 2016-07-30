@@ -161,9 +161,10 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Training-30.png" />
-    <BundleResource Include="Resources\Speaker-Filled-30.png" />
-    <BundleResource Include="Resources\Home-30.png" />
+    <BundleResource Include="Resources\Training.png" />
+    <BundleResource Include="Resources\Speaker.png" />
+    <BundleResource Include="Resources\Home.png" />
+    <BundleResource Include="Resources\ConCodeLogoColorWhiteBkgrd.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
