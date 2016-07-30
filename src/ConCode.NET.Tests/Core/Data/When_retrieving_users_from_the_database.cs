@@ -12,13 +12,13 @@ using ConCode.NET.Tests;
 namespace CodeConf.NET.Tests.Core.Data
 {
     // Not public so db integration tests will be skipped. 
-    public class When_retrieving_users_from_the_database : IDisposable
+    class When_retrieving_users_from_the_database : IDisposable
     {
         private ConferenceDbContext _conferenceDbContext;
         private User _testUser;
         private Mock<IOptions<ConnectionOption>> _mockConnectionOption;
 
-        When_retrieving_users_from_the_database()
+        public When_retrieving_users_from_the_database()
         {
             _mockConnectionOption = new Moq.Mock<IOptions<ConnectionOption>>();
             ConnectionOption connectionOption = new ConnectionOption
@@ -88,6 +88,15 @@ namespace CodeConf.NET.Tests.Core.Data
         }
         [Fact]
         public void Should_save_speaker_talk()
+        {
+            var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            user.SpeakerInfo = new SpeakerInfo { Talks = new List<Talk> { new Talk { Title = "How to find your father" } } };
+            _conferenceDbContext.SaveChanges();
+            user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
+            Assert.NotNull(user.SpeakerInfo);
+        }
+        [Fact]
+        public void Should_save_talk_resources()
         {
             var user = _conferenceDbContext.Users.FirstOrDefault(x => x.FirstName == "Luke");
             //user.SpeakerInfo = new SpeakerInfo { };
