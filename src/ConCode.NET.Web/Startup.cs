@@ -91,6 +91,8 @@ namespace ConCode.NET.Web
             else
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                app.UseBrowserLink();
                 //app.UseExceptionHandler("/Home/Error");
             }
 
