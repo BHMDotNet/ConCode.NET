@@ -40,8 +40,7 @@ namespace ConCode.NET.Mobile
 						Speakers.Add(new SpeakerListModel
 						{
 							Id = speaker.Id,
-							FirstName = speaker.FirstName,
-							LastName = speaker.LastName,
+							FullName = speaker.FirstName + " " + speaker.LastName,
 							TagLine = speaker.SpeakerInfo.Tagline,
 							Bio = speaker.Bio,
 							Photo = speaker.Photo
