@@ -56,6 +56,12 @@ namespace ConCode.NET.Mobile
 			get;
 			set;
 		}
+
+		public string Abstract
+		{
+			get;
+			set;
+		}
 	}
 
 }
