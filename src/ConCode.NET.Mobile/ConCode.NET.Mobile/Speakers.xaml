@@ -3,7 +3,6 @@
 	<ContentPage.Content>
 		<Grid>
 			<StackLayout Padding="10,10,10,0">
-			<ActivityIndicator x:Name="Loading" Color="Red" IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 				<ListView x:Name="speakerList" 
 						  SeparatorVisibility="None"
 						  BackgroundColor="Transparent"

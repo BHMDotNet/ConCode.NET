@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ConCode.NET.Mobile
@@ -19,14 +19,11 @@ namespace ConCode.NET.Mobile
 
 			if (_speakerList == null)
 			{
-				Loading.IsVisible = true;
-				Loading.IsRunning = true;
+				speakerList.IsRefreshing = true;
 
-				var cd = new ConferenceData();
-				_speakerList = await cd.GetSpeakersAsync();
+				_speakerList = await RefreshSpeakers();
 
-				Loading.IsVisible = false;
-				Loading.IsRunning = false;
+				speakerList.IsRefreshing = false;
 			}
 
 			speakerList.ItemsSource = _speakerList;
@@ -41,9 +38,18 @@ namespace ConCode.NET.Mobile
 			await Navigation.PushAsync(new SpeakerDetails());
 		}
 
-		void Handle_Refreshing(object sender, System.EventArgs e)
+		async void Handle_Refreshing(object sender, System.EventArgs e)
 		{
-			throw new NotImplementedException();
+			_speakerList = await RefreshSpeakers();
+			speakerList.EndRefresh();
+		}
+
+		private async Task<List<SpeakerListModel>> RefreshSpeakers()
+		{
+			var cd = new ConferenceData();
+			var speakerListModel = await cd.GetSpeakersAsync();
+
+			return speakerListModel;
 		}
 	}
 }
