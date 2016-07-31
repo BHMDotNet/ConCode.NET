@@ -7,4 +7,10 @@
        scope="appsettings.json"
        match="(?&lt;=&quot;ConCode&quot;:\s*&quot;)[^&quot;]*"/>
   </parameter>
+  <parameter name="SiteName">
+    <parameterEntry
+       type="providerPath"
+       scope="IisApp"
+       match="ConCode.NET.Web_Deploy$"/>
+  </parameter>
 </parameters>
