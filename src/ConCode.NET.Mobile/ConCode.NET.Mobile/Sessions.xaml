@@ -3,14 +3,15 @@
 		<ContentPage.Content>
 		<Grid>
 			<StackLayout Padding="10,10,10,0">
-			<ActivityIndicator x:Name="Loading" Color="Red" IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-				<ListView x:Name="listView" 
+				<ListView x:Name="sessionList" 
 						  SeparatorVisibility="None"
 						  BackgroundColor="Transparent"
 						  SeparatorColor="#DFDFDF"
 						  HasUnevenRows="false"
 						  RowHeight="90" 
-						  ItemSelected="Handle_ItemSelected">
+						  ItemSelected="Handle_ItemSelected"
+						  IsPullToRefreshEnabled="true" 
+						  Refreshing="Handle_Refreshing">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>

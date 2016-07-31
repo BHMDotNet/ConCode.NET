@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ConCode.NET.Mobile
@@ -19,18 +19,12 @@ namespace ConCode.NET.Mobile
 
 			if (_sessionList == null)
 			{
-				Loading.IsVisible = true;
-				Loading.IsRunning = true;
-
-				var cd = new ConferenceData();
-				_sessionList = await cd.GetSessionsAsync();
-
-				Loading.IsVisible = false;
-				Loading.IsRunning = false;
+				sessionList.IsRefreshing = true;
+				_sessionList = await RefreshSessions();
+				sessionList.IsRefreshing = false;
 			}
 
-			listView.ItemsSource = _sessionList;
-
+			sessionList.ItemsSource = _sessionList;
 		}
 
 		async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -39,7 +33,22 @@ namespace ConCode.NET.Mobile
 			{
 				return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
 			}
+
 			await Navigation.PushAsync(new SessionDetails());
+		}
+
+		async void Handle_Refreshing(object sender, System.EventArgs e)
+		{
+			_sessionList = await RefreshSessions();
+			sessionList.EndRefresh();
+		}
+
+		private async Task<List<SessionListModel>> RefreshSessions()
+		{
+			var cd = new ConferenceData();
+			var sessionsListModel = await cd.GetSessionsAsync();
+
+			return sessionsListModel;
 		}
 	}
 }

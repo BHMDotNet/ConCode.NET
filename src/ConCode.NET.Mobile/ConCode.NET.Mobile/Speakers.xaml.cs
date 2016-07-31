@@ -17,6 +17,8 @@ namespace ConCode.NET.Mobile
 		{
 			base.OnAppearing();
 
+			speakerList.IsRefreshing = true;
+
 			if (_speakerList == null)
 			{
 				speakerList.IsRefreshing = true;
@@ -41,13 +43,13 @@ namespace ConCode.NET.Mobile
 		async void Handle_Refreshing(object sender, System.EventArgs e)
 		{
 			_speakerList = await RefreshSpeakers();
-			speakerList.EndRefresh();
 		}
 
 		private async Task<List<SpeakerListModel>> RefreshSpeakers()
 		{
 			var cd = new ConferenceData();
 			var speakerListModel = await cd.GetSpeakersAsync();
+			speakerList.EndRefresh();
 
 			return speakerListModel;
 		}
