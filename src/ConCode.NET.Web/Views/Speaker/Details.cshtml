@@ -1,0 +1,48 @@
+@model ConCode.NET.Web.Models.SpeakerViewModels.SpeakerDetailsViewModel
+
+@{
+    ViewData["Title"] = "Speaker Details";
+}
+
+<div class="container-fluid speaker-page">
+    <div class="row">
+        <div class="col-md-8" style="text-align:center">
+
+            <img src="@Model.speakerInfo.Photo" height="200" width="190" />
+
+
+            <h1>@Model.speakerInfo.FirstName @Model.speakerInfo.LastName</h1>
+
+            <h4>@Model.speakerInfo.Bio</h4>
+
+            <br />
+
+            <h3 style="color: blue" >@Model.speakerInfo.SpeakerInfo.Talks.FirstOrDefault().Title</h3>
+
+            <h4 style="font-style:italic" >@Model.speakerInfo.SpeakerInfo.Talks.FirstOrDefault().Abstract</h4>
+
+        </div>
+
+        <div id="social-icons">
+
+            <a href="@Model.speakerInfo.TwitterHandle" target="_blank">
+                <img src="~/images/twitter-icon.png" alt="View Twitter Profile" height="60" width="60" />
+            </a>
+
+            <a href="@Model.speakerInfo.LinkedInProfile" target="_blank">
+                <img src="~/images/linkedin-icon.png" alt="View LinkedIn Profile" height="60" width="60" />
+            </a>
+
+            <a href="@Model.speakerInfo.FacebookProfile" target="_blank">
+                <img src="~/images/facebook-icon.png" alt="View Facebook Profile" height="60" width="60" />
+            </a>
+
+
+
+        </div>
+    </div>
+</div>
+<br /><br />
+<div>
+    <a asp-action="GetSpeakers">Back to Speaker List</a>
+</div>
