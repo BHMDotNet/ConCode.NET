@@ -17,8 +17,6 @@ namespace ConCode.NET.Mobile
 		{
 			base.OnAppearing();
 
-			speakerList.IsRefreshing = true;
-
 			if (_speakerList == null)
 			{
 				speakerList.IsRefreshing = true;
