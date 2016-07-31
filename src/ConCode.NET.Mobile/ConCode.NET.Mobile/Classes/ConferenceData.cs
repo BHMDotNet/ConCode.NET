@@ -91,7 +91,8 @@ namespace ConCode.NET.Mobile
 							Length = session.TalkType.Length.TotalMinutes.ToString(),
 							Venue = session.Venue.Description,
 							Status = session.Status,
-							Tags = session.Talk.Tags
+							Tags = session.Talk.Tags,
+							Abstract = session.Talk.Abstract
 						});
 					}
 				}

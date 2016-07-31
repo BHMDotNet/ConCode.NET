@@ -35,7 +35,9 @@ namespace ConCode.NET.Mobile
 			{
 				return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
 			}
-			await Navigation.PushAsync(new SpeakerDetails());
+			SpeakerListModel item = e.SelectedItem as SpeakerListModel;
+
+			await Navigation.PushAsync(new SpeakerDetails(item));
 		}
 
 		async void Handle_Refreshing(object sender, System.EventArgs e)

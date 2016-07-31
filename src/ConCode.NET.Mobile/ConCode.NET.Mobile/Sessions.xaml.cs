@@ -33,8 +33,8 @@ namespace ConCode.NET.Mobile
 			{
 				return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
 			}
-
-			await Navigation.PushAsync(new SessionDetails());
+			SessionListModel item = e.SelectedItem as SessionListModel;
+			await Navigation.PushAsync(new SessionDetails(item));
 		}
 
 		async void Handle_Refreshing(object sender, System.EventArgs e)

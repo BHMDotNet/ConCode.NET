@@ -10,10 +10,10 @@
 				</Grid.ColumnDefinitions>
 
 				<StackLayout Grid.Column="0" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
-					<Image MinimumHeightRequest="30" Source="{Binding Photo}"/>
+					<Image x:Name="Photo" MinimumHeightRequest="30"/>
 				</StackLayout>
 				<StackLayout Grid.Column="1" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-					<Label Text="Blake Helms" FontSize="30" TextColor="#c82b2e" FontAttributes="Bold" />
+					<Label x:Name="Name" Text="Full Name" FontSize="30" TextColor="#c82b2e" FontAttributes="Bold" />
 				</StackLayout>
 			</Grid>
 			<Grid Style="{DynamicResource AbstractStyle}">
@@ -22,7 +22,7 @@
 				</Grid.ColumnDefinitions>
 				<StackLayout Grid.Column="0" Spacing="0" Padding="10,5,10,10" HorizontalOptions="Center" VerticalOptions="Center">
 					<Label Text="Bio" FontSize="20" TextColor="#c82b2e" />
-					<Label TextColor="Gray" FontSize="13" Text="I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, &#xA;							human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf." />
+					<Label x:Name="Bio" TextColor="Gray" FontSize="13" Text="I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, &#xA;							human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf." />
 				</StackLayout>
 			</Grid>
 		</StackLayout>

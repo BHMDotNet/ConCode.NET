@@ -11,6 +11,15 @@ namespace ConCode.NET.Mobile
 		{
 			InitializeComponent();
 		}
+
+		public SpeakerDetails(SpeakerListModel speakerListModel)
+		{
+			InitializeComponent();
+
+			Name.Text = speakerListModel.FullName;
+			Photo.Source = speakerListModel.Photo;
+			Bio.Text = speakerListModel.Bio;
+		}
 	}
 }
 
