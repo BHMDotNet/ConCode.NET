@@ -33,18 +33,18 @@ namespace ConCode.NET.Mobile
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
-					var tempSpeakers = JsonConvert.DeserializeObject<List<SpeakerInfo>>(content);
+					var tempSpeakers = JsonConvert.DeserializeObject<List<User>>(content);
 
 					foreach (var speaker in tempSpeakers)
 					{
 						Speakers.Add(new SpeakerListModel
 						{
 							Id = speaker.Id,
-							FirstName = speaker.User.FirstName,
-							LastName = speaker.User.LastName,
-							TagLine = speaker.Tagline,
-							Bio = speaker.User.Bio,
-							Photo = speaker.User.Photo
+							FirstName = speaker.FirstName,
+							LastName = speaker.LastName,
+							TagLine = speaker.SpeakerInfo.Tagline,
+							Bio = speaker.Bio,
+							Photo = speaker.Photo
 
 						});
 					}
