@@ -154,6 +154,11 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
+        public void SaveSponsor()
+        {
+            throw new NotImplementedException();
+        }
+
         public ConferenceInfo ConferenceInfo
         {
             get

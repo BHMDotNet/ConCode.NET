@@ -94,6 +94,7 @@
       "wwwroot",
       "Views",
       "Areas/**/Views",
+      "Data",
       "appsettings.json",
       "web.config"
     ]

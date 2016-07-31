@@ -105,12 +105,8 @@ namespace ConCode.NET.Core.Data
 
         #region IConferenceDataProvider Implementation
 
+        #region Session
         public void AddSession(Session session)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddVenue(Venue venue)
         {
             throw new NotImplementedException();
         }
@@ -122,6 +118,7 @@ namespace ConCode.NET.Core.Data
                 throw new NotImplementedException();
             }
         }
+        #endregion
 
         #region Speaker
 
@@ -176,7 +173,13 @@ namespace ConCode.NET.Core.Data
 
         public void AddSponsor(Sponsor sponsor)
         {
-            throw new NotImplementedException();
+            Sponsors.Add(sponsor);
+            SaveChanges();
+        }
+
+        public void SaveSponsor()
+        {
+            SaveChanges();
         }
         #endregion
 
@@ -198,6 +201,7 @@ namespace ConCode.NET.Core.Data
         }
         #endregion
 
+        #region Venue
         public IQueryable<Venue> Venues
         {
             get
@@ -205,6 +209,12 @@ namespace ConCode.NET.Core.Data
                 throw new NotImplementedException();
             }
         }
+
+        public void AddVenue(Venue venue)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
 
         public ConferenceInfo ConferenceInfo
         {

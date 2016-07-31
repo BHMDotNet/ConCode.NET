@@ -90,7 +90,10 @@ namespace ConCode.NET.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                app.UseBrowserLink();
+                //app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();
