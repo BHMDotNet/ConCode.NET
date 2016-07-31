@@ -1,14 +1,49 @@
 Microsoft (R) Build Engine version 14.0.25420.1
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 7/31/2016 7:18:19 AM.
+Build started 7/31/2016 1:59:15 PM.
 C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets(184,3): warning MSB4011: "D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\DotNet\Microsoft.DotNet.Publishing.targets (54,3)". This is most likely a build authoring error. This subsequent import will be ignored. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
 The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
 The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
 The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
 The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
 The target "MvcBuildViews" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets (852,131)" does not exist in the project, and will be ignored.
-Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" on node 1 (CustomPublish target(s)).
+The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" on node 1 (Rebuild;CustomPublish target(s)).
+CleanWebsitesPackage:
+  Deleting file "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\ConCode.NET.Web.SourceManifest.xml".
+PreComputeCompileTypeScript:
+  C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.8\tsc.exe  --noEmitOnError
+Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (1) is building "D:\Github\ConCode.NET\src\ConCode.NET.Domain\ConCode.NET.Domain.xproj" (2:2) on node 1 (default targets).
+CoreCompile:
+  C:\Program Files\dotnet\dotnet.exe build "D:\Github\ConCode.NET\src\ConCode.NET.Domain" --configuration Debug --no-dependencies
+  Project ConCode.NET.Domain (.NETStandard,Version=v1.6) was previously compiled. Skipping compilation.
+Done Building Project "D:\Github\ConCode.NET\src\ConCode.NET.Domain\ConCode.NET.Domain.xproj" (default targets).
+Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (1) is building "D:\Github\ConCode.NET\src\ConCode.NET.Core\ConCode.NET.Core.xproj" (3:2) on node 1 (default targets).
+CoreCompile:
+  C:\Program Files\dotnet\dotnet.exe build "D:\Github\ConCode.NET\src\ConCode.NET.Core" --configuration Debug --no-dependencies
+  Project ConCode.NET.Core (.NETStandard,Version=v1.6) was previously compiled. Skipping compilation.
+Done Building Project "D:\Github\ConCode.NET\src\ConCode.NET.Core\ConCode.NET.Core.xproj" (default targets).
+CompileTypeScript:
+  C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.8\tsc.exe  --noEmitOnError
+CoreCompile:
+  C:\Program Files\dotnet\dotnet.exe build "D:\Github\ConCode.NET\src\ConCode.NET.Web" --configuration Debug --no-dependencies --no-incremental
+  Project ConCode.NET.Web (.NETCoreApp,Version=v1.0) will be compiled because project is not safe for incremental compilation. Use --build-profile flag for more information.
+  Compiling ConCode.NET.Web for .NETCoreApp,Version=v1.0
+  Compilation succeeded.
+      0 Warning(s)
+      0 Error(s)
+  Time elapsed 00:00:03.1667582
+   (The compilation time can be improved. Run "dotnet build --build-profile" for more information)
+GetTypeScriptCopyToOutputDirectoryItems:
+  Adding items with BuildAction=TypeScriptCompile to the same collections that will be populated (with items of other BuildActions) by the GetCopyToOutputDirectoryItems target
 GetMSDeployInstalledVersionPath:
   $(_DefaultMSDeployMaxVersion) is 3
   $(_MSDeployVersionsToTry) is 9.0
@@ -27,23 +62,439 @@ CreateMSDeployPackageFromDotNetPublishFiles:
   Info: Creating application (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\)
   Info: Adding virtual path (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\)
   Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\appsettings.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Core.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Core.pdb).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Domain.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Domain.pdb).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Web.deps.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Web.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Web.pdb).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\ConCode.NET.Web.runtimeconfig.json).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\ApplicationDbContext.cs).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\Attendees.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\ConferenceInfo.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\Speakers.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\Sponsors.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\Talks.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\TalkTypes.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Json\Venues.json).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Migrations).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Migrations\00000000000000_CreateIdentitySchema.cs).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Data\Migrations\ApplicationDbContextModelSnapshot.cs).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Antiforgery.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.Cookies.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.Facebook.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.Google.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.OAuth.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authentication.Twitter.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Authorization.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Cors.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Cryptography.Internal.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.DataProtection.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.DataProtection.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Diagnostics.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Diagnostics.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Hosting.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Hosting.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Html.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Http.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Http.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Http.Extensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Http.Features.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.HttpOverrides.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Identity.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.JsonPatch.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Localization.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.ApiExplorer.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Core.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Cors.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.DataAnnotations.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Formatters.Json.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Localization.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Razor.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.Razor.Host.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.TagHelpers.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Mvc.ViewFeatures.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Razor.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Razor.Runtime.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Routing.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Routing.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Server.IISIntegration.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.Server.Kestrel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.StaticFiles.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.AspNetCore.WebUtilities.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.DotNet.InternalAbstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.EntityFrameworkCore.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.EntityFrameworkCore.Relational.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.EntityFrameworkCore.SqlServer.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Caching.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Caching.Memory.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.Binder.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.EnvironmentVariables.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.FileExtensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.Json.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Configuration.UserSecrets.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.DependencyInjection.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.DependencyInjection.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.DependencyModel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.FileProviders.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.FileProviders.Composite.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.FileProviders.Physical.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.FileSystemGlobbing.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Globalization.CultureInfoCache.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Localization.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Localization.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Logging.Abstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Logging.Console.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Logging.Debug.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Logging.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.ObjectPool.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Options.ConfigurationExtensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Options.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.PlatformAbstractions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Extensions.WebEncoders.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.Net.Http.Headers.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Microsoft.VisualStudio.Web.BrowserLink.Loader.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Newtonsoft.Json.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\Microsoft.CSharp.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\Microsoft.VisualBasic.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\Microsoft.Win32.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\Microsoft.Win32.Registry.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.AppContext.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Collections.Concurrent.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Collections.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Collections.NonGeneric.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.ComponentModel.Annotations.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.ComponentModel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.ComponentModel.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.ComponentModel.TypeConverter.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Console.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Data.Common.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Data.SqlClient.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.Contracts.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.Debug.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.Process.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.StackTrace.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.Tools.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Diagnostics.Tracing.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Dynamic.Runtime.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Globalization.Calendars.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Globalization.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Globalization.Extensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.Compression.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.Compression.ZipFile.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.FileSystem.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.FileSystem.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.FileSystem.Watcher.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.MemoryMappedFiles.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.IO.UnmanagedMemoryStream.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Linq.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Linq.Expressions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Linq.Parallel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Linq.Queryable.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.Http.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.NameResolution.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.Requests.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.Security.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.Sockets.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.WebHeaderCollection.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Net.WebSockets.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Numerics.Vectors.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.ObjectModel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Reflection.DispatchProxy.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Reflection.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Reflection.Extensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Reflection.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Reflection.TypeExtensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Resources.ResourceManager.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.Extensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.Handles.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.InteropServices.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.InteropServices.RuntimeInformation.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.Loader.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.Numerics.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Runtime.Serialization.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Claims.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Cryptography.Algorithms.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Cryptography.Encoding.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Cryptography.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Cryptography.X509Certificates.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Principal.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Security.Principal.Windows.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Text.Encoding.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Text.Encoding.Extensions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Text.RegularExpressions.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.Tasks.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.Tasks.Parallel.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.Thread.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.ThreadPool.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Threading.Timer.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Xml.ReaderWriter.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\refs\System.Xml.XDocument.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Remotion.Linq.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\unix).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\unix\lib).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\unix\lib\netstandard1.3).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\unix\lib\netstandard1.3\System.IO.Pipes.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win\lib).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win\lib\netstandard1.3).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win\lib\netstandard1.3\System.IO.Pipes.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x64).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x64\native).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x64\native\sni.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x86).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x86\native).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\runtimes\win7-x86\native\sni.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Collections.NonGeneric.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Collections.Specialized.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.ComponentModel.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.ComponentModel.TypeConverter.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Data.Common.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Diagnostics.Contracts.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Interactive.Async.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Net.WebSockets.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Runtime.Serialization.Primitives.dll).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\System.Text.Encodings.Web.dll).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ConfirmEmail.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ExternalLoginConfirmation.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ExternalLoginFailure.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ForgotPassword.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ForgotPasswordConfirmation.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\Lockout.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\Login.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\Register.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ResetPassword.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\ResetPasswordConfirmation.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\SendCode.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Account\VerifyCode.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Attendee).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Attendee\Edit.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Attendee\Index.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Home).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Home\About.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Home\Contact.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Home\Index.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\AddPhoneNumber.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\ChangePassword.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\Index.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\ManageLogins.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\SetPassword.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Manage\VerifyPhoneNumber.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Session).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Session\Add.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Session\Details.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Session\Index.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\Error.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\_Layout.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\_LoginPartial.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\_resource.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\_sponsors.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Shared\_ValidationScriptsPartial.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker\Create.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker\Details.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker\Edit.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker\GetSpeakers.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Speaker\Index.cshtml).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Venue).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Venue\Add.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\Venue\Index.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\_ViewImports.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\Views\_ViewStart.cshtml).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\web.config).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\css\flatly.bootstrap.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\css\flatly.bootstrap.min.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\css\site.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\css\site.min.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\favicon.ico).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\BadgeTemplate.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\banner1.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\banner2.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\banner3.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\banner4.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\concode-home-page-banner.jpg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\ConCodeHeaderLogo.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\facebook-icon.png).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\aac.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ai.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\aiff.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\asp.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\avi.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\bmp.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\c.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\cpp.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\css.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dat.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dmg.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\doc.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\docx.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dot.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dotx.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dwg.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\dxf.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\eps.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\exe.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\flv.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\gif.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\h.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\html.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ics.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\iso.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\java.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\jpg.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\key.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\m4v.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\mid.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\mov.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\mp3.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\mp4.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\mpg.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\odp.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ods.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\odt.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\otp.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ots.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ott.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\pdf.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\php.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\png.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\pps.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\ppt.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\psd.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\py.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\qt.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\rar.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\rb.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\rtf.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\sql.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\tga.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\tgz.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\tiff.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\txt.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\wav.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\xls.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\xlsx.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\xml.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\yml.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\file-types\zip.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\linkedin-icon.png).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\SessionsBanner.jpg).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media\social-1_logo-facebook.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media\social-1_logo-github.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media\social-1_logo-linkedin.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media\social-1_logo-twitter.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\social-media\social-1_logo-wordpress.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\images\twitter-icon.png).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\js\site.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\js\site.min.js).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\.bower.json).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\js\bootstrap.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\dist\js\npm.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\bootstrap\LICENSE).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\.bower.json).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\dist).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\dist\jquery.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\dist\jquery.min.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\dist\jquery.min.map).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery\LICENSE.txt).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\.bower.json).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\dist).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\dist\additional-methods.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\dist\additional-methods.min.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\dist\jquery.validate.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation\LICENSE.md).
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation-unobtrusive).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation-unobtrusive\.bower.json).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js).
+  Info: Adding file (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\wwwroot\_references.js).
   Info: Adding declared parameter 'ConnectionString-ConCode'.
-  Total changes: 6 (5 added, 0 deleted, 0 updated, 1 parameters changed, 0 bytes copied)
-D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,11): error MSB4064: The "SourceFolder" parameter is not supported by the "Copy" task. Verify the parameter exists on the task, and it is a settable public instance property. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
-D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,5): error MSB4063: The "Copy" task could not be initialized with its input parameters.  [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
-Done Building Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (CustomPublish target(s)) -- FAILED.
+  Info: Adding declared parameter 'SiteName'.
+  Total changes: 409 (407 added, 0 deleted, 0 updated, 2 parameters changed, 16130596 bytes copied)
+  Copying file from "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\\ConCode.NET.Web.DestManifest.xml" to ".\bin\\Debug\package\ConCode.NET.Web.DestManifest.xml".
+  Copying file from "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\\ConCode.NET.Web.package.zip" to ".\bin\\Debug\package\ConCode.NET.Web.package.zip".
+  Copying file from "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\\ConCode.NET.Web.SourceManifest.xml" to ".\bin\\Debug\package\ConCode.NET.Web.SourceManifest.xml".
+  Copying file from "D:\Github\ConCode.NET\src\ConCode.NET.Web/Deploy/\SetParameters.Local.xml" to ".\bin\\Debug\package\SetParameters.Local.xml".
+GatherAllFilesToPublish:
+  rmdir /S /Q "C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\"
+  Environment variables:
+  DOTNET_CONFIGURE_AZURE=1
+  Path=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External;.\node_modules\.bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\NativeBinaries\x86;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\rschi\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\opscode\chefdk\bin\;C:\Program Files\Git\cmd;C:\HashiCorp\Vagrant\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files\dotnet\;C:\Users\rschi\.dnx\bin;C:\PROGRA~2\Oracle\VirtualBox;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\rschi\AppData\Roaming\npm;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External\git
+  C:\Program Files\dotnet\dotnet.exe publish "D:\Github\ConCode.NET\src\ConCode.NET.Web" --output "C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63" --configuration Debug --no-build
+  Publishing ConCode.NET.Web for .NETCoreApp,Version=v1.0
+  Bundling with configuration from D:\Github\ConCode.NET\src\ConCode.NET.Web\bundleconfig.json
+  Processing wwwroot/css/site.min.css
+  Unexpected token, found '@import'
+  Unexpected token, found 'url("https://fonts.googleapis.com/css?family=Lato:300")'
+  Processing wwwroot/js/site.min.js
+  Configuring the following project for use with IIS: 'C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63'
+  Updating web.config at 'C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\web.config'
+  Configuring project completed successfully
+  publish: Published to C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63
+  Published 1/1 projects successfully
+Done Building Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (Rebuild;CustomPublish target(s)).
 
-Build FAILED.
+Build succeeded.
 
   C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets(184,3): warning MSB4011: "D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\DotNet\Microsoft.DotNet.Publishing.targets (54,3)". This is most likely a build authoring error. This subsequent import will be ignored. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
 
-
-"D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (CustomPublish target) (1) ->
-(CreateMSDeployPackageFromDotNetPublishFiles target) -> 
-  D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,11): error MSB4064: The "SourceFolder" parameter is not supported by the "Copy" task. Verify the parameter exists on the task, and it is a settable public instance property. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
-  D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,5): error MSB4063: The "Copy" task could not be initialized with its input parameters.  [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
-
     1 Warning(s)
-    2 Error(s)
+    0 Error(s)
 
-Time Elapsed 00:00:00.88
+Time Elapsed 00:00:16.35
