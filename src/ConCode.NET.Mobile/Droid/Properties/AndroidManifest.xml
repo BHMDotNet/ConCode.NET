@@ -1,6 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="net.bhmdot.codeconf.codeconf">
 	<uses-sdk android:minSdkVersion="15" />
 	<application android:label="CodeConf">
+<meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyB17QPCLRYCzpb1N_IlZ0k2X40WjuaIMo0"/>
+
 	</application>
 </manifest>

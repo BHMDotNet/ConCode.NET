@@ -30,8 +30,7 @@ namespace ConCode.NET.Mobile
 
 				var geoCoder = await new Geocoder().GetPositionsForAddressAsync(_conferenceInfo.Location);
 
-
-				Map.MoveToRegion(MapSpan.FromCenterAndRadius(geoCoder.First(),new Distance(100)));
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(geoCoder.FirstOrDefault(), new Distance(100)));
 			}
 		}
 	}
