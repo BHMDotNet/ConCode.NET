@@ -5,12 +5,12 @@
 			<local:Home />
 		</x:Arguments>
 	</NavigationPage>
-	<NavigationPage Title="Sessions" BarTextColor="White"  WidthRequest="10" Icon="Speaker.png">
+	<NavigationPage Title="Sessions" BarTextColor="White"  WidthRequest="10" Icon="Speaker.png" >
 		<x:Arguments>
 			<local:Sessions />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="Speakers" BarTextColor="White" WidthRequest="10" Icon="Training.png">
+		<NavigationPage Title="Speakers" BarTextColor="White" WidthRequest="10" Icon="Training.png" >
 		<x:Arguments>
 			<local:Speakers />
 		</x:Arguments>

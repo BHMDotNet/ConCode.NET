@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace ConCode.NET.Mobile
 {
-	public partial class SpeakerItemTemplate : ContentPage
+	public partial class SpeakerItemTemplate : ContentView
 	{
 		public SpeakerItemTemplate()
 		{
