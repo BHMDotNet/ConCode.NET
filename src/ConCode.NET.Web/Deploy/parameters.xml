@@ -5,6 +5,6 @@
     <parameterEntry
        type="TextFile"
        scope="appsettings.json"
-       match="(?&lt;=&quot;ConCode&quot;:.*&quot;)[^&quot;]*"/>
+       match="(?&lt;=&quot;ConCode&quot;:\s*&quot;)[^&quot;]*"/>
   </parameter>
 </parameters>
