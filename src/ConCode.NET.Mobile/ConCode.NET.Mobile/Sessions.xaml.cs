@@ -7,7 +7,7 @@ namespace ConCode.NET.Mobile
 {
 	public partial class Sessions : ContentPage
 	{
-
+		private List<SessionListModel> _sessionList;
 		public Sessions()
 		{
 			InitializeComponent();
@@ -16,9 +16,21 @@ namespace ConCode.NET.Mobile
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-			var cd = new ConferenceData();
 
-			listView.ItemsSource = await cd.GetSessionsAsync();
+			if (_sessionList == null)
+			{
+				Loading.IsVisible = true;
+				Loading.IsRunning = true;
+
+				var cd = new ConferenceData();
+				_sessionList = await cd.GetSessionsAsync();
+
+				Loading.IsVisible = false;
+				Loading.IsRunning = false;
+			}
+
+			listView.ItemsSource = _sessionList;
+
 		}
 
 		async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

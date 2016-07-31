@@ -3,13 +3,16 @@
 	<ContentPage.Content>
 		<Grid>
 			<StackLayout Padding="10,10,10,0">
-
+			<ActivityIndicator x:Name="Loading" Color="Red" IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 				<ListView x:Name="speakerList" 
 						  SeparatorVisibility="None"
 						  BackgroundColor="Transparent"
 						  SeparatorColor="#DFDFDF"
 						  HasUnevenRows="false"
-						  RowHeight="90">
+						  RowHeight="90"
+						IsPullToRefreshEnabled = "true"
+						Refreshing="Handle_Refreshing"
+						ItemSelected="Handle_ItemSelected">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>
