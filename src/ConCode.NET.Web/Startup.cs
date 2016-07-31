@@ -114,6 +114,13 @@ namespace ConCode.NET.Web
                 ConsumerSecret = "CKhhQKPQJjplp8G2o5BrjmvFZeqdpVRYZAobHZrxTtevHIHtLU"
             });
 
+            app.UseGoogleAuthentication(new GoogleOptions()
+            {
+                ClientId = "897470512898-3pmr6ucsfiqmhvfkdugduv1v1s480q0d.apps.googleusercontent.com",
+                ClientSecret = "KrrPNTm52wB60SlcmqsrkvK0"
+
+            });
+
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 

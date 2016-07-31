@@ -1,0 +1,41 @@
+@model ConCode.NET.Web.Models.SpeakerViewModels.SpeakerListViewModel
+
+@{
+    ViewData["Title"] = "Speakers List";
+}
+
+<div class="container-fluid speaker-page">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="headerbanner">
+                <img src="~/images/SessionsBanner.jpg" class="img-responsive" />
+                <h1>Speakers List</h1>
+            </div>
+            <hr />
+            <div>
+                <div class="speakers-session-list list-group">
+                    @foreach (var speaker in Model.SpeakerList)
+                    {
+                        <a class="list-group-item" asp-controller="Speaker" asp-action="Details" asp-route-id="@speaker.Id">
+                            <table>
+                                <tr>
+                                    <td><img src="@speaker.Photo" height="130" width="120" /></td>
+                                    <td>
+                                        <div>
+                                            <h4 style="display:inline;">@speaker.FirstName @speaker.LastName</h4>
+                                            <br />
+                                            <span class="text-danger"><em>@speaker.SpeakerInfo.Tagline </em></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    }
+                </div>               
+            </div>
+        </div>
+        <div class="col-md-4">
+            @await Html.PartialAsync("_sponsors");
+        </div>
+    </div>
+</div>

@@ -4,6 +4,7 @@ using ConCode.NET.Web.Models.SpeakerViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Security.Claims;
 
 namespace ConCode.NET.Web.Controllers
@@ -71,6 +72,23 @@ namespace ConCode.NET.Web.Controllers
             var speakerViewModel = new SpeakerIndexViewModel(speaker);
 
             return View(speakerViewModel);
+        }
+
+
+        [HttpGet]
+        public IActionResult GetSpeakers()
+        {
+            var speakerListViewModel = new SpeakerListViewModel { SpeakerList = _speakerService.GetSpeakers().ToList() };
+
+            return View(speakerListViewModel);
+        }
+
+
+        [HttpGet]
+        public IActionResult Details(int Id)
+        {  
+            var speaker = _speakerService.GetSpeakerById(Id);
+            return View("Details", new SpeakerDetailsViewModel { speakerInfo = speaker });
         }
 
         [HttpGet]

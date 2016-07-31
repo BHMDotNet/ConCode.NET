@@ -1,58 +1,45 @@
 [
   {
     "Id": 1,
-    "Username" :  "bhelms",
+    "Username": "bhelms",
     "Bio": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
     "BlogUri": "http://theverybestblog.com",
-    "FacebookProfile": "blakehelms",
+    "FacebookProfile": "https://twitter.com/helmsb",
     "FirstName": "Blake",
     "LastName": "Helms",
-    "LinkedInProfile": "blakehelms",
+    "LinkedInProfile": "https://twitter.com/helmsb",
     "Photo": "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-    "TwitterHandle": "helmsb",
+    "TwitterHandle": "https://twitter.com/helmsb",
     "SpeakerInfo": {
       "Tagline": "Someone very interesting"
     }
   },
   {
     "Id": 2,
-    "Username" :  "bhelms",
-    "Bio": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
-    "BlogUri": "http://theverybestblog.com",
-    "FacebookProfile": "blakehelms",
-    "FirstName": "Blake",
-    "LastName": "Helms",
-    "LinkedInProfile": "blakehelms",
-    "Photo": "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-    "TwitterHandle": "helmsb",
+    "Username": "sbehara",
+    "Bio": "I am Samir Behara, a passionate software developer. I have ten years of experience in IT industry, working on large-scale enterprise applications involving complex business functions, web integration, and data management in various domains like Insurance, Manufacturing and Publishing. Currently I am working as a .NET Developer in EBSCO Industries, Birmingham, Alabama.",
+    "BlogUri": "https://dotnetvibes.com/",
+    "FacebookProfile": "https://www.facebook.com/samir.behara",
+    "FirstName": "Samir",
+    "LastName": "Behara",
+    "LinkedInProfile": "https://www.linkedin.com/in/samir-behara-78953870",
+    "Photo": "https://yt3.ggpht.com/-1264m53wRnI/AAAAAAAAAAI/AAAAAAAAAAA/A8MX1D5F_-g/s100-c-k-no-rj-c0xffffff/photo.jpg",
+    "TwitterHandle": "https://twitter.com/samirbehara",
     "SpeakerInfo": {
-      "Tagline": "Someone very interesting"
+      "Tagline": "Living a developer's life in this topsy-turvy world"
     }
-  },
+  }, 
   {
     "Id": 3,
-    "Username" :  "bhelms",
-    "Bio": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
-    "BlogUri": "http://theverybestblog.com",
-    "FacebookProfile": "blakehelms",
-    "FirstName": "Blake",
-    "LastName": "Helms",
-    "LinkedInProfile": "blakehelms",
-    "Photo": "https://pbs.twimg.com/profile_images/287277250/WebReadyColorProfilePhoto.jpg",
-    "TwitterHandle": "helmsb",
-    "SpeakerInfo": { "Tagline": "Someone very interesting" }
-  },
-  {
-    "Id": 4,
     "Username": "stgwilli@gmail.com",
     "Bio": "I recommend you don't fire until you're within 40,000 kilometers. About four years. I got tired of hearing how young I looked. Now we know what they mean by 'advanced' tactical training. Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.",
     "BlogUri": "http://theverybestblog.com",
-    "FacebookProfile": "stgwilli",
+    "FacebookProfile": "https://twitter.com/helmsb",
     "FirstName": "Steven",
     "LastName": "Williams",
-    "LinkedInProfile": "stgwilli",
+    "LinkedInProfile": "https://twitter.com/helmsb",
     "Photo": "https://avatars1.githubusercontent.com/u/26733?v=3&s=460",
-    "TwitterHandle": "stgwilli",
-    "SpeakerInfo": { "Tagline": "Someone very interesting" }
+    "TwitterHandle": "https://twitter.com/helmsb",
+    "SpeakerInfo": { "Tagline": "The awesome bearded programmer" }
   }
 ]
