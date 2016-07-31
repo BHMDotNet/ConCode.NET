@@ -40,7 +40,12 @@ namespace ConCode.NET.Mobile
 						Name = tempConferenceInfo.Name,
 						Description = tempConferenceInfo.Description,
 						Dates = "1/1/2017",
-						Location = tempConferenceInfo.Location
+						Location = string.Format("{0} {1} {2} {3}, {4} {5}", tempConferenceInfo.Location.Line1,
+												tempConferenceInfo.Location.Line2,
+												tempConferenceInfo.Location.Line3,
+												tempConferenceInfo.Location.City,
+												tempConferenceInfo.Location.StateOrProvince,
+												 tempConferenceInfo.Location.PostalCode)
 
 					};
 

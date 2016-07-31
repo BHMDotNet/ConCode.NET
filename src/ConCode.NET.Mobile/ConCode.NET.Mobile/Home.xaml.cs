@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Forms.Maps;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace ConCode.NET.Mobile
 {
@@ -26,6 +27,11 @@ namespace ConCode.NET.Mobile
 
 				Title.Text = _conferenceInfo.Name;
 				Description.Text = _conferenceInfo.Description;
+
+				var geoCoder = await new Geocoder().GetPositionsForAddressAsync(_conferenceInfo.Location);
+
+
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(geoCoder.First(),new Distance(100)));
 			}
 		}
 	}

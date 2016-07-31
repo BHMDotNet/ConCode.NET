@@ -26,7 +26,7 @@ namespace ConCode.NET.Mobile
 			set;
 		}
 
-		public Address Location
+		public string Location
 		{
 			get;
 			set;

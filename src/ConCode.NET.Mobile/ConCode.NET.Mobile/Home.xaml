@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.Home" Title="Home">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConCode.NET.Mobile.Home" Title="Home">
 	<ContentPage.Content>
 		<Grid BackgroundColor="{DynamicResource DefaultRed}">
 			<StackLayout Padding="10,10,10,0">
@@ -7,7 +7,12 @@
 				<Grid Style="{DynamicResource CardStyle}">
 					<Label x:Name="Description" TextColor="Gray" FontSize="13"/>
 				</Grid>
-
+				<StackLayout VerticalOptions="StartAndExpand" Padding="30">
+			        <maps:Map WidthRequest="320" HeightRequest="200"
+			            x:Name="Map"
+			            MapType="Street"
+			        />
+    			</StackLayout>
 			</StackLayout>
 		</Grid>
 
