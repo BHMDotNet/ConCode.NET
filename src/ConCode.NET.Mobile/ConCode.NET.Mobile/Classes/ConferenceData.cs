@@ -21,9 +21,50 @@ namespace ConCode.NET.Mobile
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
+		public async Task<ConferenceInfoModel> GetConferenceInfoAsync()
+		{
+			var ConferenceInformation = new ConferenceInfoModel();
+
+			try
+			{
+				var uri = new Uri(string.Format(Uri, string.Empty));
+
+				var response = await client.GetAsync(uri + "/conference");
+				if (response.IsSuccessStatusCode)
+				{
+					var content = await response.Content.ReadAsStringAsync();
+					var tempConferenceInfo = JsonConvert.DeserializeObject<ConferenceInfo>(content);
+
+					ConferenceInformation = new ConferenceInfoModel
+					{
+						Name = tempConferenceInfo.Name,
+						Description = tempConferenceInfo.Description,
+						Dates = "1/1/2017",
+						Location = tempConferenceInfo.Location
+
+					};
+
+					response.Dispose();
+					content = null;
+					tempConferenceInfo = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"ERROR {0}", ex.Message);
+			}
+			finally
+			{
+				client.Dispose();
+
+			}
+
+			return ConferenceInformation;
+		}
+
 		public async Task<List<SpeakerListModel>> GetSpeakersAsync()
 		{
-			var Speakers = new List<SpeakerListModel>();
+			var SpeakerList = new List<SpeakerListModel>();
 
 			try
 			{
@@ -37,7 +78,7 @@ namespace ConCode.NET.Mobile
 
 					foreach (var speaker in tempSpeakers)
 					{
-						Speakers.Add(new SpeakerListModel
+						SpeakerList.Add(new SpeakerListModel
 						{
 							Id = speaker.Id,
 							FullName = speaker.FirstName + " " + speaker.LastName,
@@ -63,12 +104,12 @@ namespace ConCode.NET.Mobile
 
 			}
 
-			return Speakers;
+			return SpeakerList;
 		}
 
 		public async Task<List<SessionListModel>> GetSessionsAsync()
 		{
-			var Sessions = new List<SessionListModel>();
+			var SessionList = new List<SessionListModel>();
 
 			try
 			{
@@ -82,7 +123,7 @@ namespace ConCode.NET.Mobile
 
 					foreach (var session in tempSessions)
 					{
-						Sessions.Add(new SessionListModel
+						SessionList.Add(new SessionListModel
 						{
 							Id = session.Id,
 							Title = session.Talk.Title,
@@ -102,7 +143,7 @@ namespace ConCode.NET.Mobile
 				Debug.WriteLine(@"ERROR {0}", ex.Message);
 			}
 
-			return Sessions;
+			return SessionList;
 		}
 
 	}

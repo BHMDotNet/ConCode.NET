@@ -89,6 +89,7 @@
     <Compile Include="SpeakerDetails.xaml.cs">
       <DependentUpon>SpeakerDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConferenceInfoModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
