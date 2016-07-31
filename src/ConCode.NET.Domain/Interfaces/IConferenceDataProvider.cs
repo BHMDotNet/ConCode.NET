@@ -23,6 +23,8 @@ namespace ConCode.NET.Domain.Interfaces
         IEnumerable<TalkType> TalkTypes { get; }
 
         IQueryable<Talk> GetTalks { get; }
+
+        void AddTalk(Talk talk);
         #endregion
 
         #region Sponser

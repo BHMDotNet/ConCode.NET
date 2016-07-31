@@ -21,7 +21,7 @@
         <div class="form-group">
             <label asp-for="Abstract" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Abstract" class="form-control" />
+                <textarea asp-for="Abstract" class="form-control" rows="7"></textarea>
                 <span asp-validation-for="Abstract" class="text-danger" />
             </div>
         </div>
@@ -30,6 +30,13 @@
             <div class="col-md-10">
                 <select asp-for="Level" class="form-control" asp-items="@Model.TalkLevels"></select>
                 <span asp-validation-for="Level" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TagList" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select multiple asp-for="TagList" class="form-control" data-role="tagsinput"/>
+                <span asp-validation-for="TagList" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

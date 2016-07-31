@@ -1,0 +1,16 @@
+@model ConCode.NET.Web.Models.TalkViewModels.TalkSubmittedViewModel
+
+@{
+    ViewData["Title"] = "Thank You!";
+}
+
+<h2>Your talk has been submitted.</h2>
+
+<div>
+    <h4>We will let you know.</h4>
+    <hr />
+    <p>Thank you for submitting your talk <span id="talk-title">'@Model.Title'</span>! You will receive an email notification if your talk has been selected.</p>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Back Home</a>
+</div>

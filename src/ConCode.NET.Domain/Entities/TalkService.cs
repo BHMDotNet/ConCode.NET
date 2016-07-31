@@ -32,5 +32,12 @@ namespace ConCode.NET.Domain
         {
             return _conferenceDataProvider.TalkTypes.FirstOrDefault(x => x.Id == talkTypeId);
         }
+
+        public void AddTalk(Talk talk)
+        {
+            var maxId = _conferenceDataProvider.GetTalks.Max(x => x.Id);
+            talk.Id = maxId + 1;
+            _conferenceDataProvider.AddTalk(talk);
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace ConCode.NET.Web.Models.TalkViewModels
             }
         }
 
-        public IEnumerable<string> Tags { get; set; }
+        public IEnumerable<string> TagList { get; set; }
 
         public int TimesPresented { get; set; }
     }

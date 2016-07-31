@@ -107,6 +107,11 @@ namespace ConCode.NET.Core.Data
             }
         }
 
+        public void AddTalk(Talk talk)
+        {
+            _talks.Add(talk);
+        }
+
         public IQueryable<Venue> Venues
         {
             get

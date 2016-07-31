@@ -199,6 +199,10 @@ namespace ConCode.NET.Core.Data
                 throw new NotImplementedException();
             }
         }
+        public void AddTalk(Talk talk)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Venue
@@ -214,6 +218,7 @@ namespace ConCode.NET.Core.Data
         {
             throw new NotImplementedException();
         }
+
         #endregion
 
         public ConferenceInfo ConferenceInfo
