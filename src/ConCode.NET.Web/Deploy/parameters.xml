@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter name="ConnectionString-ConCode"
+     defaultValue="Parameterized connection string!">
+    <parameterEntry
+       type="TextFile"
+       scope="appsettings.json"
+       match="(?&lt;=&quot;ConCode&quot;:.*&quot;)[^&quot;]*"/>
+  </parameter>
+</parameters>

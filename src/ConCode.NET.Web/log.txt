@@ -1,0 +1,49 @@
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 7/31/2016 7:18:19 AM.
+C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets(184,3): warning MSB4011: "D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\DotNet\Microsoft.DotNet.Publishing.targets (54,3)". This is most likely a build authoring error. This subsequent import will be ignored. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+The target "MvcBuildViews" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets (852,131)" does not exist in the project, and will be ignored.
+Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" on node 1 (CustomPublish target(s)).
+GetMSDeployInstalledVersionPath:
+  $(_DefaultMSDeployMaxVersion) is 3
+  $(_MSDeployVersionsToTry) is 9.0
+  $(MSDeployPath) is C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\
+CreateMSDeployPackageFromDotNetPublishFiles:
+  PublishOutputPath=C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\
+  PackageTempPath=C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\
+  GetMSDeployOutputs=
+  MSDeployPath=C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\
+  Removing directory "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\".
+  Creating directory "C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\".
+  MSDeployArgs=-declareParamFile="D:\Github\ConCode.NET\src\ConCode.NET.Web/Deploy/parameters.xml" 
+  "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\\MSDeploy.exe" -verb:sync -source:manifest="C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\ConCode.NET.Web.SourceManifest.xml" -dest:package="C:\Users\rschi\AppData\Local\Temp\PackageTemp\ConCode.NET.Web\ConCode.NET.Web.package.zip" -declareParamFile="D:\Github\ConCode.NET\src\ConCode.NET.Web/Deploy/parameters.xml" 
+  Info: Adding sitemanifest (sitemanifest).
+  Info: Adding IIS Application (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\)
+  Info: Creating application (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\)
+  Info: Adding virtual path (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\)
+  Info: Adding directory (C:\Users\rschi\AppData\Local\Temp\PublishTemp\ConCode.NET.Web63\).
+  Info: Adding declared parameter 'ConnectionString-ConCode'.
+  Total changes: 6 (5 added, 0 deleted, 0 updated, 1 parameters changed, 0 bytes copied)
+D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,11): error MSB4064: The "SourceFolder" parameter is not supported by the "Copy" task. Verify the parameter exists on the task, and it is a settable public instance property. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,5): error MSB4063: The "Copy" task could not be initialized with its input parameters.  [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+Done Building Project "D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (CustomPublish target(s)) -- FAILED.
+
+Build FAILED.
+
+  C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.targets(184,3): warning MSB4011: "D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\DotNet\Microsoft.DotNet.Publishing.targets (54,3)". This is most likely a build authoring error. This subsequent import will be ignored. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+
+
+"D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj" (CustomPublish target) (1) ->
+(CreateMSDeployPackageFromDotNetPublishFiles target) -> 
+  D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,11): error MSB4064: The "SourceFolder" parameter is not supported by the "Copy" task. Verify the parameter exists on the task, and it is a settable public instance property. [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+  D:\Github\ConCode.NET\src\ConCode.NET.Web\Properties\PublishProfiles\Package.pubxml(82,5): error MSB4063: The "Copy" task could not be initialized with its input parameters.  [D:\Github\ConCode.NET\src\ConCode.NET.Web\ConCode.NET.Web.xproj]
+
+    1 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.88
