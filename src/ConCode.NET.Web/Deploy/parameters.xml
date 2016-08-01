@@ -16,5 +16,9 @@
        type="providerPath"
        scope="contentPath"
        match="ConCode.NET.Web_Deploy$"/>
+    <parameterEntry
+       type="providerPath"
+       scope="createApp"
+       match="ConCode.NET.Web_Deploy$"/>
   </parameter>
 </parameters>
