@@ -6,6 +6,7 @@ using Xamarin.Forms.Maps.iOS;
 using Xamarin.Forms.Platform.iOS;
 using Foundation;
 using UIKit;
+using WatchKit;
 
 namespace ConCode.NET.Mobile.iOS
 {
@@ -24,6 +25,22 @@ namespace ConCode.NET.Mobile.iOS
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
+		}
+
+		public async override void HandleWatchKitExtensionRequest(UIApplication application, NSDictionary userInfo, Action<NSDictionary> reply)
+		{
+
+			var cd = new ConferenceData();
+			var sessions = await cd.GetSessionsAsync();
+
+			var array = new NSMutableArray((nuint)sessions.Count);
+			foreach (var session in sessions)
+			{
+				var title = string.Format("{0}|{1}", session.DateTime, session.Title);
+				array.Add(FromObject(title));
+			}
+
+			reply(new NSDictionary("SessionTitle", array));
 		}
 	}
 }
