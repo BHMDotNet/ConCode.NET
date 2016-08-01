@@ -1,0 +1,63 @@
+@model ConCode.NET.Web.Models.TalkViewModels.SubmitTalkViewModel
+
+@{
+    ViewData["Title"] = "Submit A Talk!";
+}
+
+<h2>Submit</h2>
+
+<form asp-action="Submit">
+    <div class="form-horizontal">
+        <h4>Fill in all the information to submit a talk</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Abstract" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="Abstract" class="form-control" rows="7"></textarea>
+                <span asp-validation-for="Abstract" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Level" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Level" class="form-control" asp-items="@Model.TalkLevels"></select>
+                <span asp-validation-for="Level" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TagList" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select multiple asp-for="TagList" class="form-control" data-role="tagsinput"/>
+                <span asp-validation-for="TagList" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TimesPresented" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TimesPresented" class="form-control" />
+                <span asp-validation-for="TimesPresented" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

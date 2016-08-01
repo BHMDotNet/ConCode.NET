@@ -62,6 +62,13 @@
 				<Setter Property="FontAttributes" Value="Bold"/>
 			</Style> 
 
+			<Style x:Key="ConferenceTitleStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="30"/>
+				<Setter Property="TextColor" Value="Color.White"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+			</Style> 
+
 			<Style x:Key="TimeStyle" TargetType="Label">
 				<Setter Property="FontSize" Value="30"/>
 				<Setter Property="TextColor" Value="{DynamicResource DefaultRed}"/>

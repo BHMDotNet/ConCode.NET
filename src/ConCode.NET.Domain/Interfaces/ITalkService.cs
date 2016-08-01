@@ -12,5 +12,7 @@ namespace ConCode.NET.Domain.Interfaces
         IEnumerable<TalkType> GetTalkTypes();
 
         TalkType GetTalkType(int talkTypeId);
+
+        void AddTalk(Talk talk);
     }
 }
