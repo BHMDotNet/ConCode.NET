@@ -12,8 +12,8 @@ namespace ConCode.NET.Web.Controllers
     public class AttendeeController : Controller
     {
 
-        private IHttpContextAccessor _httpContextAccessor;
-        private IAttendeeService _attendeeService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IAttendeeService _attendeeService;
 
         public AttendeeController(IHttpContextAccessor httpContextAccessor, IAttendeeService service)
         {
