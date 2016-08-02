@@ -26,7 +26,7 @@ namespace ConCode.NET.Web.Controllers.Api
 
         // GET: api/Session/5
         [HttpGet("{id}", Name = "Get")]
-        public Session Get(int id)
+        public Session Get(long id)
         {
             return sessionService.GetSessions().FirstOrDefault(x => x.Id == id);
         }
