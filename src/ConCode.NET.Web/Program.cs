@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using ConCode.NET.Core.Data;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
 
 namespace ConCode.NET.Web
 {
@@ -12,6 +13,7 @@ namespace ConCode.NET.Web
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls(args)
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();

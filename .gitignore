@@ -246,3 +246,4 @@ ModelManifest.xml
 .fake/
 *.espressostorage
 
+/ConCode.NET.Database/ConCode.NET.Database.jfm

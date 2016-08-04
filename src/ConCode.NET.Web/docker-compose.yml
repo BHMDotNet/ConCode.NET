@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  concode.net.web:
+    image: username/concode.net.web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
