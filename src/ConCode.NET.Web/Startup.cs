@@ -102,26 +102,10 @@ namespace ConCode.NET.Web
 
             app.UseFacebookAuthentication(new FacebookOptions()
             {
-                //AppId = Configuration["Authentication:Facebook:AppId"],
-                //AppSecret = Configuration["Authentication:Facebook:AppSecret"]
-                AppId = "1751083965130261",
-                AppSecret = "c7338a55d95b7477c87224d79a1cc457"
+                AppId = Configuration["Authentication:Facebook:AppId"],
+                AppSecret = Configuration["Authentication:Facebook:AppSecret"]
             });
-
-            app.UseTwitterAuthentication(new TwitterOptions()
-            {
-                ConsumerKey = "iPRM2uhtpwfwPU9GK8QbXXZMW",
-                ConsumerSecret = "CKhhQKPQJjplp8G2o5BrjmvFZeqdpVRYZAobHZrxTtevHIHtLU"
-            });
-
-            app.UseGoogleAuthentication(new GoogleOptions()
-            {
-                ClientId = "897470512898-3pmr6ucsfiqmhvfkdugduv1v1s480q0d.apps.googleusercontent.com",
-                ClientSecret = "KrrPNTm52wB60SlcmqsrkvK0"
-
-            });
-
-
+           
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
