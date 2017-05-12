@@ -26,7 +26,7 @@ namespace ConCode.NET.Web.Controllers
             return View(model);
         }
 
-        public IActionResult Details(int Id)
+        public IActionResult Details(long Id)
         {
             var session = sessionService.GetSessions().FirstOrDefault(x => x.Id == Id);
             return View("details", new SessionDetailsViewModel { Session = session });

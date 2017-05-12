@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[TalkTypes]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [LengthInTicks] BIGINT NOT NULL
+)
