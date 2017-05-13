@@ -11,14 +11,6 @@
     <parameterEntry
        type="providerPath"
        scope="IisApp"
-       match="ConCode.NET"/>
-    <parameterEntry
-       type="providerPath"
-       scope="contentPath"
-       match="ConCode.NET"/>
-    <parameterEntry
-       type="providerPath"
-       scope="createApp"
-       match="ConCode.NET"/>
+       match="ConCode.NET.Web_Deploy$"/>
   </parameter>
 </parameters>

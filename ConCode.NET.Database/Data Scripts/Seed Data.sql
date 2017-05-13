@@ -9,16 +9,12 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-
 DELETE FROM [dbo].[Sponsors]
 DELETE FROM [dbo].[Talks]
 DELETE FROM [dbo].[SpeakerTalks]
 DELETE FROM [dbo].[AttendeeInfo]
 DELETE FROM [dbo].[SpeakerInfo]
 DELETE FROM [dbo].[Users]
-DELETE FROM [dbo].[Sessions]
-DELETE FROM [dbo].[TalkTypes]
 
 DBCC CHECKIDENT ('[dbo].[Sponsors]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[Talks]', RESEED, 0);
@@ -26,8 +22,6 @@ DBCC CHECKIDENT ('[dbo].[SpeakerTalks]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[AttendeeInfo]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[SpeakerInfo]', RESEED, 0);
 DBCC CHECKIDENT ('[dbo].[Users]', RESEED, 0);
-DBCC CHECKIDENT ('[dbo].[Sessions]', RESEED, 0);
-DBCC CHECKIDENT ('[dbo].[TalkTypes]', RESEED, 0);
 GO
 
 DECLARE @UserId INT
@@ -166,22 +160,6 @@ VALUES
 	, 1
 	, 2 )
 
-	
-INSERT INTO [dbo].[SpeakerTalks]
-	( [SpeakerId]
-	, [TalkId] )
-VALUES
-	( 
-	 1
-	, 1 )
-INSERT INTO [dbo].[SpeakerTalks]
-	( [SpeakerId]
-	, [TalkId] )
-VALUES
-	( 
-	 2
-	, 2 )
-
 -------------------------------------
 -- Sponsor Seed Data
 -------------------------------------
@@ -211,40 +189,3 @@ VALUES
 	( 'Pied Piper'
 	, 'http://www.piedpiper.com'
 	, 'http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo' )
-
-	
-INSERT INTO [dbo].[TalkTypes]
-	( [Name]
-	, [LengthInTicks] )
-VALUES
-	( 'Session'
-	, 27000000000 )
-INSERT INTO [dbo].[TalkTypes]
-	( [Name]
-	, [LengthInTicks] )
-VALUES
-	( 'Lightening Talk'
-	, 9000000000 )
-
-
-	
-INSERT INTO [dbo].[Sessions]
-	( [TalkId]
-	, [Start]
-	, [TalkTypeId]
-	, [SessionStatus] )
-VALUES
-	( 1
-	, '8/20/2016 1:30:00 PM'
-	, 1
-	, 1 )
-INSERT INTO [dbo].[Sessions]
-	( [TalkId]
-	, [Start]
-	, [TalkTypeId]
-	, [SessionStatus] )
-VALUES
-	( 1
-	, '8/20/2016 2:30:00 PM'
-	, 2
-	, 2 )
