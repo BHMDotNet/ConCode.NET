@@ -1,22 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B532C4D3-A1A0-4299-80C9-9E87D70069E9}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Core", "src\ConCode.NET.Core\ConCode.NET.Core.xproj", "{A5F75399-09D0-46D0-9C0F-A6C4B31409FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConCode.NET.Core", "src\ConCode.NET.Core\ConCode.NET.Core.csproj", "{A5F75399-09D0-46D0-9C0F-A6C4B31409FC}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Web", "src\ConCode.NET.Web\ConCode.NET.Web.xproj", "{CF4564CF-1AD3-4B65-9CE7-95FBF0437390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConCode.NET.Web", "src\ConCode.NET.Web\ConCode.NET.Web.csproj", "{CF4564CF-1AD3-4B65-9CE7-95FBF0437390}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Tests", "src\ConCode.NET.Tests\ConCode.NET.Tests.xproj", "{43D4B277-D269-4DD1-A733-E02D744464EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConCode.NET.Tests", "src\ConCode.NET.Tests\ConCode.NET.Tests.csproj", "{43D4B277-D269-4DD1-A733-E02D744464EF}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ConCode.NET.Database", "ConCode.NET.Database\ConCode.NET.Database.sqlproj", "{B76AD3E4-6338-48E6-A9D5-42BCD9FA7AF6}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConCode.NET.Domain", "src\ConCode.NET.Domain\ConCode.NET.Domain.xproj", "{204C5FD3-065A-49AF-B2EA-53AB897AD57F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConCode.NET.Domain", "src\ConCode.NET.Domain\ConCode.NET.Domain.csproj", "{204C5FD3-065A-49AF-B2EA-53AB897AD57F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
