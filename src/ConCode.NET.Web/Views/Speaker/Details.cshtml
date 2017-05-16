@@ -17,16 +17,10 @@
 
             <br />
 
-            @if (Model.speakerInfo.SpeakerInfo.Talks != null && Model.speakerInfo.SpeakerInfo.Talks.Any())
-            {
-                <h3>Talks</h3>
-                @foreach (var talk in Model.speakerInfo.SpeakerInfo.Talks)
-                {
-                    <h3 style="color: blue">@talk.Title</h3>
+            <h3 style="color: blue" >@Model.speakerInfo.SpeakerInfo.Talks.FirstOrDefault().Title</h3>
 
-                    <p style="font-style:italic">@talk.Abstract.PadRight(100).Substring(0, 100).Trim() ...</p>
-                }
-            }
+            <h4 style="font-style:italic" >@Model.speakerInfo.SpeakerInfo.Talks.FirstOrDefault().Abstract</h4>
+
         </div>
 
         <div id="social-icons">

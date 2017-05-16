@@ -116,6 +116,11 @@
       <Project>{71A63BB1-DCB8-4F33-B9B4-03500C28B639}</Project>
       <Name>ConCode.NET.Mobile</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ConCode.NET.Mobile.iOS.WatchKitExtension\ConCode.NET.Mobile.iOS.WatchKitExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{79320A06-8C76-4070-8217-991BB57482E4}</Project>
+      <Name>ConCode.NET.Mobile.iOS.WatchKitExtension</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />

@@ -11,8 +11,8 @@ namespace ConCode.NET.Web.Controllers
 {
     public class SpeakerController : Controller
     {
-        private readonly ISpeakerService _speakerService;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISpeakerService _speakerService;
+        private IHttpContextAccessor _httpContextAccessor;
 
         public SpeakerController(IHttpContextAccessor httpContextAccessor, ISpeakerService service)
         {
@@ -67,9 +67,6 @@ namespace ConCode.NET.Web.Controllers
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
-
-            // Example of Service Location pattern
-            // var service = this.ControllerContext.HttpContext.RequestServices.GetService(typeof(ISpeakerService));
 
             // Create our ViewModel and fire up the View!
             var speakerViewModel = new SpeakerIndexViewModel(speaker);

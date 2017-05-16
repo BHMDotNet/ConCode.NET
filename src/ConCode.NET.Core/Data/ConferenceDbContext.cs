@@ -76,20 +76,6 @@ namespace ConCode.NET.Core.Data
                 entity.Property(e => e.ImageUrl);
                 entity.Ignore(e => e.SponsorshipLevel);
             });
-            modelBuilder.Entity<Session>(entity =>
-            {
-                entity.HasKey(e => e.Id);
-                entity.Ignore(e => e.Venue);
-                entity.Property(e => e.Status).HasColumnName("SessionStatus");
-                //entity.HasOne(e => e.Talk);
-                //entity.HasOne(e => e.TalkType);
-            });
-            modelBuilder.Entity<TalkType>(entity =>
-            {
-                entity.ToTable("TalkTypes");
-                entity.HasKey(e => e.Id);
-                entity.Ignore(e => e.Length);
-            });
         }
 
         public override int SaveChanges()
@@ -116,7 +102,6 @@ namespace ConCode.NET.Core.Data
         public DbSet<Talk> Talks { get; set; }
 
         public DbSet<Sponsor> Sponsors { get; set; }
-        public DbSet<Session> Sessions { get; set; }
 
         #region IConferenceDataProvider Implementation
 
@@ -126,11 +111,11 @@ namespace ConCode.NET.Core.Data
             throw new NotImplementedException();
         }
 
-        IQueryable<Session> IConferenceDataProvider.Sessions
+        public IQueryable<Session> Sessions
         {
             get
             {
-                return Sessions.Include(e => e.TalkType).Include(e => e.Talk.SpeakerInfo.User);
+                throw new NotImplementedException();
             }
         }
         #endregion
